@@ -10,7 +10,7 @@ class Siswa extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'ktm', 'profile',
+        'user_id', 'jenjang_pendidikan', 'profile',
     ];
 
     protected $casts = [

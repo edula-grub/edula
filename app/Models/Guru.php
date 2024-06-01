@@ -10,7 +10,7 @@ class Guru extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'rankup', 'porfolio',
+        'user_id', 'porfolio',
     ];
 
     protected $casts = [

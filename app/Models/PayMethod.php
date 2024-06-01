@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PayMethod extends Model
+class Paymethod extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'total', 'status', 'method',
+        'jenis_pembayaran', 'task1', 'task2',
     ];
 
     protected $casts = [

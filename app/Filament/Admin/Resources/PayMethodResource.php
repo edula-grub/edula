@@ -2,17 +2,17 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\PayMethodResource\Pages;
-use App\Models\PayMethod;
+use App\Filament\Admin\Resources\PaymethodResource\Pages;
+use App\Models\Paymethod;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
-class PayMethodResource extends Resource
+class PaymethodResource extends Resource
 {
-    protected static ?string $model = PayMethod::class;
+    protected static ?string $model = Paymethod::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -20,9 +20,9 @@ class PayMethodResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('total'),
-                Forms\Components\TextInput::make('status'),
-                Forms\Components\TextInput::make('method'),
+                Forms\Components\TextInput::make('jenis_pembayaran'),
+                Forms\Components\TextInput::make('task1'),
+                Forms\Components\TextInput::make('task2'),
             ]);
     }
 
@@ -30,9 +30,9 @@ class PayMethodResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('total')->searchable(),
-                Tables\Columns\TextColumn::make('status')->searchable(),
-                Tables\Columns\TextColumn::make('method')->searchable(),
+                Tables\Columns\TextColumn::make('jenis_pembayaran')->searchable(),
+                Tables\Columns\TextColumn::make('task1')->searchable(),
+                Tables\Columns\TextColumn::make('task2')->searchable(),
             ])
             ->filters([
 
@@ -50,9 +50,9 @@ class PayMethodResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListPayMethods::route('/'),
-            'create' => Pages\CreatePayMethod::route('/create'),
-            'edit' => Pages\EditPayMethod::route('/{record}/edit'),
+            'index' => Pages\ListPaymethods::route('/'),
+            'create' => Pages\CreatePaymethod::route('/create'),
+            'edit' => Pages\EditPaymethod::route('/{record}/edit'),
         ];
     }
 }

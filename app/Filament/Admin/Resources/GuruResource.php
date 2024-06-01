@@ -9,10 +9,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-// rich textbox
-use Filament\Forms\Components\RichEditor;
-// use model user
-use App\Models\User;
 
 class GuruResource extends Resource
 {
@@ -22,30 +18,18 @@ class GuruResource extends Resource
 
     public static function form(Form $form): Form
     {
-        $listopsi=User::get()->pluck('name', 'id');
-        $listrank=[
-            "Radiant","Immortal","Divine","Ancient","Legend","Archon","Crusader","Guardian","Herald"
-        ];
-
-
         return $form
             ->schema([
-                Forms\Components\Select::make('user_id')->options($listopsi),
-                Forms\Components\Select::make('rankup')->options($listrank),
-                Forms\Components\RichEditor::make('porfolio'),
+                Forms\Components\TextInput::make('user_id')->numeric(),
+                Forms\Components\Textarea::make('porfolio'),
             ]);
     }
 
     public static function table(Table $table): Table
     {
-        $table->query(function () {
-            return Guru::query()->join('users', 'users.id', '=', 'gurus.user_id')->select('gurus.*', 'users.name');
-        });
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('user_id')->searchable(),
-                Tables\Columns\TextColumn::make('name')->searchable(),
-                Tables\Columns\TextColumn::make('rankup')->searchable(),
+
             ])
             ->filters([
 

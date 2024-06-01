@@ -2,16 +2,13 @@
 
 namespace App\Filament\Admin\Resources;
 
-use Filament\Forms;
-use App\Models\Guru;
-use Filament\Tables;
-use Filament\Forms\Form;
-use App\Models\Biderlist;
-use App\Models\Bidrequest;
-use Filament\Tables\Table;
-use Filament\Resources\Resource;
-use Illuminate\Support\Facades\DB;
 use App\Filament\Admin\Resources\BiderlistResource\Pages;
+use App\Models\Biderlist;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
 
 class BiderlistResource extends Resource
 {
@@ -21,13 +18,11 @@ class BiderlistResource extends Resource
 
     public static function form(Form $form): Form
     {
-        $listguru=DB::table('gurus')->join('users', 'users.id', '=', 'gurus.user_id')->select('gurus.*', 'users.name')->get()->pluck('name', 'id');
-        $bidlist=Bidrequest::get()->pluck('id', 'nama_mapel');
         return $form
             ->schema([
-                Forms\Components\Select::make('bidrequest_id')->options($bidlist),
-                Forms\Components\Select::make('guru_id')->options($listguru),
-                Forms\Components\Textarea::make('zoomlink'),
+                Forms\Components\TextInput::make('bidrequest_id')->numeric(),
+                Forms\Components\TextInput::make('guru_id')->numeric(),
+                Forms\Components\Textarea::make('harga'),
             ]);
     }
 

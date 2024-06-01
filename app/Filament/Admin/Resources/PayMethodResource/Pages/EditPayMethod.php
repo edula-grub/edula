@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Filament\Admin\Resources\PayMethodResource\Pages;
+namespace App\Filament\Admin\Resources\PaymethodResource\Pages;
 
-use App\Filament\Admin\Resources\PayMethodResource;
+use App\Filament\Admin\Resources\PaymethodResource;
 use Filament\Resources\Pages\EditRecord;
 
-class EditPayMethod extends EditRecord
+class EditPaymethod extends EditRecord
 {
-    protected static string $resource = PayMethodResource::class;
+    protected static string $resource = PaymethodResource::class;
 
     protected function getHeaderActions(): array
     {

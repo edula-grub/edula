@@ -2,14 +2,13 @@
 
 namespace App\Filament\Admin\Resources;
 
-use Filament\Forms;
-use Filament\Tables;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use App\Models\Sertifandskil;
-use Filament\Resources\Resource;
-use Illuminate\Support\Facades\DB;
 use App\Filament\Admin\Resources\SertifandskilResource\Pages;
+use App\Models\Sertifandskil;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
 
 class SertifandskilResource extends Resource
 {
@@ -19,24 +18,14 @@ class SertifandskilResource extends Resource
 
     public static function form(Form $form): Form
     {
-        $guru=DB::table('gurus')->join('users', 'users.id', '=', 'gurus.user_id')->select('gurus.*', 'users.name')->get()->pluck('name', 'id');
-        $status = [
-            "pending","accepted","rejected"
-        ];
-        $rate = [
-            "*","**","***","****","*****"
-        ];
-        $level = [
-            "Expert","Intermediate","Beginner"
-        ];
         return $form
             ->schema([
-                Forms\Components\Select::make('guru_id')->options($guru)->label("Guru"),
-                Forms\Components\FileUpload::make('sertifdoc')->label("Dokumen Sertifikat pdf/image only"),
-                Forms\Components\Textarea::make('credensial'),
-                Forms\Components\Select::make('level')->options($level)->label("Tingkat Skill"),
-                Forms\Components\TextInput::make('skil'),
-                Forms\Components\Select::make('approved')->options($status),
+                Forms\Components\TextInput::make('guru_id')->numeric(),
+                Forms\Components\Textarea::make('dokumen_sertifikat'),
+                Forms\Components\Textarea::make('kredensial_sertifikat'),
+                Forms\Components\Textarea::make('skil'),
+                Forms\Components\TextInput::make('level'),
+                Forms\Components\TextInput::make('diterima_oleh_sistem')->numeric(),
             ]);
     }
 

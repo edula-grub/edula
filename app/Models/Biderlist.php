@@ -10,7 +10,7 @@ class Biderlist extends Model
     use HasFactory;
 
     protected $fillable = [
-        'bidrequest_id', 'guru_id', 'zoomlink',
+        'bidrequest_id', 'guru_id', 'harga',
     ];
 
     protected $casts = [

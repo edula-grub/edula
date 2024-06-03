@@ -14,7 +14,9 @@ class BiderlistResource extends Resource
 {
     protected static ?string $model = Biderlist::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-ticket';
+
+    protected static ?string $label = 'List Pengajaran';
 
     public static function form(Form $form): Form
     {

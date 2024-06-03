@@ -14,7 +14,9 @@ class BidrequestResource extends Resource
 {
     protected static ?string $model = Bidrequest::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
+
+    protected static ?string $label = 'List Pengajuan Bimbingan';
 
     public static function form(Form $form): Form
     {

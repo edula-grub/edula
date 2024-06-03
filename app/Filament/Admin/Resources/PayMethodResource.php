@@ -14,7 +14,9 @@ class PaymethodResource extends Resource
 {
     protected static ?string $model = Paymethod::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-credit-card';
+
+    protected static ?string $label = 'List Metode Pembayaran';
 
     public static function form(Form $form): Form
     {

@@ -14,7 +14,9 @@ class SertifandskilResource extends Resource
 {
     protected static ?string $model = Sertifandskil::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-sparkles';
+
+    protected static ?string $label = 'Skill dan Sertifikat Guru';
 
     public static function form(Form $form): Form
     {

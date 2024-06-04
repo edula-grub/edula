@@ -14,7 +14,9 @@ class PaymetResource extends Resource
 {
     protected static ?string $model = Paymet::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
+
+    protected static ?string $label = 'List Pembayaran';
 
     public static function form(Form $form): Form
     {

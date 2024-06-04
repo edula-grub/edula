@@ -53,4 +53,5 @@ class User extends Authenticatable implements FilamentUser
             'password' => 'hashed',
         ];
     }
+
 }

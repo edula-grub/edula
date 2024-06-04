@@ -2,20 +2,26 @@
 
 namespace App\Filament\Admin\Resources;
 
-use App\Filament\Admin\Resources\SiswaResource\Pages;
-use App\Models\Siswa;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Siswa;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Support\Facades\DB;
+use Filament\Tables\Actions\EditAction;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Actions\DeleteBulkAction;
+use App\Filament\Admin\Resources\SiswaResource\Pages;
 
 class SiswaResource extends Resource
 {
     protected static ?string $model = Siswa::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+
+    protected static ?string $label = 'List Siswa';
 
     public static function DataGeter()
     {
@@ -35,7 +41,6 @@ class SiswaResource extends Resource
 
         return $data;
     }
-
     public static function form(Form $form): Form
     {
         $data=self::DataGeter();
@@ -46,59 +51,31 @@ class SiswaResource extends Resource
                 Forms\Components\FileUpload::make('profile')->image(),
             ]);
     }
-
-    // public static function table(Table $table): Table
-    // {
-
-    //     return $table
-    //         ->columns([
-    //             Tables\Columns\TextColumn::make('profile')->searchable(),
-    //             // Tabel menampilkan nama user berdasarkan user_id
-    //             Tables\Columns\TextColumn::make('user_id')->searchable()->format(
-    //                 function ($value) { // ini adalah closure function yang akan dijalankan untuk setiap baris data, ibaratnya kayak inline css
-    //                     $user = DB::table('users')->where('id', $value)->first();
-    //                  return $user->name;
-    //                 }
-    //             ),
-    //             Tables\Columns\TextColumn::make('jenjang_pendidikan')->searchable(),
-    //         ])
-    //         ->filters([
-
-    //         ])
-    //         ->actions([
-    //             Tables\Actions\EditAction::make(),
-    //         ])
-    //         ->bulkActions([
-    //             Tables\Actions\BulkActionGroup::make([
-    //                 Tables\Actions\DeleteBulkAction::make(),
-    //             ]),
-    //         ]);
-    // }
-
     public static function table(Table $table): Table
-{
-    return $table
-        ->columns([
-            Tables\Columns\TextColumn::make('profile')->searchable(),
-            Tables\Columns\TextColumn::make('user_id')->searchable()->format(
-                function ($value) {
-                    $user = DB::table('users')->where('id', $value)->first();
-                    return $user ? $user->name : 'Unknown User';
-                }
-            ),
-
-            Tables\Columns\TextColumn::make('jenjang_pendidikan')->searchable(),
-        ])
-        ->filters([
-            // Add any filters here if necessary
-        ])
-        ->actions([
-            Tables\Actions\EditAction::make(),
-        ])
-        ->bulkActions([
-            Tables\Actions\DeleteBulkAction::make(),
-        ]);
-}
+    {
+        return $table
+            ->columns([
+                // TextColumn::make('profile')->searchable(),
+                // image show
+                ImageColumn::make('profile')->circular(),
+                TextColumn::make('user_id')->formatStateUsing(
+                    function ($record) {
+                        $user = DB::table('users')->where('id', $record->user_id)->first();
+                        return $user ? $user->name : '';
+                    }
+                ),
+                TextColumn::make('jenjang_pendidikan')->searchable(),
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                EditAction::make(),
+            ])
+            ->bulkActions([
+                DeleteBulkAction::make(),
+            ]);
+    }
 
     public static function getPages(): array
     {

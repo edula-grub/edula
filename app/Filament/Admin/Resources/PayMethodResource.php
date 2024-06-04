@@ -20,9 +20,9 @@ class PaymethodResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('jenis_pembayaran'),
-                Forms\Components\TextInput::make('task1'),
-                Forms\Components\TextInput::make('task2'),
+                Forms\Components\TextInput::make('payment_method'),
+                Forms\Components\TextInput::make('logo_payment_method'),
+                Forms\Components\TextInput::make('account_number'),
             ]);
     }
 
@@ -30,9 +30,9 @@ class PaymethodResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('jenis_pembayaran')->searchable(),
-                Tables\Columns\TextColumn::make('task1')->searchable(),
-                Tables\Columns\TextColumn::make('task2')->searchable(),
+                Tables\Columns\TextColumn::make('payment_method')->searchable(),
+                Tables\Columns\TextColumn::make('logo_payment_method')->searchable(),
+                Tables\Columns\TextColumn::make('account_number')->searchable(),
             ])
             ->filters([
 

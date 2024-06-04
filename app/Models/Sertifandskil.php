@@ -10,7 +10,7 @@ class Sertifandskil extends Model
     use HasFactory;
 
     protected $fillable = [
-        'guru_id', 'dokumen_sertifikat', 'kredensial_sertifikat', 'skil', 'level', 'diterima_oleh_sistem',
+        'guru_id', 'document_sertificate', 'credential_sertificate', 'skill', 'level', 'status',
     ];
 
     protected $casts = [

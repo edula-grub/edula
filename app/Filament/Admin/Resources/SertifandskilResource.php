@@ -21,11 +21,11 @@ class SertifandskilResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('guru_id')->numeric(),
-                Forms\Components\Textarea::make('dokumen_sertifikat'),
-                Forms\Components\Textarea::make('kredensial_sertifikat'),
-                Forms\Components\Textarea::make('skil'),
+                Forms\Components\Textarea::make('document_sertificate'),
+                Forms\Components\Textarea::make('credential_sertificate'),
+                Forms\Components\Textarea::make('skill'),
                 Forms\Components\TextInput::make('level'),
-                Forms\Components\TextInput::make('diterima_oleh_sistem')->numeric(),
+                Forms\Components\TextInput::make('status')->numeric(),
             ]);
     }
 

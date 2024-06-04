@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('paymethods', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('jenis_pembayaran');
-            $table->string('task1');
-            $table->string('task2');
+            $table->string('payment_method');
+            $table->string('logo_payment_method');
+            $table->string('account_number');
             $table->timestamps();
         });
     }

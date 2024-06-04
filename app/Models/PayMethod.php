@@ -10,7 +10,7 @@ class Paymethod extends Model
     use HasFactory;
 
     protected $fillable = [
-        'jenis_pembayaran', 'task1', 'task2',
+        'payment_method', 'logo_payment_method', 'account_number',
     ];
 
     protected $casts = [

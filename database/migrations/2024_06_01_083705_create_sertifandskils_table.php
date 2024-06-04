@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('sertifandskils', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('guru_id');
-            $table->longText('dokumen_sertifikat');
-            $table->longText('kredensial_sertifikat');
-            $table->longText('skil');
+            $table->longText('document_sertificate');
+            $table->longText('credential_sertificate');
+            $table->longText('skill');
             $table->string('level');
-            $table->integer('diterima_oleh_sistem');
+            $table->integer('status');
             $table->timestamps();
         });
     }

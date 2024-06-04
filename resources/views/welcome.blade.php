@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    Jalan 123
+    Jalan
 </body>
 </html>

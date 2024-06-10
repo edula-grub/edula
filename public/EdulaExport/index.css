@@ -1,0 +1,9 @@
+.index {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 64rem;
+  overflow: hidden;
+  line-height: normal;
+  letter-spacing: normal;
+}

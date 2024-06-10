@@ -1,0 +1,256 @@
+.frame-child109 {
+  width: 34.688rem;
+  height: 35.063rem;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  display: none;
+  max-width: 100%;
+}
+.cara-melakukan-pembayaran,
+.pilih-metode-pembayaran {
+  position: relative;
+  letter-spacing: 0.02em;
+  max-width: 100%;
+}
+.pilih-metode-pembayaran {
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  display: inline-block;
+  z-index: 1;
+}
+.cara-melakukan-pembayaran {
+  height: 0;
+  width: 25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-black);
+  display: none;
+}
+.bayar,
+.cek-kembali-nominal,
+.masukkan-nominal-sesuai,
+.masukkan-nomor-virtual,
+.masukkan-pin-transaksi,
+.ok,
+.transfer-virtual-account {
+  font-family: var(--font-poppins);
+}
+.klik-menu-transfer-pilih-tran {
+  margin: 0;
+  font-size: inherit;
+  padding-left: var(--padding-lgi);
+}
+.klik-menu-transfer-container {
+  height: 0;
+  width: 31.375rem;
+  position: relative;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.02em;
+  color: var(--color-black);
+  display: none;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.bank-transfer-label-child {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+}
+.bank-transfer-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.transfer-bank {
+  position: relative;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 7.063rem;
+}
+.bank-transfer-option {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.frame-child110 {
+  width: 1.25rem;
+  height: 1.25rem;
+  position: relative;
+}
+.bank-transfer-option-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-11xs) 0 0;
+}
+.qris {
+  position: relative;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 2.313rem;
+}
+.bank-transfer-option1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.numbervirtualaccount-child {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-whitesmoke-300);
+}
+.div20,
+.virtual-account-number {
+  position: absolute;
+  top: 18%;
+  left: 3.98%;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.div20 {
+  top: 47%;
+  font-size: var(--font-size-5xl);
+}
+.numbervirtualaccount {
+  height: 6.25rem;
+  width: 31.375rem;
+  position: relative;
+  display: none;
+  max-width: 100%;
+}
+.cara-melakukan-pembayaran-deng-parent,
+.pilih-metode-pembayaran-parent {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.cara-melakukan-pembayaran-deng-parent {
+  flex-direction: row;
+  padding: 0 0 19.875rem;
+  box-sizing: border-box;
+  gap: 5.125rem;
+  z-index: 1;
+  font-size: var(--font-size-base);
+}
+.pilih-metode-pembayaran-parent {
+  flex-direction: column;
+  gap: var(--gap-3xs);
+}
+.bayar1,
+.total-rp {
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+.total-rp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.bayar1 {
+  position: relative;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  min-width: 3.938rem;
+}
+.button34 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) var(--padding-10xl);
+  background-color: var(--color-orange-100);
+  position: absolute;
+  top: 2.063rem;
+  left: 23.938rem;
+  border-radius: var(--br-mini);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 1;
+}
+.button34:hover {
+  background-color: var(--color-darkgoldenrod);
+}
+.total-rp-100000-parent {
+  align-self: stretch;
+  height: 5.188rem;
+  position: relative;
+}
+.rectangle-parent52,
+.request-kelas-3-pelajar {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.rectangle-parent52 {
+  width: 34.688rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--br-xl);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-6xl);
+  gap: var(--gap-21xl);
+  max-width: 100%;
+  max-height: 90%;
+  overflow: auto;
+}
+.request-kelas-3-pelajar {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8.25rem var(--padding-xl) 20.687rem;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-royalblue-200);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 525px) {
+  .rectangle-parent52 {
+    gap: var(--gap-xl);
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 450px) {
+  .div20,
+  .pilih-metode-pembayaran {
+    font-size: var(--font-size-lgi);
+  }
+  .cara-melakukan-pembayaran-deng-parent {
+    flex-wrap: wrap;
+    gap: var(--gap-22xl);
+  }
+  .total-rp {
+    font-size: var(--font-size-lgi);
+  }
+  .bayar1 {
+    font-size: var(--font-size-base);
+  }
+}

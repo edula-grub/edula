@@ -12,3 +12,7 @@ Route::get('/login', function () {
 Route::get('/landing', function () {
     return view('landing');
 });
+
+Route::get('/riwayatpengajar',function() {
+    return view('ktks');
+});

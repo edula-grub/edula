@@ -11,7 +11,11 @@ Route::get('/landing', function () {
 });
 
 // agustinus
-// Detail1.blade.php
+// Detail1
 Route::get('/detail1', function () {
-    return view('Agustinus/detail1');
+    return view('detail1');
+});
+// DetailPengajar
+Route::get('/DetailPengajar', function () {
+    return view('DetailPengajar');
 });

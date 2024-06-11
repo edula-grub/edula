@@ -1,0 +1,195 @@
+.request-kelas-pelajar-child {
+  position: absolute;
+  top: 12.125rem;
+  left: 74.313rem;
+  border-radius: 50%;
+  background-color: var(--color-orange-200);
+  width: 4.313rem;
+  height: 4.313rem;
+}
+.frame-child104 {
+  top: 22rem;
+  left: 0;
+  width: 3.488rem;
+  height: 3.488rem;
+}
+.frame-child104,
+.frame-child105,
+.frame-child106 {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--color-lavender-100);
+}
+.frame-child105 {
+  top: 1.5rem;
+  left: 4.063rem;
+  width: 4.363rem;
+  height: 4.363rem;
+}
+.frame-child106 {
+  height: calc(100% - 0.3px);
+  top: 0;
+  bottom: 0.019rem;
+  left: 7.188rem;
+  width: 29.1rem;
+  z-index: 1;
+}
+.undraw-online-learning-re-qw08-icon2 {
+  position: absolute;
+  width: calc(100% - 27px);
+  top: 4.125rem;
+  right: 0.813rem;
+  left: 0.875rem;
+  max-width: 100%;
+  overflow: hidden;
+  height: 24.994rem;
+  z-index: 2;
+}
+.ellipse-parent3 {
+  position: absolute;
+  top: 11.375rem;
+  left: 4rem;
+  width: 36.288rem;
+  height: 29.119rem;
+}
+.req-description,
+.request-kelas-head {
+  margin: 0;
+  position: relative;
+  letter-spacing: 0.02em;
+}
+.request-kelas-head {
+  font-size: inherit;
+  font-weight: 600;
+  font-family: inherit;
+  z-index: 1;
+}
+.req-description {
+  align-self: stretch;
+  font-size: var(--font-size-base);
+}
+.request-info1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs);
+}
+.request-kelas1 {
+  position: relative;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: left;
+}
+.header3,
+.request-button {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.request-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs) var(--padding-xl);
+  background-color: var(--color-orange-100);
+  border-radius: var(--br-mini);
+  flex-direction: row;
+  white-space: nowrap;
+}
+.request-button:hover {
+  background-color: var(--color-darkgoldenrod);
+}
+.header3 {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-21xl);
+  min-width: 19.313rem;
+  max-width: 100%;
+}
+.frame-child107,
+.frame-child108 {
+  position: absolute;
+  border-radius: 50%;
+}
+.frame-child107 {
+  top: 0;
+  left: 0.5rem;
+  background-color: var(--color-lavender-300);
+  width: 15.5rem;
+  height: 15.5rem;
+}
+.frame-child108 {
+  top: 1.563rem;
+  left: 0;
+  border: 0 solid var(--color-darkslateblue-300);
+  box-sizing: border-box;
+  width: 14.438rem;
+  height: 14.438rem;
+  z-index: 1;
+}
+.ellipse-parent4 {
+  align-self: stretch;
+  height: 16rem;
+  position: relative;
+}
+.frame-wrapper60,
+.header-parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-wrapper60 {
+  width: 12.75rem;
+  flex-direction: column;
+  padding: 10.562rem 0 0;
+  box-sizing: border-box;
+  min-width: 12.75rem;
+}
+.header-parent {
+  position: absolute;
+  top: 12.625rem;
+  left: 45.75rem;
+  width: 44.25rem;
+  flex-direction: row;
+  gap: var(--gap-9xl);
+  max-width: 100%;
+}
+.request-kelas-pelajar {
+  width: 100%;
+  height: 64rem;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--font-size-45xl);
+  color: var(--color-royalblue-200);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 750px) {
+  .request-kelas-head {
+    font-size: var(--font-size-32xl);
+  }
+}
+@media screen and (max-width: 675px) {
+  .frame-wrapper60 {
+    flex: 1;
+  }
+  .header-parent {
+    flex-wrap: wrap;
+  }
+  .request-kelas-pelajar {
+    height: auto;
+    min-height: 1024;
+  }
+}
+@media screen and (max-width: 450px) {
+  .request-kelas-head {
+    font-size: var(--font-size-19xl);
+  }
+}

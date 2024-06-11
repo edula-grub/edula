@@ -16,3 +16,13 @@ Route::get('/landing', function () {
 Route::get('/riwayatpengajar',function() {
     return view('ktks');
 });
+
+// agustinus
+// Detail1
+Route::get('/detail1', function () {
+    return view('detail1');
+});
+// DetailPengajar
+Route::get('/DetailPengajar', function () {
+    return view('DetailPengajar');
+});

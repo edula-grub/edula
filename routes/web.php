@@ -10,6 +10,8 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
+
+
 // agustinus
 // Detail1
 Route::get('/detail1', function () {
@@ -18,4 +20,11 @@ Route::get('/detail1', function () {
 // DetailPengajar
 Route::get('/DetailPengajar', function () {
     return view('DetailPengajar');
+});
+
+
+// yohhhhh
+// UbahProfilPengajar
+Route::get('/UbahProfilPengajar', function () {
+    return view('UbahProfilPengajar');
 });

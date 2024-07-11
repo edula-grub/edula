@@ -17,6 +17,10 @@ Route::get('/riwayatpengajar',function() {
     return view('ktks');
 });
 
+Route::get('/riwayatpengajar2',function() {
+    return view('rr');
+});
+
 // agustinus
 // Detail1
 Route::get('/detail1', function () {
@@ -26,3 +30,4 @@ Route::get('/detail1', function () {
 Route::get('/DetailPengajar', function () {
     return view('DetailPengajar');
 });
+

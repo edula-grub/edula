@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', function () {
+    return view('login');
+});
 
 Route::get('/CaraKerjaPelajar', function () {
     return view('caraKerjaPelajar');
@@ -16,6 +19,10 @@ Route::get('/CaraKerjaPengajar', function(){
 
 Route::get('/landing', function () {
     return view('landing');
+});
+
+Route::get('/riwayatpengajar',function() {
+    return view('ktks');
 });
 
 // agustinus

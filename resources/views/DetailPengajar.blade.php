@@ -13,6 +13,27 @@
         .poinsetpanel {
             min-width: 50dvw;
         }
+
+        .CourseName {
+            font-size: var(--font-size-h3);
+            font-family: var(--font-inter);
+            font-weight: 600;
+            /* color: var(--color-darkgray); */
+            margin-bottom: 0rem !important;
+        }
+
+        .Distributor {
+            font-size: var(--font-size-h4);
+            font-family: var(--font-inter);
+            font-weight: 400;
+            /* color: var(--color-darkgray); */
+        }
+
+        .Validtime {
+            font-size: var(--font-size-base);
+            font-family: var(--font-inter);
+            color: var(--color-darkgray);
+        }
     </style>
 @endsection
 

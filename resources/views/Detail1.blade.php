@@ -87,7 +87,7 @@
                         PENGAJARMU
                     </div>
 
-                    @for ($i = 0; $i < 1; $i++)
+                    @for ($i = 0; $i < 10; $i++)
                         <div class="my-2 col-9 teacher-info5">
                             <div class="teacher-profile">
                                 <img class="profilepicture-icon11" loading="lazy" alt=""

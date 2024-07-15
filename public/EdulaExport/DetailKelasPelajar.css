@@ -1,0 +1,896 @@
+.scheduled-class-item {
+  width: 85rem;
+  height: 52.375rem;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  display: none;
+  max-width: 100%;
+}
+.calculus-dasar-anak7 {
+  color: var(--color-black);
+}
+.cek-riwayat,
+.cek-riwayat-container {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+.cek-riwayat {
+  z-index: 2;
+  margin-left: -34.438rem;
+}
+.class-history {
+  width: 34.438rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.scheduled-class-inner {
+  align-self: stretch;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 1;
+}
+.icon-mapel2 {
+  height: 9.375rem;
+  width: 9.375rem;
+  position: relative;
+  z-index: 1;
+}
+.code-algoritma-dasar {
+  font-weight: 600;
+  z-index: 1;
+}
+.code-algoritma-dasar,
+.kuliah,
+.rp-100000,
+.sabtu-21-juni7 {
+  position: relative;
+  letter-spacing: 0.02em;
+}
+.sabtu-21-juni7 {
+  font-weight: 500;
+  z-index: 1;
+}
+.kuliah,
+.rp-100000 {
+  display: inline-block;
+}
+.rp-100000 {
+  font-weight: 600;
+  color: var(--color-royalblue-200);
+  min-width: 6.313rem;
+  white-space: nowrap;
+  z-index: 1;
+}
+.kuliah {
+  font-weight: 500;
+  min-width: 2.875rem;
+}
+.button19 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-cornflowerblue);
+  flex-direction: row;
+  padding: var(--padding-11xs) var(--padding-6xl);
+  z-index: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+}
+.button19,
+.class-price,
+.price-info1,
+.subject-icon2 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.price-info1 {
+  flex-direction: column;
+  gap: var(--gap-7xs);
+}
+.class-price,
+.subject-icon2 {
+  max-width: 100%;
+}
+.class-price {
+  flex-direction: column;
+  padding: var(--padding-6xs) 0 0;
+  box-sizing: border-box;
+  min-width: 22.25rem;
+}
+.subject-icon2 {
+  flex-direction: row;
+  gap: var(--gap-11xl);
+}
+.deskripsi-pelajaran1,
+.lorem-ipsum-dolor20 {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+.deskripsi-pelajaran1 {
+  font-weight: 500;
+}
+.lorem-ipsum-dolor20 {
+  margin: 0;
+  align-self: stretch;
+  font-size: var(--font-size-sm);
+  text-align: justify;
+}
+.description1,
+.deskripsi-pelajaran-parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.deskripsi-pelajaran-parent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-3xs);
+}
+.description1 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-6xl) var(--padding-3xl) var(--padding-mini);
+  box-sizing: border-box;
+}
+.frame-child85 {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 1;
+}
+.class-title-inner {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 0 var(--padding-mini);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.kamis-19-juni,
+.pembayaran,
+.transfer-bank- {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+.pembayaran {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  text-align: left;
+  display: inline-block;
+  min-width: 7.688rem;
+}
+.kamis-19-juni,
+.transfer-bank- {
+  margin: 0;
+  align-self: stretch;
+}
+.kamis-19-juni {
+  color: var(--color-darkgray);
+}
+.payment-date {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs-5);
+  min-width: 13.875rem;
+  max-width: 100%;
+}
+.div3,
+.tautan-zoom1 {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+.tautan-zoom1 {
+  font-weight: 500;
+  display: inline-block;
+  min-width: 7.813rem;
+}
+.div3 {
+  align-self: stretch;
+  font-size: var(--font-size-sm);
+  text-align: justify;
+}
+.zoom-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+  min-width: 13.875rem;
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-lg);
+}
+.payment-info {
+  flex: 1;
+  flex-direction: row;
+  gap: var(--gap-mini);
+}
+.class-title,
+.payment-details,
+.payment-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.payment-details {
+  width: 45.563rem;
+  flex-direction: row;
+  padding: 0 var(--padding-mini);
+  box-sizing: border-box;
+  text-align: justify;
+  font-size: var(--font-size-sm);
+}
+.class-title {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-9xl);
+  min-width: 33.5rem;
+}
+.frame-child86 {
+  width: 0;
+  flex: 1;
+  position: relative;
+  max-height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+.class-info-inner {
+  height: 45.438rem;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-6xs) 0 0;
+  box-sizing: border-box;
+}
+.list-calon-pengajar {
+  margin: 0;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-family: inherit;
+  z-index: 1;
+}
+.profilepicture-icon7 {
+  height: 5rem;
+  width: 5rem;
+  position: relative;
+  min-height: 5rem;
+  z-index: 1;
+}
+.tulus-monokrom {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  z-index: 1;
+}
+.rating-stars-child3,
+.rating-stars-child4,
+.rating-stars-child5,
+.rating-stars-child6,
+.rating-stars-child7 {
+  height: 1.25rem;
+  width: 1.25rem;
+  position: relative;
+  min-height: 1.25rem;
+}
+.rating-stars2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+  z-index: 1;
+}
+.single-star {
+  position: relative;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 1.75rem;
+  z-index: 1;
+}
+.rating-display {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.jam {
+  font-weight: 600;
+}
+.total-durasi-mengajar-container {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+.action-buttons6,
+.button-states {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button-states {
+  align-self: stretch;
+  gap: var(--gap-9xs);
+}
+.action-buttons6 {
+  flex: 1;
+  padding: var(--padding-4xs) 0 0;
+  box-sizing: border-box;
+  min-width: 8.875rem;
+}
+.terima4 {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 3.688rem;
+}
+.button20,
+.teacher-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button20 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-orange-100);
+  padding: var(--padding-8xs) var(--padding-sm);
+  z-index: 1;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.teacher-actions {
+  align-self: stretch;
+  gap: var(--gap-5xl);
+  margin-top: -0.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-silver-100);
+}
+.teacher-info4,
+.teacher-names {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.teacher-info4 {
+  align-self: stretch;
+  justify-content: flex-start;
+}
+.teacher-names {
+  flex: 1;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-11xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.teacher-card-row {
+  width: 26.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+}
+.profilepicture-icon8 {
+  height: 5rem;
+  width: 5rem;
+  position: relative;
+  min-height: 5rem;
+  z-index: 1;
+}
+.budiman-h6 {
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: var(--color-black);
+  display: inline-block;
+  min-width: 5.75rem;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  z-index: 1;
+}
+.frame-child87,
+.frame-child88,
+.frame-child89,
+.frame-child90,
+.frame-child91 {
+  height: 1.25rem;
+  width: 1.25rem;
+  position: relative;
+  min-height: 1.25rem;
+}
+.star-parent1 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+  z-index: 1;
+}
+.div4 {
+  position: relative;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 2.5rem;
+  z-index: 1;
+}
+.frame-parent77,
+.frame-wrapper57 {
+  display: flex;
+  align-items: flex-start;
+}
+.frame-parent77 {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.frame-wrapper57 {
+  width: 10.125rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-9xs);
+  box-sizing: border-box;
+}
+.terima5 {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 3.688rem;
+}
+.button21,
+.frame-parent76 {
+  display: flex;
+  flex-direction: row;
+}
+.button21 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-orange-100);
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) var(--padding-sm);
+  z-index: 1;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.frame-parent76 {
+  align-self: stretch;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  gap: var(--gap-xl);
+  margin-top: -0.125rem;
+}
+.jam1 {
+  font-weight: 600;
+}
+.total-durasi-mengajar-container1 {
+  position: relative;
+  letter-spacing: 0.02em;
+  flex-shrink: 0;
+  debug_commit: 69da668;
+  z-index: 1;
+  margin-top: -0.125rem;
+}
+.budiman-h-parent,
+.teacher-card-row-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.budiman-h-parent {
+  align-self: stretch;
+  justify-content: flex-start;
+}
+.teacher-card-row-inner {
+  flex: 1;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-11xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.teacher-card-row1 {
+  width: 26.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+  font-size: var(--font-size-sm);
+  color: var(--color-silver-100);
+}
+.profilepicture-icon9 {
+  height: 5rem;
+  width: 5rem;
+  position: relative;
+  min-height: 5rem;
+  z-index: 1;
+}
+.andi-jora-raya {
+  position: relative;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: var(--color-black);
+  display: inline-block;
+  min-width: 7.938rem;
+  z-index: 1;
+}
+.stars-child,
+.stars-child1,
+.stars-child2,
+.stars-inner,
+.stars-item {
+  height: 1.25rem;
+  width: 1.25rem;
+  position: relative;
+  min-height: 1.25rem;
+}
+.stars {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+  z-index: 1;
+}
+.empty-rating {
+  position: relative;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 1.938rem;
+  z-index: 1;
+}
+.stars-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.jam2 {
+  font-weight: 600;
+}
+.total-durasi-mengajar-container2 {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+.andi-jora-raya-parent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs-5);
+  min-width: 9rem;
+}
+.terima6 {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 3.688rem;
+}
+.button22 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-orange-100);
+  flex-direction: row;
+  padding: var(--padding-8xs) var(--padding-sm);
+  z-index: 1;
+}
+.button-wrapper,
+.button22,
+.frame-parent78 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button-wrapper {
+  flex-direction: column;
+  padding: var(--padding-xl) 0 0;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.frame-parent78 {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-2xl);
+}
+.teacher-card-row-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-11xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.teacher-card-row2 {
+  width: 26.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+  font-size: var(--font-size-sm);
+  color: var(--color-silver-100);
+}
+.profilepicture-icon10 {
+  height: 5rem;
+  width: 5rem;
+  position: relative;
+  min-height: 5rem;
+  z-index: 1;
+}
+.siti-triani {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 4.813rem;
+  z-index: 1;
+}
+.frame-child92,
+.frame-child93,
+.frame-child94,
+.frame-child95,
+.frame-child96 {
+  height: 1.25rem;
+  width: 1.25rem;
+  position: relative;
+  min-height: 1.25rem;
+}
+.star-parent2 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+  z-index: 1;
+}
+.div5 {
+  position: relative;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 1.625rem;
+  z-index: 1;
+}
+.frame-parent81 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-7xs);
+}
+.jam3 {
+  font-weight: 600;
+}
+.total-durasi-mengajar-container3 {
+  position: relative;
+  letter-spacing: 0.02em;
+  z-index: 1;
+}
+.frame-parent80,
+.frame-wrapper58 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame-parent80 {
+  align-self: stretch;
+  gap: var(--gap-9xs);
+}
+.frame-wrapper58 {
+  flex: 1;
+  padding: var(--padding-4xs) 0 0;
+  box-sizing: border-box;
+  min-width: 8.875rem;
+}
+.terima7 {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 3.688rem;
+}
+.button23,
+.frame-parent79 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.button23 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-orange-100);
+  padding: var(--padding-8xs) var(--padding-sm);
+  z-index: 1;
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}
+.frame-parent79 {
+  align-self: stretch;
+  gap: var(--gap-5xl);
+  margin-top: -0.25rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-silver-100);
+}
+.siti-triani-parent,
+.teacher-card-row-inner1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.siti-triani-parent {
+  align-self: stretch;
+  justify-content: flex-start;
+}
+.teacher-card-row-inner1 {
+  flex: 1;
+  justify-content: flex-end;
+  padding: 0 0 var(--padding-11xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.teacher-card-row3,
+.teacher-cards1 {
+  width: 26.875rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-2xl);
+}
+.teacher-cards1 {
+  overflow-x: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-xl);
+  max-width: 100%;
+  font-size: var(--font-size-base);
+}
+.list-header {
+  flex-direction: column;
+  gap: var(--gap-mini);
+}
+.class-info2,
+.list-header,
+.teacher-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 100%;
+}
+.teacher-list {
+  flex-direction: column;
+  padding: var(--padding-6xs) 0 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-xl);
+}
+.class-info2 {
+  flex: 1;
+  flex-direction: row;
+  gap: var(--gap-xl);
+}
+.class-details3,
+.detailkelas-pelajar,
+.scheduled-class1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+.class-details3 {
+  align-self: stretch;
+  flex-direction: row;
+  padding: 0 var(--padding-2xs) 0 var(--padding-8xs);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.detailkelas-pelajar,
+.scheduled-class1 {
+  background-color: var(--color-white);
+}
+.scheduled-class1 {
+  flex: 1;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: var(--br-3xs);
+  flex-direction: column;
+  padding: var(--padding-9xl) var(--padding-6xl) var(--padding-6xl);
+  gap: var(--gap-base-5);
+  max-width: 100%;
+  text-align: left;
+  font-size: var(--font-size-mini);
+  color: var(--color-darkgray);
+  font-family: var(--font-poppins);
+}
+.detailkelas-pelajar {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-100xl) var(--padding-21xl) var(--padding-48xl);
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 1200px) {
+  .class-info-inner {
+    display: none;
+  }
+  .teacher-list {
+    flex: 1;
+  }
+  .class-info2 {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .scheduled-class1 {
+    padding-top: var(--padding-xl);
+    padding-bottom: var(--padding-xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 750px) {
+  .icon-mapel2 {
+    flex: 1;
+  }
+  .class-price {
+    flex: 1;
+    min-width: 100%;
+  }
+  .payment-info,
+  .subject-icon2 {
+    flex-wrap: wrap;
+  }
+  .class-title {
+    min-width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .list-calon-pengajar {
+    font-size: var(--font-size-base);
+  }
+  .frame-parent76,
+  .frame-parent78,
+  .frame-parent79,
+  .teacher-actions {
+    flex-wrap: wrap;
+  }
+}

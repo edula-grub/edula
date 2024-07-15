@@ -1,0 +1,474 @@
+.profilepicture-icon {
+  height: 7.5rem;
+  width: 7.5rem;
+  position: relative;
+}
+.budiman-h {
+  text-decoration: none;
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: inherit;
+  display: inline-block;
+  min-width: 7.188rem;
+  white-space: nowrap;
+}
+.budiman-h-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 var(--padding-11xs);
+}
+.stars-icon5,
+.stars-icon6,
+.stars-icon7,
+.stars-icon8,
+.stars-icon9 {
+  height: 1.813rem;
+  width: 1.813rem;
+  position: relative;
+  min-height: 1.813rem;
+}
+.rating1 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.teaching-hours {
+  position: relative;
+  letter-spacing: 0.02em;
+  display: inline-block;
+  min-width: 2.875rem;
+}
+.duration {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10xs) 0 0;
+}
+.durasi-mengajar-50-container {
+  position: relative;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.duration1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-10xs) 0 0;
+  color: var(--color-black);
+}
+.teaching-info {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-4xs);
+  font-size: var(--font-size-base);
+  color: var(--color-darkgray);
+}
+.details,
+.name-container,
+.profile-info,
+.teaching-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.name-container {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-8xs);
+}
+.details,
+.profile-info {
+  max-width: 100%;
+}
+.details {
+  flex: 1;
+  flex-direction: column;
+  padding: var(--padding-6xl) 0 0;
+  box-sizing: border-box;
+}
+.profile-info {
+  width: 37.438rem;
+  flex-direction: row;
+  gap: var(--gap-31xl);
+}
+.ubah-profil {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 5.688rem;
+}
+.button1 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-gainsboro-100);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) var(--padding-sm);
+  white-space: nowrap;
+}
+.keluar {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  display: inline-block;
+  min-width: 3.375rem;
+}
+.button2 {
+  border-radius: var(--br-xl);
+  background-color: var(--color-gainsboro-100);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-8xs) var(--padding-sm);
+}
+.buttons {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.actions1,
+.buttons,
+.header2,
+.profile {
+  display: flex;
+  align-items: flex-start;
+}
+.actions1 {
+  width: 15.688rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--padding-24xl) 0 0;
+  box-sizing: border-box;
+  font-size: var(--font-size-base);
+}
+.header2,
+.profile {
+  flex-direction: row;
+  max-width: 100%;
+}
+.profile {
+  width: 67.375rem;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.header2 {
+  width: 77.5rem;
+  justify-content: center;
+  padding: 0 0 var(--padding-3xs);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.line-icon {
+  flex: 1;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.dashboard-cek-riwayat-peng-inner {
+  width: 77.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0 0 var(--padding-5xs);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.deskripsi {
+  display: inline-block;
+  min-width: 5.938rem;
+}
+.deskripsi,
+.kelas-selesai,
+.kelas-terjadwal {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.sertifikasi {
+  display: inline-block;
+  min-width: 6.375rem;
+}
+.rating-ulasan,
+.sertifikasi {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+.navbar-profilriwayat {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gap-xl);
+}
+.frame-child19 {
+  height: 0.125rem;
+  width: 10.313rem;
+  position: relative;
+}
+.navigation-container-inner {
+  width: 28.313rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--padding-xl);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.navigation-container {
+  width: 54.063rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+  max-width: 100%;
+}
+.frame-child20 {
+  height: 10.375rem;
+  width: 67.375rem;
+  position: relative;
+  border-radius: var(--br-mini);
+  background-color: var(--color-whitesmoke-100);
+  display: none;
+  max-width: 100%;
+}
+.class-background {
+  height: 6.25rem;
+  width: 6.25rem;
+  position: relative;
+  background-color: var(--color-royalblue-200);
+  z-index: 1;
+}
+.calculus-dasar-anak,
+.sabtu-21-juni {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  z-index: 1;
+}
+.sabtu-21-juni {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+}
+.class-details1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs);
+  max-width: 100%;
+}
+.group-div {
+  align-self: stretch;
+  border-radius: var(--br-mini);
+  background-color: var(--color-whitesmoke-100);
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: var(--padding-14xl) var(--padding-11xl);
+  box-sizing: border-box;
+  gap: var(--gap-11xl);
+  font-size: var(--font-size-lg);
+}
+.content2,
+.group-div,
+.navigation-container-parent {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.navigation-container-parent {
+  width: 67.375rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-9xl);
+}
+.content2 {
+  width: 77.5rem;
+  flex-direction: row;
+  justify-content: center;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.frame-child21 {
+  height: 10.375rem;
+  width: 67.375rem;
+  position: relative;
+  border-radius: var(--br-mini);
+  background-color: var(--color-whitesmoke-100);
+  display: none;
+  max-width: 100%;
+}
+.schedule-background {
+  height: 6.25rem;
+  width: 6.25rem;
+  position: relative;
+  background-color: var(--color-royalblue-200);
+  z-index: 1;
+}
+.calculus-dasar-anak1,
+.sabtu-21-juni1 {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  z-index: 1;
+}
+.sabtu-21-juni1 {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+}
+.schedule-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs);
+  max-width: 100%;
+}
+.main-container,
+.rectangle-parent17 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.rectangle-parent17 {
+  width: 67.375rem;
+  border-radius: var(--br-mini);
+  background-color: var(--color-whitesmoke-100);
+  justify-content: flex-start;
+  padding: var(--padding-14xl) var(--padding-11xl);
+  box-sizing: border-box;
+  gap: var(--gap-11xl);
+}
+.main-container {
+  width: 77.5rem;
+  justify-content: center;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+.frame-child22 {
+  height: 10.375rem;
+  width: 67.375rem;
+  position: relative;
+  border-radius: var(--br-mini);
+  background-color: var(--color-whitesmoke-100);
+  display: none;
+  max-width: 100%;
+}
+.frame-child23 {
+  height: 6.25rem;
+  width: 6.25rem;
+  position: relative;
+  background-color: var(--color-royalblue-200);
+  z-index: 1;
+}
+.calculus-dasar-anak2,
+.sabtu-21-juni2 {
+  position: relative;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  z-index: 1;
+}
+.sabtu-21-juni2 {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+}
+.calculus-dasar-anak-kuliah-sem-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-8xs);
+  max-width: 100%;
+}
+.main-container1,
+.rectangle-parent18 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+}
+.rectangle-parent18 {
+  width: 67.375rem;
+  border-radius: var(--br-mini);
+  background-color: var(--color-whitesmoke-100);
+  justify-content: flex-start;
+  padding: var(--padding-14xl) var(--padding-11xl);
+  box-sizing: border-box;
+  gap: var(--gap-11xl);
+}
+.main-container1 {
+  width: 77.5rem;
+  justify-content: center;
+}
+.dashboard-cek-riwayat-peng {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-93xl) var(--padding-xl) 8.125rem;
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-family: var(--font-poppins);
+}
+@media screen and (max-width: 750px) {
+  .navbar-profilriwayat {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 675px) {
+  .profile-info {
+    gap: var(--gap-6xl);
+  }
+  .group-div {
+    flex-wrap: wrap;
+    gap: var(--gap-mini);
+  }
+  .rectangle-parent17,
+  .rectangle-parent18 {
+    flex-wrap: wrap;
+    gap: var(--gap-mini);
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 450px) {
+  .deskripsi,
+  .kelas-selesai,
+  .kelas-terjadwal,
+  .rating-ulasan,
+  .sertifikasi {
+    font-size: var(--font-size-base);
+  }
+}

@@ -108,14 +108,18 @@
                                         <input type="hidden" name="rating" id="rating" value="0">
                                     </div>
                                     <div class="mb-3">
+                                        <label for="exampleInputNama" class="form-label">Nama</label>
+                                        <input type="text" class="form-control" id="exampleInputNama" aria-describedby="emailHelp" name="name">
+                                    </div>
+                                    <div class="mb-3">
                                         <label for="exampleInputMataPelajaran" class="form-label">Mata Pelajaran</label>
-                                        <input type="text" class="form-control" id="exampleInputMataPelajaran" aria-describedby="emailHelp" name="inputMataPelajaran">
-                                      </div>
-                                      <div class="mb-3">
+                                        <input type="text" class="form-control" id="exampleInputMataPelajaran" aria-describedby="emailHelp" name="mataPelajaran">
+                                    </div>
+                                    <div class="mb-3">
                                         <label for="exampleInputUlasan" class="form-label">Ulasan</label>
-                                        <textarea name="inputUlasan" id="exampleInputUlasan" cols="30" rows="10" class="form-control"></textarea>
-                                      </div>
-                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                        <textarea name="review" id="exampleInputUlasan" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                         </div>

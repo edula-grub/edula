@@ -135,7 +135,7 @@
                 <div class="col-12 tab-pane fade" id="kelas-selesai" role="tabpanel"
                     aria-labelledby="kelas-selesai-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                        <p class="mt-3">Konten Kelas Terjadwal</p>
+                        <p class="mt-3">Konten Kelas Selesai</p>
                     </div>
                 </div>
                 <div class="col-12 tab-pane fade" id="sertifikasi" role="tabpanel" aria-labelledby="sertifikasi-tab">
@@ -146,7 +146,8 @@
                 <div class="col-12 tab-pane fade" id="rating-ulasan" role="tabpanel"
                     aria-labelledby="rating-ulasan-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                        <p class="mt-3">Konten Kelas Terjadwal</p>
+                        @include('Pengajar/ratingPengajar')
+                        @include('Pengajar.reviewPengajar')
                     </div>
                 </div>
             </div>

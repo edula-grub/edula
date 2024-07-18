@@ -3,21 +3,21 @@
     <div class="container mt-5">
         {{-- Row nama, bulan, dan ratingnya --}}
         <div class="row">
-            <div class="bg-body-tertiary d-flex border border-primary">
+            <div class="bg-body-tertiary d-flex">
                 <div class="col-md-1 p-2">
                     <img src="{{ asset('img/profilPelajar.png') }}" alt="">
                 </div>
                 <div class="col-md-11">
                     <div class="row">
-                        <div class="col-md-5 text-start border border-success">
+                        <div class="col-md-5 text-start">
                             <strong>Afrizal Rizqi Syahputra</strong>
                         </div>
 
-                        <div class="col-md-2 text-start border border-warning">
+                        <div class="col-md-2 text-start">
                             <p class="text-secondary">4 bulan lalu</p>
                         </div>
 
-                        <div class="col-md-5 text-end border border-primary">
+                        <div class="col-md-5 text-end">
                             <strong>5.0</strong> ★★★★☆
                         </div>
                     </div>

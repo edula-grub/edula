@@ -10,7 +10,7 @@
                 <p>300 Rating</p>
             </div>
 
-            <div class="col-md-9 border border-warning">
+            <div class="col-md-9">
                 {{-- Bintang 5 --}}
                 <div class="d-flex align-items-center my-3">
                     <div class="col-md-10">

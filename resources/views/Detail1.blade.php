@@ -3,14 +3,25 @@
     <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
     <link rel="stylesheet" href="{{ url('/EdulaExport/DetailKelasPelajar1.css') }}" />
     <link rel="stylesheet" href="{{ url('/EdulaExport/SertifikasiPortofolio.css') }}" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers Quarrel:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {{-- <script src="{{ url('/EdulaExport/script.js') }}"></script> --}}
+    <style>
+        .stars i {
+            color: #e6e6e6;
+            font-size: 35px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .stars i.active{
+            color: #FFD700;
+        }
+    </style>
 @endsection
-
 
 @section('content')
     <main class="frame-main">
@@ -87,13 +98,14 @@
                                     @csrf
                                     <div class="rating-box" style="position: relative;">
                                         <header>Bagaimana pengalaman Anda?</header>
-                                        <div class="stars d-flex align-items-center" style="gap: 25px">
-                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
-                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
-                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
-                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
-                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
+                                        <div class="stars d-flex align-items-center my-3" style="gap: 25px">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
                                         </div>
+                                        <input type="hidden" name="rating" id="rating" value="0">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputMataPelajaran" class="form-label">Mata Pelajaran</label>
@@ -159,4 +171,26 @@
 @endsection
 
 @section('JS')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const stars = document.querySelectorAll('.stars i');
+        const ratingInput = document.getElementById('rating');
+
+        stars.forEach((star, index1) => {
+            star.addEventListener("click", () => {
+                let ratingValue = index1 + 1;
+                ratingInput.value = ratingValue;
+
+                stars.forEach((star, index2) => {
+                    if (index1 >= index2) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+</script>
+
 @endsection

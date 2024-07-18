@@ -141,7 +141,7 @@
                           </div>
                           <div class="kotakisi">
                             <h5>Calculus Dasar Anak Kuliah semester 1</h5>
-                            <p>Sabtu, 21 Juni 2024</p>  
+                            <p>Sabtu, 21 Juni 2024</p>
                           </div>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                           </div>
                           <div class="kotakisi">
                             <h5>Calculus Dasar Anak Kuliah semester 1</h5>
-                            <p>Sabtu, 21 Juni 2024</p>  
+                            <p>Sabtu, 21 Juni 2024</p>
                           </div>
                           <div class="kotakbutton">
                             <button class="statusbutton">Lunas</button>
@@ -168,7 +168,7 @@
                           </div>
                           <div class="kotakisi">
                             <h5>Calculus Dasar Anak Kuliah semester 1</h5>
-                            <p>Sabtu, 21 Juni 2024</p>  
+                            <p>Sabtu, 21 Juni 2024</p>
                           </div>
                           <div class="kotakbutton">
                             <button class="statusbutton">Selesai</button>
@@ -184,7 +184,8 @@
                 <div class="col-12 tab-pane fade" id="rating-ulasan" role="tabpanel"
                     aria-labelledby="rating-ulasan-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                        <p class="mt-3">Konten Kelas Terjadwal</p>
+                        @include('Pengajar/ratingPengajar')
+                        @include('Pengajar.reviewPengajar')
                     </div>
                 </div>
             </div>

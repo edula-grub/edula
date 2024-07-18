@@ -2,6 +2,7 @@
 @section('CSS')
     <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
     <link rel="stylesheet" href="{{ url('/EdulaExport/RiwayatPengajar.css') }}" />
+    <link rel="stylesheet" href="{{ url('/css/agus.css') }}" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
@@ -10,30 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap" />
 
     <style>
-        .poinsetpanel {
-            min-width: 50dvw;
-        }
-
-        .CourseName {
-            font-size: var(--font-size-h3);
-            font-family: var(--font-inter);
-            font-weight: 600;
-            /* color: var(--color-darkgray); */
-            margin-bottom: 0rem !important;
-        }
-
-        .Distributor {
-            font-size: var(--font-size-h4);
-            font-family: var(--font-inter);
-            font-weight: 400;
-            /* color: var(--color-darkgray); */
-        }
-
-        .Validtime {
-            font-size: var(--font-size-base);
-            font-family: var(--font-inter);
-            color: var(--color-darkgray);
-        }
+      
     </style>
 @endsection
 

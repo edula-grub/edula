@@ -306,3 +306,57 @@
     box-sizing: border-box;
   }
 }
+
+.kotak{
+  width: 100%;
+  height: 50%;
+  display: flex;
+  border-radius: 10px;
+  border: #cccccc;
+  padding: 2%;
+  background-color: #cccccc;
+  margin-bottom: 2%;
+}
+
+.kotakisi p{
+  font-size: medium;
+}
+.kotakimg{
+  width: 18%;
+  height: 30%;
+}
+.kotakisi{
+  width: 82%;
+  display: block;
+}
+
+.kotakbutton{
+  width: 15%;
+  align-self: center;
+}
+
+.statusbutton{
+  width: 100%;
+  height: 100%;
+  background-color: green;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+.row{
+  width: 100%;
+  /* border: solid blue; */
+}
+
+.tab-content{
+  /* width: 100%; */
+  margin-left: 7.7%;
+  /* border: solid green; */
+}

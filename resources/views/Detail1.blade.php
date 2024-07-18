@@ -64,21 +64,30 @@
                     <div class="separator1">
                         <hr class="col-12">
                     </div>
-                    {{-- info paaymend and class triger --}}
-                    <div class="payment-details1">
-                        <div class="payment-info1">
-                            <div class="payment-date1">
-                                <div class="pembayaran1">Pembayaran</div>
-                                <p class="transfer-bank-1">Transfer Bank - BCA</p>
-                                <p class="kamis-19-juni1">Kamis, 19 Juni 2023</p>
-                            </div>
-                            <div class="zoom-link1">
-                                <div class="tautan-zoom2">Tautan Zoom</div>
-                                <i class="link-zoom">link zoom</i>
+                    @if (!empty($_GET['terima']))
+                        {{-- info paaymend and class triger --}}
+                        <div class="payment-details1">
+                            <div class="payment-info1">
+                                <div class="payment-date1">
+                                    <div class="pembayaran1">Pembayaran</div>
+                                    <p class="transfer-bank-1">Transfer Bank - BCA</p>
+                                    <p class="kamis-19-juni1">Kamis, 19 Juni 2023</p>
+                                </div>
+                                <div class="zoom-link1">
+                                    <div class="tautan-zoom2">Tautan Zoom</div>
+                                    <i class="link-zoom">link zoom</i>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                        <div class="container">
+                            <div class="row">
+                                {{-- secmen rating dan riew --}}
+                                <form action="">
+                                    <input type="text" class="col-12 form-control">
+                                </form>
+                            </div>
+                        </div>
+                    @endif
                 </div>
 
                 <div class="col-4 Pengajar secmen1 row align-items-center">
@@ -117,9 +126,9 @@
                             </div>
                         </div>
                         <div class="col-3">
-                            <button class="btn btn-warning" type="button">
+                            <a href="?terima=t" class="btn btn-warning" type="button">
                                 Terima
-                            </button>
+                            </a>
                         </div>
                     @endfor
 

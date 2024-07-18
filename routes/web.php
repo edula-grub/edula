@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,6 +37,12 @@ Route::get('/riwayatpengajar2',function() {
 Route::get('/detail1', function () {
     return view('detail1');
 });
+
+Route::post('/detail1', function (Request $req) {
+    dd($req->all());
+    return view('detail1');
+});
+
 // DetailPengajar
 Route::get('/DetailPengajar', function () {
     return view('DetailPengajar');

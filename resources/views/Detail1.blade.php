@@ -82,8 +82,28 @@
                         <div class="container">
                             <div class="row">
                                 {{-- secmen rating dan riew --}}
-                                <form action="">
-                                    <input type="text" class="col-12 form-control">
+
+                                <form action="" method="POST">
+                                    @csrf
+                                    <div class="rating-box" style="position: relative;">
+                                        <header>Bagaimana pengalaman Anda?</header>
+                                        <div class="stars d-flex align-items-center" style="gap: 25px">
+                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
+                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
+                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
+                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
+                                            <i class="fa-solid fa-star" style="color: #e6e6e6; font-size: 35px; cursor: pointer;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputMataPelajaran" class="form-label">Mata Pelajaran</label>
+                                        <input type="text" class="form-control" id="exampleInputMataPelajaran" aria-describedby="emailHelp" name="inputMataPelajaran">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="exampleInputUlasan" class="form-label">Ulasan</label>
+                                        <textarea name="inputUlasan" id="exampleInputUlasan" cols="30" rows="10" class="form-control"></textarea>
+                                      </div>
+                                      <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                         </div>

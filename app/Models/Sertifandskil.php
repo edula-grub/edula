@@ -16,4 +16,8 @@ class Sertifandskil extends Model
     protected $casts = [
 
     ];
+
+    public function guru(){
+        return $this->belongsTo(Guru::class);
+    }
 }

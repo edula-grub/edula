@@ -20,24 +20,44 @@ class GuruController extends Controller
         return view('DetailPengajar', compact('sertif'));
     }
 
-    public function store(Request $request, Guru $guruId)
+    public function store(Request $request, $guruId)
     {
-        $request->validate([
-            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
-        ]);
+        // $request->validate([
+        //     'guru_id' => 'required',
+        //     'nama' => 'required',
+        //     'distributor' => 'required',
+        //     'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
+        // ]);
 
-        $guru = Guru::findOrFail($guruId);
-
-        if(!is_null($guru)){
+        $guru = Guru::where('user_id', $guruId);
+        // dump($guruId);
+        if(!$guru->first()){
             return response()->json(['message' => 'Guru not found'], 404);
-        }
-
-        $sertif = $guru->sertifandskil()->create([
-            'guru_id' => $guruId,
-            'nama' => $request->nama,
-            'distributor' => $request->distributor,
-        ]);
-
-        return response()->json($sertif, 201);
+        }else{
+            if($request->hasFile('img')){
+                $request->file('img')->move('img',$request->file('img')->getClientOriginalName());
+            }
+            // dd($request->all());
+            // dd($request->file('img')->getClientOriginalName());
+            // $data = [
+            //     'guru_id' => $guru->first()->id,
+            //     'nama'=> $request->nama,
+            //     'distributor'=> $request->distributor,
+            //     "skill" => "DEMO",
+            //     "level" => "123",
+            //     'image' => $request->file('img')->getClientOriginalName(),
+            //     'status' => 'pending',
+            // ];
+            // dd($data);
+            $sertif = Sertifandskil::create([
+                'guru_id' => $guru->first()->user_id,
+                'nama'=> $request->nama,
+                'distributor'=> $request->distributor,
+                "skill" => "DEMO",
+                "level" => "123",
+                'status' => 1,
+                'image' => $request->file('img')->getClientOriginalName(),
+            ]);
     }
+}
 }

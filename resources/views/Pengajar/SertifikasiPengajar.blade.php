@@ -95,19 +95,19 @@
                     @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Sertifikat</label>
-                        <input type="text" class="form-control" id="SertifName" aria-describedby="emailHelp" name="nama">
+                        <input type="text" class="form-control" id="SertifName" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                         <label for="distributor" class="form-label">Distributor</label>
-                        <input type="text" class="form-control" id="Distributor" name="distributor">
+                        <input type="text" class="form-control" id="Distributor">
                     </div>
                     <div class="mb-3">
                         <label for="ValidTime" class="form-label">Valid Time</label>
-                        <input type="date" class="form-control" id="ValidTime" name="time">
+                        <input type="date" class="form-control" id="ValidTime">
                     </div>
                     <div class="mb-3">
                         <label for="SertifImage" class="form-label">Image</label>
-                        <input type="file" name="img" class="form-control" id="SertifImage">
+                        <input type="file" class="form-control" id="SertifImage">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

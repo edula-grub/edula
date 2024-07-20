@@ -40,7 +40,7 @@
   z-index: 1;
 }
 .cari3 {
-  width: 5.544rem;
+  width: 100%;
   border: 0;
   outline: 0;
   font-weight: 300;
@@ -55,6 +55,8 @@
   padding: 0;
 }
 .image-2-icon1 {
+
+  position: absolute;
   height: 1.125rem;
   width: 1.125rem;
   object-fit: contain;
@@ -133,7 +135,7 @@
   gap: var(--gap-6xl-6);
   max-width: 100%;
 }
-.detail-permintaan-mengajar {
+.heading-permintaan-mengajar {
   margin: 0;
   position: relative;
   font-size: inherit;
@@ -183,6 +185,7 @@
 .class-item-child {
   align-self: stretch;
   flex: 1;
+  border-radius: var(--br-xl);
   position: relative;
   max-width: 100%;
   overflow: hidden;
@@ -250,7 +253,7 @@
   font-size: var(--font-size-xl);
   color: red;
 }
-.matematika-wajib {
+.mapel {
   position: relative;
   letter-spacing: 0.02em;
   font-weight: 700;
@@ -486,14 +489,15 @@
 }
 .terima-parent {
   flex: 1;
-  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: var(--br-xl);
   background-color: var(--color-white);
   flex-direction: row;
   flex-wrap: wrap;
-  padding: var(--padding-22xl) 3.375rem 3rem;
+  /* padding: var(--padding-22xl) 3.375rem 3rem; */
   gap: var(--gap-12xl);
   max-width: 100%;
+  padding: var(--padding-6xl) var(--padding-6xl) var(--padding-24xl);
   z-index: 2;
 }
 .ambil-kelas-detailbid-peng,
@@ -581,7 +585,7 @@
   .main {
     gap: var(--gap-3xl);
   }
-  .matematika-wajib,
+  .mapel,
   .rp-1500009 {
     font-size: var(--font-size-base);
   }

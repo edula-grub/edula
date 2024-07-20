@@ -16,4 +16,8 @@ class Guru extends Model
     protected $casts = [
 
     ];
+
+    public function reviews(){
+        return $this->hasMany(RatingAndReview::class);
+    }
 }

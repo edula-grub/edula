@@ -13,5 +13,7 @@ class RatingAndReview extends Model
         'rating', 'name', 'mataPelajaran', 'review',
     ];
 
-
+    public function guru(){
+        return $this->belongsTo(Guru::class);
+    }
 }

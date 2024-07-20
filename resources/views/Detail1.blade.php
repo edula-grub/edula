@@ -94,7 +94,7 @@
                             <div class="row">
                                 {{-- secmen rating dan riew --}}
 
-                                <form action="" method="POST">
+                                <form action="{{ route('form-review') }}" method="POST">
                                     @csrf
                                     <div class="rating-box" style="position: relative;">
                                         <header>Bagaimana pengalaman Anda?</header>
@@ -105,19 +105,19 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </div>
-                                        <input type="hidden" name="rating" id="rating" value="0">
+                                        <input type="hidden" name="rating_siswa_ke_guru" id="rating" value="0">
                                     </div>
-                                    <div class="mb-3">
+                                    {{-- <div class="mb-3">
                                         <label for="exampleInputNama" class="form-label">Nama</label>
                                         <input type="text" class="form-control" id="exampleInputNama" aria-describedby="emailHelp" name="name">
-                                    </div>
+                                    </div> --}}
                                     <div class="mb-3">
                                         <label for="exampleInputMataPelajaran" class="form-label">Mata Pelajaran</label>
-                                        <input type="text" class="form-control" id="exampleInputMataPelajaran" aria-describedby="emailHelp" name="mataPelajaran">
+                                        <input type="text" class="form-control" id="exampleInputMataPelajaran" aria-describedby="emailHelp" name="nama_mapel">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputUlasan" class="form-label">Ulasan</label>
-                                        <textarea name="review" id="exampleInputUlasan" cols="30" rows="10" class="form-control"></textarea>
+                                        <textarea name="komen_siswa_ke_guru" id="exampleInputUlasan" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

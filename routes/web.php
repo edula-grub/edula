@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PelajarController;
+use App\Http\Controllers\PengajarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,13 +24,17 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
-Route::get('/riwayatpengajar',function() {
-    return view('ktks');
-});
+// Route::get('/riwayatpengajar',function() {
+//     return view('ktks');
+// });
 
-Route::get('/riwayatpengajar2',function() {
-    return view('rr');
-});
+Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');
+// Route::get('/riwayatpengajar/{id}', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar.show');
+
+// Route::get('/riwayatpengajar2',function() {
+//     return view('rr');
+// });
+
 
 
 
@@ -43,7 +48,7 @@ Route::get('/detail1', function () {
 //     dd($req->all());
 //     return view('detail1');
 // });
-Route::post('/detail1', [PelajarController::class, 'store']);
+Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
 
 // DetailPengajar
 Route::get('/DetailPengajar', function () {

@@ -4,6 +4,8 @@ use App\Http\Controllers\PelajarController;
 use App\Http\Controllers\PengajarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuruController;
+use App\Models\Sertifandskil;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,9 +53,15 @@ Route::get('/detail1', function () {
 Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
 
 // DetailPengajar
-Route::get('/DetailPengajar', function () {
-    return view('DetailPengajar');
-});
+// Route::get('/DetailPengajar', function () {
+//     return view('DetailPengajar');
+// });
+
+// DetailPengajar.show
+Route::get('/DetailPengajar/{guru_id}',[GuruController::class, 'show'])->name('DetailPengajar.show');
+Route::post('/DetailPengajar/{guru_id}/upload',[GuruController::class, 'store'])->name('DetailPengajar.store');
+
+Route::get('/DetailPengajar',[GuruController::class, 'showall'])->name('DetailPengajar.showall');
 
 
 

@@ -17,6 +17,14 @@ class Guru extends Model
 
     ];
 
+    public function sertifandskil(){
+        return $this->hasMany(sertifandskil::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     public function reviews(){
         return $this->hasMany(RatingAndReview::class);
     }

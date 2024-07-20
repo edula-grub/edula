@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Filament\Admin\Widgets\Siswa;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class SiswaSeeder extends Seeder
@@ -11,6 +13,13 @@ class SiswaSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Siswa::factory(10)->create();
+        $user = User::all();
+        for($i = 1 ; $i <= 5 ; $i++){
+            Siswa::create([
+                'user_id' => $user->random()->id,
+                'jenjang_pendidikan' => 'SMA',
+                'profile' => 'profile',
+            ]);
+        }
     }
 }

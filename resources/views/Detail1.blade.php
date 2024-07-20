@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap" />
 @endsection
 
-
 @section('content')
     <main class="frame-main">
         <div class="class-details4">

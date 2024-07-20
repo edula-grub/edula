@@ -24,7 +24,6 @@
     />
   </head>
   <body>
-    <div class="landing-page1">
       <b class="lastest-news-and1">Lastest News and Resources</b>
       <div class="see-the-developments1">
         See the developments that have occurred to Skillines in the world
@@ -904,6 +903,6 @@
           </div>
         </section>
       </main>
-    </div>
+
   </body>
 </html>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap" />
 
     <style>
-      
+
     </style>
 @endsection
 
@@ -71,26 +71,26 @@
         <div class="row justify-content-center">
             <div class="mb-3 col-sm-9">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
+                    <li class="nav-item" role="presentation" id="idpresentation">
                         <button class="nav-link active" id="deskripsi-tab" data-bs-toggle="tab" data-bs-target="#deskripsi"
                             type="button" role="tab" aria-controls="deskripsi" aria-selected="true">Deskripsi</button>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <li class="nav-item" role="presentation" id="idpresentation">
                         <button class="nav-link" id="kelas-terjadwal-tab" data-bs-toggle="tab"
                             data-bs-target="#kelas-terjadwal" type="button" role="tab" aria-controls="kelas-terjadwal"
                             aria-selected="false">Kelas Terjadwal</button>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <li class="nav-item" role="presentation" id="idpresentation">
                         <button class="nav-link" id="kelas-selesai-tab" data-bs-toggle="tab" data-bs-target="#kelas-selesai"
                             type="button" role="tab" aria-controls="kelas-selesai" aria-selected="false">Kelas
                             Selesai</button>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <li class="nav-item" role="presentation" id="idpresentation">
                         <button class="nav-link" id="sertifikasi-tab" data-bs-toggle="tab" data-bs-target="#sertifikasi"
                             type="button" role="tab" aria-controls="sertifikasi"
                             aria-selected="false">Sertifikasi</button>
                     </li>
-                    <li class="nav-item" role="presentation">
+                    <li class="nav-item" role="presentation" id="idpresentation">
                         <button class="nav-link" id="rating-ulasan-tab" data-bs-toggle="tab"
                             data-bs-target="#rating-ulasan" type="button" role="tab" aria-controls="rating-ulasan"
                             aria-selected="false">Rating & Ulasan</button>
@@ -131,4 +131,17 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('JS')
+    {{-- http://localhost:8000/DetailPengajar#idpresentation if detect like this target nav-tab dengan id idpresentation lalu click --}}
+    <script>
+        $(document).ready(function() {
+            if (window.location.hash) {
+                var hash = window.location.hash;
+                console.log(hash);
+                document.getElementById(hash.replace('#', '')).click();
+            }
+        });
+    </script>
 @endsection

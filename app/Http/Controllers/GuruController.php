@@ -22,12 +22,11 @@ class GuruController extends Controller
 
     public function store(Request $request, $guruId)
     {
-        // $request->validate([
-        //     'guru_id' => 'required',
-        //     'nama' => 'required',
-        //     'distributor' => 'required',
-        //     'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
-        // ]);
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'distributor' => 'required|string|max:255',
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
 
         $guru = Guru::where('user_id', $guruId);
         // dump($guruId);

@@ -15,6 +15,10 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'ValidateLogin'])->name('login');
 Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('register');
 
+// dasboard
+Route::get('/dashboard', function () {
+    return view('welcome');
+});
 
 
 Route::get('/CaraKerjaPelajar', function () {

@@ -33,7 +33,7 @@ class AuthController extends Controller
         if($user && Hash::check($request->PASSWORD, $user->password)){
             $user = DB::table('siswa_aktif')->where('id', $user->id)->first();
             session(['user' => $user]);
-            return redirect('/dashb oard');
+            return redirect('/dashboard');
         } else {
             return redirect('/login')->with('faill', 'Invalid Username or Password');
         }

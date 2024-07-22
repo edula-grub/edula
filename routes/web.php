@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\GuruController;
 use App\Models\Sertifandskil;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuruController;
+use App\Http\Controllers\ipaymuController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,4 +39,6 @@ Route::get('/DetailPengajar/{guru_id}',[GuruController::class, 'show'])->name('D
 Route::post('/DetailPengajar/{guru_id}/upload',[GuruController::class, 'store'])->name('DetailPengajar.store');
 
 Route::get('/DetailPengajar',[GuruController::class, 'showall'])->name('DetailPengajar.showall');
+
+Route::get('/Pembayaran', [ipaymuController::class, 'pembayaran'])->name('Pembayaran');
 

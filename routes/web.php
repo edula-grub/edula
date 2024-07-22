@@ -10,6 +10,7 @@ Route::get('/login', function () {
     return view('login');
 });
 
+
 Route::get('/CaraKerjaPelajar', function () {
     return view('caraKerjaPelajar');
 });

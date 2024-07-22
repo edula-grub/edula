@@ -1,45 +1,46 @@
 <?php
-
 use App\Http\Controllers\PelajarController;
 use App\Http\Controllers\PengajarController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Models\Sertifandskil;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\ipaymuController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/login', [AuthController::class, 'login']);
-Route::POST('/login', [AuthController::class, 'ValidateLogin'])->name('login');
-Route::POST('/register', [AuthController::class, 'ValidateRegister'])->name('register');
+Route::post('/login', [AuthController::class, 'ValidateLogin'])->name('login');
+Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('register');
+
 Route::get('/CaraKerjaPelajar', function () {
     return view('caraKerjaPelajar');
 });
+
 Route::get('/CaraKerjaPengajar', function(){
     return view('caraKerjaPengajar');
 });
+
 Route::get('/landing', function () {
     return view('landing');
 });
+
 Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');
+
 Route::get('/detail1', function () {
     return view('detail1');
 });
+
 Route::get('/DetailPengajar', function () {
     return view('DetailPengajar');
 });
-
 
 Route::get('/UbahProfilPengajar', function () {
     return view('UbahProfilPengajar');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/login', function () {
     return view('login');
 });
@@ -48,14 +49,13 @@ Route::get('/landing', function () {
     return view('landing');
 });
 
-Route::get('/riwayatpengajar',function() {
+Route::get('/riwayatpengajar', function() {
     return view('ktks');
 });
 
-Route::get('/riwayatpengajar2',function() {
+Route::get('/riwayatpengajar2', function() {
     return view('rr');
 });
-
 
 Route::get('/detail1', function () {
     return view('detail1');
@@ -63,14 +63,10 @@ Route::get('/detail1', function () {
 
 Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
 
-Route::get('/DetailPengajar/{guru_id}',[GuruController::class, 'show'])->name('DetailPengajar.show');
-Route::post('/DetailPengajar/{guru_id}/upload',[GuruController::class, 'store'])->name('DetailPengajar.store');
+Route::get('/DetailPengajar/{guru_id}', [GuruController::class, 'show'])->name('DetailPengajar.show');
+Route::post('/DetailPengajar/{guru_id}/upload', [GuruController::class, 'store'])->name('DetailPengajar.store');
 
-Route::get('/DetailPengajar',[GuruController::class, 'showall'])->name('DetailPengajar.showall');
-
-Route::get('/UbahProfilPengajar', function () {
-    return view('UbahProfilPengajar');
-});
+Route::get('/DetailPengajar', [GuruController::class, 'showall'])->name('DetailPengajar.showall');
 
 Route::get('/UbahProfilPelajar', function () {
     return view('UbahProfilPelajar');
@@ -107,6 +103,7 @@ Route::get('/ReqKelasConfirm', function(){
 Route::get('/ReqKelasSchedule', function(){
     return view('Pelajar.RequestKelasSchedule');
 });
+
 
 // DetailPengajar
 // agustinus

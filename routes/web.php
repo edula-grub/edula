@@ -45,5 +45,9 @@ Route::get('/ReqKelasPayment', function(){
 });
 
 Route::get('/ReqKelasConfirm', function(){
-    return view('Pelajar.RquestKelasConfirm');
+    return view('Pelajar.RequestKelasConfirm');
+});
+
+Route::get('/ReqKelasSchedule', function(){
+    return view('Pelajar.RequestKelasSchedule');
 });

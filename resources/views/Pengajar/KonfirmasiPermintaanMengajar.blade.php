@@ -7,15 +7,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers Quarrel:wght@400&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"/>
     <style>
-        body {
-            /* font-family: Arial, sans-serif; */
+        .search {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
+            justify-content: center !important;
+            align-content: center !important;
+            align-self: center !important;
         }
         .search-container {
             position: relative;
@@ -88,9 +84,24 @@
 @endsection
 
 @section('content')
-    <div class="search-container mt-2 m-auto d-flex justify-content-between">
-        <input type="text" id="search-input" placeholder="Cari">
-        <span class="search-icon">&#128269;</span>
+    <div class="search m-auto d-flex align-self-center mt-3">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Cari">
+            <span class="search-icon">&#128269;</span>
+        </div>
+        <div class="dropdown">
+            <img src="" alt="" sizes="" srcset="">
+            <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 20px; width: 100px">
+                Filter
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">SD</a></li>
+              <li><a class="dropdown-item" href="#">SMP</a></li>
+              <li><a class="dropdown-item" href="#">SMA</a></li>
+              <li><a class="dropdown-item" href="#">Kuliah</a></li>
+              <li><a class="dropdown-item" href="#">Umum</a></li>
+            </ul>
+        </div>
     </div>
     <div>
         <div class="container d-flex flex-column justify-content-center">
@@ -100,3 +111,4 @@
         </div>
     </div>
 @endsection
+

@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"/>
     <style>
         body {
-            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
             margin: 0;
-            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .search {
+            display: flex;
+            justify-content: center !important;
+            align-content: center !important;
+            align-self: center !important;
         }
 
         .search-container {
@@ -38,132 +48,135 @@
             cursor: pointer;
             color: #aaa; /* Optional: change color to fit your design */
         }
-
         .container {
-            width: 60%;
-            margin: 50px auto;
-            background-color: #fff;
+            background: #fff;
+            width: 820px;
             padding: 20px;
+            border-radius:20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            max-height: 100vh;
         }
-
-        .header {
+        .container {
+            background: #fff;
+            width: 820px;
+            height: 400px;
+            margin-top: 20px;
+            padding: 40px;
+            border-radius:20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .img-pelajar {
+            max-width: 200px;
+            max-height: 800px;
+            flex-direction: row;
+            border-radius: 60px;
+            margin-top: 10px;
+            align-self: center !important;
+            margin-bottom: 10px;
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
+            justify-content: center !important;
+            align-content: center !important;
 
-        .header input[type="text"] {
-            width: 80%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
         }
-
-        .filter-btn {
-            padding: 10px 20px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .card {
-            display: flex;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 10px;
-            margin-right: 20px;
-        }
-
-        .details {
-            flex: 1;
-        }
-
-        .details h2 {
-            margin-top: 0;
-        }
-
-        .price-rating {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0;
-        }
-
         .price {
-            color: red;
-            font-size: 1.5em;
+            margin-bottom: 0px !important;
+            font-weight: 700;
+            color: #FF0000;
+            font-size: larger;
         }
-
-        .rating {
-            color: gold;
-            font-size: 1.5em;
+        .row{
+            margin-right: 0px;
+            margin-left: 0px;
         }
-
-        .buttons {
-            display: flex;
-            justify-content: space-between;
+        .name, .mapel, .tanggal, .desc, .jenjang {
+            font-weight: 400;
+            color: #696984;
+            font-size: 14px;
         }
-
-        .cancel-btn, .accept-btn {
-            padding: 10px 20px;
+        button {
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            border-radius: 30px;
+            box-sizing: 20px;
         }
-
-        .cancel-btn {
-            background-color: #ccc;
+        .btn-batal {
+            margin-right: 20px;
+            background-color: #DADADA;
+            color: black;
+            font-weight: 500;
         }
-
-        .accept-btn {
-            background-color: #007bff;
-            color: #fff;
+        .btn-terima {
+            background-color: #275FCA;
+            color: white;
+            font-weight: 500;
         }
     </style>
 @endsection
 
 @section('content')
-    <body>
-        <div class="search-container mt-2 m-auto d-flex justify-content-between">
-            <input type="text" id="search-input" placeholder="Cari">
-            <span class="search-icon">&#128269;</span>
-        </div>
-        <div class="container">
-            <h1>Detail Permintaan Mengajar</h1>
-            <div class="card">
-                <img src="cat.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="details">
-                    <h2>MATEMATIKA WAJIB</h2>
-                    <p><strong>Nama:</strong> Budiman Susanto</p>
-                    <p><strong>Mata Pelajaran:</strong> Kalkulus</p>
-                    <p><strong>Tanggal/Jam Pertemuan:</strong> 20 Mei 2020 | 18:00-19:00</p>
-                    <p><strong>Jenjang:</strong> Kuliah Semester 1</p>
-                    <p><strong>Deskripsi Pelajaran:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna fermentum iaculis eu non. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Porta nibh venenatis cras sed felis eget velit aliquet sagittis.</p>
-                    <div class="price-rating">
-                        <span class="price">Rp. 150,000</span>
-                        <span class="rating">★★★★★</span>
-                    </div>
-                    <div class="buttons">
-                        <button class="cancel-btn">Batal</button>
-                        <button class="accept-btn">Terima</button>
-                    </div>
-                </div>
+
+        <div class="search m-auto d-flex align-self-center mt-3">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Cari">
+                <span class="search-icon">&#128269;</span>
+            </div>
+            <div class="dropdown">
+                <img src="" alt="" sizes="" srcset="">
+                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 20px; width: 100px">
+                    Filter
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">SD</a></li>
+                  <li><a class="dropdown-item" href="#">SMP</a></li>
+                  <li><a class="dropdown-item" href="#">SMA</a></li>
+                  <li><a class="dropdown-item" href="#">Kuliah</a></li>
+                  <li><a class="dropdown-item" href="#">Umum</a></li>
+                </ul>
             </div>
         </div>
-    </body>
+        <h1 class="text-center mt-4 mb-3">Detail Permintaan Mengajar</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex align-self-center">
+                    <div class="row d-flex justify-content-center">
+                        <img class="col-md-12 img-pelajar" src="{{ asset('storage/mask-group-8@2x.png') }}" alt="" srcset="">
+                        <p class="price d-flex justify-content-center">Rp 100.000</p>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <h5 class="mapel-title d-flex justify-content-center mb-3">MATEMATIKA WAJIB</h5>
+                        <div class="row">
+                            <h6 class="title-name col-md-4">Nama</h6>
+                            <h6 class="name col-md-8">Budiman Susanto</h6>
+                        </div>
+                        <div class="row">
+                            <h6 class="title-mapel col-md-4">Mata Pelajaran</h6>
+                            <h6 class="mapel col-md-8">Matematika Peminatan</h6>
+                        </div>
+                        <div class="row">
+                            <h6 class="title-tgl col-md-4">Tanggal Pertemuan</h6>
+                            <h6 class="tanggal col-md-8">12 July 2023</h6>
+                        </div>
+                        <div class="row">
+                            <h6 class="title-jenjang col-md-4">Jenjang</h6>
+                            <h6 class="jenjang col-md-8">SMA</h6>
+                        </div>
+                        <div class="row">
+                            <h6 class="title-desc col-md-4">Deskripsi</h6>
+                            <h6 class="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident nulla aspernatur voluptatum! Rem, fugiat ut nulla ullam expedita eum minima, provident vero ex ab cumque, beatae quos adipisci aut magnam.</h6>
+                        </div>
+                        <div class="row justify-content-end">
+                            <button class="btn-batal col-md-2">
+                                Batal
+                            </button>
+                            <a class="btn btn-terima col-md-2">
+                                Terima
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
 @endsection

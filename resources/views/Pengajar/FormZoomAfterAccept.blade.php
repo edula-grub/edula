@@ -18,6 +18,13 @@
         background-color: #ffffff;
     }
 
+    .search {
+        display: flex;
+        justify-content: center !important;
+        align-content: center !important;
+        align-self: center !important;
+    }
+
     .search-container {
         position: relative;
         width: 100%;
@@ -116,9 +123,24 @@
 @endsection
 
 @section('content')
-<div class="search-container mt-2 m-auto d-flex justify-content-between">
-    <input type="text" id="search-input" placeholder="Cari">
-    <span class="search-icon">&#128269;</span>
+<div class="search m-auto d-flex align-self-center">
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Cari">
+        <span class="search-icon">&#128269;</span>
+    </div>
+    <div class="dropdown">
+        <img src="" alt="" sizes="" srcset="">
+        <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 20px; width: 100px">
+            Filter
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">SD</a></li>
+          <li><a class="dropdown-item" href="#">SMP</a></li>
+          <li><a class="dropdown-item" href="#">SMA</a></li>
+          <li><a class="dropdown-item" href="#">Kuliah</a></li>
+          <li><a class="dropdown-item" href="#">Umum</a></li>
+        </ul>
+    </div>
 </div>
 <h1 class="text-center mt-4 mb-3">Formulir Pertemuan Online dengan Pelajar</h1>
 <div class="container mt d-flex">

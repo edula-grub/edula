@@ -2,13 +2,21 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('landing');
 });
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
+// Auth::routes();
+
+Route::get('/login', [AuthController::class, 'login']);
+// Route::get('/register', [AuthController::class, 'register']);
+Route::POST('/login', [AuthController::class, 'ValidateLogin'])->name('login');
+Route::POST('/register', [AuthController::class, 'ValidateRegister'])->name('register');
+
 
 
 Route::get('/CaraKerjaPelajar', function () {

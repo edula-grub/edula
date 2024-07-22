@@ -8,27 +8,44 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/login/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Edula-Masuk</title>
     <style>
-
+        /* Add custom styles if needed */
     </style>
 </head>
 
 <body>
     <div class="container">
         <div class="signin-signup">
-            <form action="" class="sign-in-form">
+            {{-- IF ERROR fail RETURN HANDEL  --}}
+            {{-- @if (session('fail'))
+                <div class="alert alert-danger">
+                    {{ session('fail') }}
+                </div>
+            @endif --}}
+            <form id="loginForm" action="{{ route('login') }}" class="sign-in-form" method="POST">
+                @csrf
                 <h2 class="title">Masuk</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Username" name="USERNAME">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="PASSWORD">
                 </div>
-                <input type="submit" value="Masuk" class="btn">
+                <input type="submit" value="Masuk" class="btn btn-primary">
                 <p class="social-text">Atau Masuk dengan Sosial Media</p>
+                @if (session('faill'))
+                    {{-- <div class="alert alert-danger"> --}}
+                    <p class="text-alert alert-danger">
+                        {{ session('faill') }}
+                    </p>
+
+                    {{-- </div> --}}
+                @endif
                 <div class="social-media">
                     <a href="#" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -45,22 +62,31 @@
                 </div>
                 <p class="account-text">Tidak ada akun? <a href="#" id="sign-up-btn2">Daftar</a></p>
             </form>
-            <form action="" class="sign-up-form">
+            <form id="registerForm" action="{{ route('register') }}" class="sign-up-form" method='POST'>
+                @csrf
                 <h2 class="title">Daftar</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" placeholder="Username" name="USERNAME">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Email" name="EMAIL">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Password" name="PASSWORD">
                 </div>
-                <input type="submit" value="Daftar" class="btn">
+                <input type="submit" value="Daftar" class="btn btn-primary">
                 <p class="social-text">Atau Masuk dengan Sosial Media</p>
+                @if (session('failr'))
+                    {{-- <div class="alert alert-danger"> --}}
+                    <p class="text-alert alert-danger">
+                        {{ session('failr') }}
+                    </p>
+
+                    {{-- </div> --}}
+                @endif
                 <div class="social-media">
                     <a href="#" class="social-icon">
                         <i class="fab fa-facebook"></i>
@@ -99,26 +125,68 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
+
+    <!-- Bootstrap Modal for Errors -->
+    {{-- <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul id="error-list">
+                        <!-- Errors will be injected here by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> --}}
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+
+    {{-- <script>
+        // Get the current URL
+        const url = window.location.href;
+
+        // Extract the fragment (part after #)
+        const fragment = url.split('#')[1];
+
+        // Print the fragment
+        console.log(fragment);
+    </script> --}}
+
+    <script>
+        const sign_in_btn = document.querySelector("#sign-in-btn");
+        const sign_up_btn = document.querySelector("#sign-up-btn");
+        const container = document.querySelector(".container");
+        const sign_in_btn2 = document.querySelector("#sign-in-btn2");
+        const sign_up_btn2 = document.querySelector("#sign-up-btn2");
+        const trigger = window.location.hash.substring(1);
+        if (trigger == "sign-up-btn") {
+            console.log(trigger)
+            // document.getElementById("sign-up-btn").click();
+            // sign_up_btn.addEventListener("click", () => {
+            setTimeout(() => {
+                container.classList.add("sign-up-mode");
+            }, 100);
+            // });
+        }
+
+        sign_up_btn.addEventListener("click", () => {
+            container.classList.add("sign-up-mode");
+        });
+
+        sign_in_btn.addEventListener("click", () => {
+            container.classList.remove("sign-up-mode");
+        });
+
+        sign_up_btn2.addEventListener("click", () => {
+            container.classList.add("sign-up-mode2");
+        });
+
+        sign_in_btn2.addEventListener("click", () => {
+            container.classList.remove("sign-up-mode2");
+        });
+    </script>
 </body>
-<script>
-    const sign_in_btn = document.querySelector("#sign-in-btn");
-    const sign_up_btn = document.querySelector("#sign-up-btn");
-    const container = document.querySelector(".container");
-    const sign_in_btn2 = document.querySelector("#sign-in-btn2");
-    const sign_up_btn2 = document.querySelector("#sign-up-btn2");
-    sign_up_btn.addEventListener("click", () => {
-        container.classList.add("sign-up-mode");
-    });
-    sign_in_btn.addEventListener("click", () => {
-        container.classList.remove("sign-up-mode");
-    });
-    sign_up_btn2.addEventListener("click", () => {
-        container.classList.add("sign-up-mode2");
-    });
-    sign_in_btn2.addEventListener("click", () => {
-        container.classList.remove("sign-up-mode2");
-    });
-</script>
 
 </html>

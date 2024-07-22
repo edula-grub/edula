@@ -49,3 +49,7 @@ Route::get('/DetailPengajar', function () {
 Route::get('/UbahProfilPengajar', function () {
     return view('UbahProfilPengajar');
 });
+
+Route::get('/UbahProfilPelajar', function () {
+    return view('UbahProfilPelajar');
+});

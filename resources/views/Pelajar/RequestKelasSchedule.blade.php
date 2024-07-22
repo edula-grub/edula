@@ -1,8 +1,14 @@
 @extends('Template.Master')
 
 @section('CSS')
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers Quarrel:wght@400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap" />
     <style>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers Quarrel:wght@400&display=swap"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap"/>body {
+        body {
             /* font-family: Arial, sans-serif; */
             display: flex;
             justify-content: center;
@@ -50,14 +56,14 @@
     {{-- <link rel="stylesheet" href="{{ url('/calendar/styles.css') }}"> --}}
     <style>
         /* body {
-                                                                                                            font-family: Arial, sans-serif;
-                                                                                                            background-color: #f4f4f4;
-                                                                                                            display: flex;
-                                                                                                            justify-content: center;
-                                                                                                            align-items: center;
-                                                                                                            height: 100vh;
-                                                                                                            margin: 0;
-                                                                                                        } */
+                                                                                                                    font-family: Arial, sans-serif;
+                                                                                                                    background-color: #f4f4f4;
+                                                                                                                    display: flex;
+                                                                                                                    justify-content: center;
+                                                                                                                    align-items: center;
+                                                                                                                    height: 100vh;
+                                                                                                                    margin: 0;
+                                                                                                                } */
 
         .containerkecil {
             background-color: white;

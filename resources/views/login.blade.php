@@ -20,11 +20,6 @@
     <div class="container">
         <div class="signin-signup">
             {{-- IF ERROR fail RETURN HANDEL  --}}
-            {{-- @if (session('fail'))
-                <div class="alert alert-danger">
-                    {{ session('fail') }}
-                </div>
-            @endif --}}
             <form id="loginForm" action="{{ route('login') }}" class="sign-in-form" method="POST">
                 @csrf
                 <h2 class="title">Masuk</h2>
@@ -39,12 +34,9 @@
                 <input type="submit" value="Masuk" class="btn btn-primary">
                 <p class="social-text">Atau Masuk dengan Sosial Media</p>
                 @if (session('faill'))
-                    {{-- <div class="alert alert-danger"> --}}
                     <p class="text-alert alert-danger">
                         {{ session('faill') }}
                     </p>
-
-                    {{-- </div> --}}
                 @endif
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -80,12 +72,9 @@
                 <input type="submit" value="Daftar" class="btn btn-primary">
                 <p class="social-text">Atau Masuk dengan Sosial Media</p>
                 @if (session('failr'))
-                    {{-- <div class="alert alert-danger"> --}}
                     <p class="text-alert alert-danger">
                         {{ session('failr') }}
                     </p>
-
-                    {{-- </div> --}}
                 @endif
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -126,33 +115,12 @@
         </div>
     </div>
 
-    <!-- Bootstrap Modal for Errors -->
-    {{-- <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <ul id="error-list">
-                        <!-- Errors will be injected here by JavaScript -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 
     <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 
-    {{-- <script>
-        // Get the current URL
-        const url = window.location.href;
 
-        // Extract the fragment (part after #)
-        const fragment = url.split('#')[1];
-
-        // Print the fragment
-        console.log(fragment);
-    </script> --}}
 
     <script>
         const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -163,12 +131,9 @@
         const trigger = window.location.hash.substring(1);
         if (trigger == "sign-up-btn") {
             console.log(trigger)
-            // document.getElementById("sign-up-btn").click();
-            // sign_up_btn.addEventListener("click", () => {
             setTimeout(() => {
                 container.classList.add("sign-up-mode");
             }, 100);
-            // });
         }
 
         sign_up_btn.addEventListener("click", () => {

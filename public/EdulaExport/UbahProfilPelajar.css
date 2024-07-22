@@ -310,7 +310,7 @@
   max-width: 100%;
 }
 .nama-depan1 {
-  width: 6.875rem;
+  width: 100%;
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
@@ -319,7 +319,7 @@
   height: 1.5rem;
   position: relative;
   letter-spacing: 0.02em;
-  color: var(--color-silver-100);
+  color: #000;
   text-align: left;
   display: inline-block;
   padding: 0;
@@ -340,7 +340,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: var(--padding-5xs) var(--padding-3xs);
-  min-width: 19.563rem;
+  /* min-width: 19.563rem; */
   z-index: 1;
 }
 .fill-namabelakang-item {
@@ -350,7 +350,7 @@
   display: none;
 }
 .nama-belakang1 {
-  width: 8.375rem;
+  width: 100%;
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
@@ -359,7 +359,7 @@
   height: 1.5rem;
   position: relative;
   letter-spacing: 0.02em;
-  color: var(--color-silver-100);
+  color: #000;
   text-align: left;
   display: inline-block;
   padding: 0;
@@ -394,7 +394,7 @@
 }
 .alamat-email1,
 .nomor-telepon1 {
-  position: relative;
+  /* position: relative; */
   font-size: var(--font-size-lg);
   letter-spacing: 0.02em;
   font-weight: 500;
@@ -411,7 +411,7 @@
   max-width: 100%;
 }
 .contact-input-labels {
-  width: 40.313rem;
+  width: 37.5rem;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -432,7 +432,7 @@
   max-width: 100%;
 }
 .emailgmailcom1 {
-  width: 9.5rem;
+  width: 100%;
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
@@ -441,7 +441,7 @@
   height: 1.5rem;
   position: relative;
   letter-spacing: 0.02em;
-  color: var(--color-silver-100);
+  color: #000;
   text-align: left;
   display: inline-block;
   white-space: nowrap;
@@ -473,7 +473,7 @@
   display: none;
 }
 .input1 {
-  width: 9.5rem;
+  width: 100%;
   border: 0;
   outline: 0;
   font-family: var(--font-poppins);
@@ -482,7 +482,7 @@
   height: 1.5rem;
   position: relative;
   letter-spacing: 0.02em;
-  color: var(--color-silver-100);
+  color: #000;
   text-align: left;
   display: inline-block;
   white-space: nowrap;
@@ -868,4 +868,82 @@
   .contact-input-labels {
     flex-wrap: wrap;
   }
+}
+
+
+
+/* DARI GW */
+.input-tanggal-lahir
+{
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1.5px solid var(--color-silver-100);
+    box-sizing: border-box;
+    padding: var(--padding-5xs) var(--padding-3xs);
+    min-width: 19.563rem;
+    z-index: 1;
+    color: var(--color-silver-100);
+    font-size: 16px;
+}
+
+
+.dropdown-container {
+    width: 200px;
+    margin: 20px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.dropdown-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown-button::after {
+    content: '▼';
+    font-size: 12px;
+    margin-left: 10px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.dropdown-content div {
+    padding: 10px;
+    cursor: pointer;
+}
+.dropdown-content div:hover {
+    background-color: #f1f1f1;
+}
+
+
+.pilih-satu5{
+    height: 2.75rem;
+    /* width: 17.125rem; */
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1.5px solid var(--color-silver-100);
+    box-sizing: border-box;
+    font-size: var(--font-size-base);
+    letter-spacing: 0.02em;
+    font-family: var(--font-poppins);
+    color: var(--color-silver-100);
+    z-index: 1;
 }

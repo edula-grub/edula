@@ -6,7 +6,7 @@
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
-    <link rel="stylesheet" href="{{ url('/EdulaExport/UbahProfilPengajar.css') }}" />
+    <link rel="stylesheet" href="{{ url('/EdulaExport/UbahProfilPelajar.css') }}" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"/>
@@ -66,7 +66,7 @@
                       src="{{url('EdulaExport/public/id-card-24dp-fill0-wght400-grad0-opsz24-2.svg')}}"
                     />
                   </div>
-                  <b class="data-pribadi3">Data Pribadi Pengajar</b>
+                  <b class="data-pribadi3">Data Pribadi Pelajar</b>
                 </div>
               </div>
               <div class="frame-child102"></div>

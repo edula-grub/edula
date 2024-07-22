@@ -1,7 +1,7 @@
 
     .request-kelas-pelajar-child {
         position: absolute;
-        top: 12.125rem;
+        top: 13rem;
         left: 74.313rem;
         border-radius: 50%;
         background-color: var(--color-orange-200);
@@ -48,7 +48,7 @@
     }
     .ellipse-parent3 {
         position: absolute;
-        top: 11.375rem;
+        top: 9rem;
         left: 4rem;
         width: 36.288rem;
         height: 29.119rem;
@@ -152,7 +152,7 @@
     }
     .header-parent {
         position: absolute;
-        top: 12.625rem;
+        top: 15rem;
         left: 45.75rem;
         width: 44.25rem;
         flex-direction: row;

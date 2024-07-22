@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .calendar {
+            width: 100%;
+        }
+
+        .day {
+            width: 14.28%;
+            border: 1px solid #ddd;
+            height: 100px;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 100px;
+        }
+
+        .empty {
+            background-color: #f8f9fa;
+        }
+
+        .horospo {
+            //ini klo ada amu custem css si tnggalnya
+        }
+
+        .hopi {
+            //ini buat ubah bagian css header tanggalnya
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <button class="btn btn-primary" onclick="LoadKalender(-1)">Previous Month</button>
+            </div>
+            <h2 class="mt-4 text-center col-4" id="month-year"></h2>
+            <div class="text-right col-4">
+                <button class="btn btn-primary" onclick="LoadKalender(1)">Next Month</button>
+            </div>
+        </div>
+        <div class="text-center row row-cols-7 font-weight-bold">
+            <div class="col day hopi">Sun</div>
+            <div class="col day hopi">Mon</div>
+            <div class="col day hopi">Tue</div>
+            <div class="col day hopi">Wed</div>
+            <div class="col day hopi">Thu</div>
+            <div class="col day hopi">Fri</div>
+            <div class="col day hopi">Sat</div>
+        </div>
+        <div id="calendar" class="text-center row row-cols-1"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to generate calendar -->
+    <script>
+        function LoadKalender(addnow) {
+            document.addEventListener('DOMContentLoaded', function () {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = now.getMonth() + addnow;
+                const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August",
+                    "September", "October", "November", "December"
+                ];
+                document.getElementById('month-year').innerText = `${monthNames[month]} ${year}`;
+
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                const calendar = document.getElementById('calendar');
+
+                // Fill in the empty days before the first day of the month
+                for (let i = 0; i < firstDay; i++) {
+                    const emptyDiv = document.createElement('div');
+                    emptyDiv.className = 'col day empty';
+                    calendar.appendChild(emptyDiv);
+                }
+
+                // Fill in the days of the month
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const dayDiv = document.createElement('div');
+                    dayDiv.className = 'col day horospo';
+                    dayDiv.innerText = day;
+                    calendar.appendChild(dayDiv);
+
+                    // Start a new row after Saturday
+                    if ((day + firstDay) % 7 === 0) {
+                        const newRow = document.createElement('div');
+                        newRow.className = 'row text-center row-cols-7';
+                        calendar.appendChild(newRow);
+                    }
+                }
+            });
+        }
+
+        //parameter di dalam ini itu akan ngeriger bulan sekarang +1 bulan depan
+        LoadKalender(0)
+    </script>
+</body>
+
+</html>

@@ -71,3 +71,7 @@ Route::get('/DetailPengajar',[GuruController::class, 'showall'])->name('DetailPe
 Route::get('/UbahProfilPengajar', function () {
     return view('UbahProfilPengajar');
 });
+
+Route::get('/UbahProfilPelajar', function () {
+    return view('UbahProfilPelajar');
+});

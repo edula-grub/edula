@@ -118,3 +118,39 @@ Route::get('/DetailPengajar',[GuruController::class, 'showall'])->name('DetailPe
 Route::get('/UbahProfilPengajar', function () {
     return view('UbahProfilPengajar');
 });
+
+Route::get('/UbahProfilPelajar', function () {
+    return view('UbahProfilPelajar');
+});
+
+Route::get('/DetailReqMengajar', function () {
+    return view('Pengajar.DetailPermintaanMengajar');
+});
+
+Route::get('/FormZoom', function(){
+    return view('Pengajar.FormZoomAfterAccept');
+});
+
+Route::get('/Konfirm', function(){
+    return view('Pengajar.KonfirmasiPermintaanMengajar');
+});
+
+Route::get('/RequestKelas', function(){
+    return view('Pelajar.RequestKelas');
+});
+
+Route::get('/RequestKelas3', function(){
+    return view('Pelajar.RequestKelas3');
+});
+
+Route::get('/ReqKelasPayment', function(){
+    return view('Pelajar.RequestKelasPayment');
+});
+
+Route::get('/ReqKelasConfirm', function(){
+    return view('Pelajar.RequestKelasConfirm');
+});
+
+Route::get('/ReqKelasSchedule', function(){
+    return view('Pelajar.RequestKelasSchedule');
+});

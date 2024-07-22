@@ -1,198 +1,98 @@
-@extends('Template.Master')
-@section('CSS')
-    <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubah Profil</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('/EdulaExport/UbahProfilPengajar.css') }}" />
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
-@endsection
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-@section('content')
-
-<div class="ubah-profil-pengajar">
-    <main class="main-container2">
-      <div class="main-container-child"></div>
-      <div class="profile-container1">
-        <h1 class="ubah-profil5">Ubah Profil</h1>
-        <div class="data-container">
-          <div class="credentials-container">
-            <div class="credentials-icons-container">
-              <img
-                class="id-card-24dp-fill0-wght400-gra-icon"
-                loading="lazy"
-                alt=""
-                src="./public/id-card-24dp-fill0-wght400-grad0-opsz24-1.svg"
-              />
-            </div>
-            <div class="data-pribadi">Data Pribadi</div>
-          </div>
-          <div class="credentials-container1">
-            <div class="password-24dp-fill0-wght400-gr-wrapper">
-              <img
-                class="password-24dp-fill0-wght400-gr-icon"
-                loading="lazy"
-                alt=""
-                src="./public/password-24dp-fill0-wght400-grad0-opsz24-1.svg"
-              />
-            </div>
-            <div class="kata-sandi">Kata Sandi</div>
-          </div>
-          <div class="credentials-container2">
-            <div class="policy-24dp-fill0-wght400-grad-wrapper">
-              <img
-                class="policy-24dp-fill0-wght400-grad-icon"
-                loading="lazy"
-                alt=""
-                src="./public/policy-24dp-fill0-wght400-grad0-opsz24-1.svg"
-              />
-            </div>
-            <a class="kebijakan">Kebijakan</a>
-          </div>
-        </div>
-      </div>
-      <div class="main-container-item"></div>
-      <form class="frame-form">
-        <div class="photo-container-wrapper">
-          <div class="photo-container">
-            <div class="photo-container-inner">
-              <div class="frame-parent67">
-                <div class="id-card-24dp-fill0-wght400-gra-wrapper">
-                  <img
-                    class="id-card-24dp-fill0-wght400-gra-icon1"
-                    alt=""
-                    src="./public/id-card-24dp-fill0-wght400-grad0-opsz24-2.svg"
-                  />
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="nav flex-column nav-pills" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Data Pribadi</a>
+                    <a class="nav-link" id="v-pills-password-tab" data-toggle="pill" href="#v-pills-password" role="tab" aria-controls="v-pills-password" aria-selected="false">Kata Sandi</a>
+                    <a class="nav-link" id="v-pills-policy-tab" data-toggle="pill" href="#v-pills-policy" role="tab" aria-controls="v-pills-policy" aria-selected="false">Kebijakan</a>
                 </div>
-                <b class="data-pribadi1">Data Pribadi</b>
-              </div>
             </div>
-            <div class="photo-container-child"></div>
-          </div>
-        </div>
-        <div class="foto-profil-parent">
-          <div class="foto-profil">Foto Profil</div>
-          <div class="full-name-container">
-            <div class="name-fields-container">
-              <img
-                class="name-fields-container-child"
-                loading="lazy"
-                alt=""
-                src="./public/group-146.svg"
-              />
-
-              <div class="nama-lengkap">Nama Lengkap</div>
-            </div>
-            <div class="photo-buttons-container">
-              <div class="button-group">
-                <div class="button11">
-                  <div class="ubah-foto-profil">Ubah Foto Profil</div>
+            <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <h3>Data Pribadi</h3>
+                        <div class="form-group text-center">
+                            <img src="profile.jpg" class="rounded-circle" alt="Foto Profil" width="100">
+                            <div>
+                                <button class="btn btn-outline-secondary btn-sm">Ubah Foto Profil</button>
+                                <button class="btn btn-outline-secondary btn-sm">Hapus Foto Profil</button>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="namaDepan">Nama Lengkap</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="namaDepan" placeholder="Nama depan">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control" id="namaBelakang" placeholder="Nama belakang">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Alamat Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="email@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="nomorTelepon">Nomor Telepon</label>
+                                <input type="tel" class="form-control" id="nomorTelepon" placeholder="+62 8123 4567 890">
+                            </div>
+                            <div class="form-group">
+                                <label for="tanggalLahir">Tanggal Lahir</label>
+                                <div class="row">
+                                    <div class="col">
+                                        <select class="form-control" id="tanggal">
+                                            <option>Tanggal</option>
+                                            <!-- Add options here -->
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control" id="bulan">
+                                            <option>Bulan</option>
+                                            <!-- Add options here -->
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <select class="form-control" id="tahun">
+                                            <option>Tahun</option>
+                                            <!-- Add options here -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="jenisKelamin">Jenis Kelamin</label>
+                                <select class="form-control" id="jenisKelamin">
+                                    <option>Pilih satu</option>
+                                    <!-- Add options here -->
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                        </form>
+                    </div>
+                    <!-- Additional tabs content can go here -->
                 </div>
-                <div class="button12">
-                  <div class="hapus-foto-profil">Hapus Foto Profil</div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="name-input-fields-parent">
-            <div class="name-input-fields">
-              <div class="fill-namadepan">
-                <div class="fill-namadepan-child"></div>
-                <input
-                  class="nama-depan"
-                  placeholder="Nama depan"
-                  type="text"
-                />
-              </div>
-              <div class="fill-namabelakang">
-                <div class="fill-namabelakang-child"></div>
-                <input
-                  class="nama-belakang"
-                  placeholder="Nama belakang"
-                  type="text"
-                />
-              </div>
-            </div>
-            <div class="contact-labels">
-              <div class="alamat-email">Alamat Email</div>
-              <div class="nomor-telepon">Nomor Telepon</div>
-            </div>
-          </div>
-          <div class="contact-input-fields">
-            <div class="fill-email">
-              <div class="fill-email-child"></div>
-              <input
-                class="emailgmailcom"
-                placeholder="email@gmail.com"
-                type="text"
-              />
-            </div>
-            <div class="fill-nohp">
-              <div class="fill-nohp-child"></div>
-              <input
-                class="input"
-                placeholder="+62 8123 4567 890"
-                type="text"
-              />
-            </div>
-          </div>
         </div>
-        <div class="birth-date-container-parent">
-          <div class="birth-date-container">
-            <div class="tanggal-lahir">Tanggal Lahir</div>
-            <div class="date-dropdown-fields">
-              <div class="fill-email1">
-                <div class="fill-email-item"></div>
-                <div class="tanggal1">Tanggal</div>
-                <img
-                  class="arrow-drop-down-24dp-fill0-wgh-icon"
-                  alt=""
-                  src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1.svg"
-                />
-              </div>
-              <div class="fill-email2">
-                <div class="fill-email-inner"></div>
-                <div class="bulan1">Bulan</div>
-                <img
-                  class="arrow-drop-down-24dp-fill0-wgh-icon1"
-                  alt=""
-                  src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1.svg"
-                />
-              </div>
-              <div class="fill-email3">
-                <div class="fill-email-child1"></div>
-                <div class="tahun1">Tahun</div>
-                <img
-                  class="arrow-drop-down-24dp-fill0-wgh-icon2"
-                  alt=""
-                  src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1.svg"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="gender-container">
-            <div class="jenis-kelamin">Jenis Kelamin</div>
-            <div class="fill-email4">
-              <div class="fill-email-child2"></div>
-              <div class="pilih-satu">Pilih satu</div>
-              <img
-                class="arrow-drop-down-24dp-fill0-wgh-icon3"
-                alt=""
-                src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1-3.svg"
-              />
-            </div>
-          </div>
-          <div class="save-button-container">
-            <button class="button13">
-              <div class="simpan">Simpan</div>
-            </button>
-          </div>
-        </div>
-      </form>
-    </main>
-  </div>
+    </div>
 
-@endsection
-
-
-@section('JS')
-
-@endsection
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

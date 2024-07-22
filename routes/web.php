@@ -6,6 +6,7 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\ipaymuController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PelajarState;
 
 Route::get('/', function () {
     return view('landing');
@@ -15,10 +16,32 @@ Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'ValidateLogin'])->name('login');
 Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('register');
 
-// dasboard
+// dasboard perlu di benarkan
 Route::get('/dashboard', function () {
     return view('welcome');
 });
+
+Route::any('/ReqPelajaran', [PelajarState::class, 'BuatPenajuan'])->name('BuatPenajuan');
+
+Route::get('/RequestKelas3', function(){
+    return view('Pelajar.RequestKelas3');
+});
+
+// Route::get('/ReqKelasPayment', function(){
+//     return view('Pelajar.RequestKelasPayment');
+// });
+
+Route::get('/ReqKelasConfirm', function(){
+    return view('Pelajar.RequestKelasConfirm');
+});
+
+Route::get('/ReqKelasSchedule', function(){
+    return view('Pelajar.RequestKelasSchedule');
+});
+
+
+
+
 
 
 Route::get('/CaraKerjaPelajar', function () {
@@ -90,25 +113,7 @@ Route::get('/Konfirm', function(){
     return view('Pengajar.KonfirmasiPermintaanMengajar');
 });
 
-Route::get('/RequestKelas', function(){
-    return view('Pelajar.RequestKelas');
-});
 
-Route::get('/RequestKelas3', function(){
-    return view('Pelajar.RequestKelas3');
-});
-
-Route::get('/ReqKelasPayment', function(){
-    return view('Pelajar.RequestKelasPayment');
-});
-
-Route::get('/ReqKelasConfirm', function(){
-    return view('Pelajar.RequestKelasConfirm');
-});
-
-Route::get('/ReqKelasSchedule', function(){
-    return view('Pelajar.RequestKelasSchedule');
-});
 
 
 // DetailPengajar

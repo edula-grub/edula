@@ -32,6 +32,10 @@ class AuthController extends Controller
         $user = User::where('name', $request->USERNAME)->first();
         if($user && Hash::check($request->PASSWORD, $user->password)){
             $user = DB::table('siswa_aktif')->where('id', $user->id)->first();
+            $guru = DB::table('guru_aktif')->where('id', $user->id)->first();
+            if($guru){
+                session(['guru' => $guru]); 
+            }
             session(['user' => $user]);
             return redirect('/dashboard');
         } else {

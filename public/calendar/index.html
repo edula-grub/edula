@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilih Jadwal Lesmu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pilih Jadwal Lesmu</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut nisi tellus.</p>
+        </div>
+        <button class="back-button">Kembali</button>
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prevMonth">❮</button>
+                <div id="monthYear"></div>
+                <button id="nextMonth">❯</button>
+            </div>
+            <div class="days">
+                <div>Min</div><div>Sen</div><div>Sel</div><div>Rab</div><div>Kam</div><div>Jum</div><div>Sab</div>
+            </div>
+            <div class="dates" id="dates"></div>
+        </div>
+        <div class="time">
+            <h2>Waktu</h2>
+            <select id="timeSelect">
+                <option value="06:00-07:00">06:00 - 07:00</option>
+                <option value="07:00-08:00">07:00 - 08:00</option>
+                <option value="08:00-09:00">08:00 - 09:00</option>
+                <option value="09:00-10:00">09:00 - 10:00</option>
+                <option value="10:00-11:00">10:00 - 11:00</option>
+                <option value="11:00-12:00">11:00 - 12:00</option>
+                <option value="12:00-13:00">12:00 - 13:00</option>
+                <option value="13:00-14:00">13:00 - 14:00</option>
+                <option value="14:00-15:00">14:00 - 15:00</option>
+                <option value="15:00-16:00">15:00 - 16:00</option>
+                <option value="16:00-17:00">16:00 - 17:00</option>
+                <option value="17:00-18:00">17:00 - 18:00</option>
+                <option value="18:00-19:00">18:00 - 19:00</option>
+                <option value="19:00-20:00">19:00 - 20:00</option>
+                <option value="20:00-21:00">20:00 - 21:00</option>
+                <option value="21:00-22:00">21:00 - 22:00</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <button class="select-button">Pilih</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,3 +3,7 @@ Dasboard
 
 <a href="">KelasTerjadwal</a>
 <a href="">KelasSelesai</a>
+<a href="">Request</a>
+
+<hr>
+@dump(session()->all())

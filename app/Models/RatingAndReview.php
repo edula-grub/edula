@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sertifandskil extends Model
+class RatingAndReview extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'guru_id', 'nama', 'distributor', 'skill', 'level', 'status', 'image'
-    ];
-
-    protected $casts = [
-
+        'rating', 'name', 'mataPelajaran', 'review',
     ];
 
     public function guru(){

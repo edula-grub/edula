@@ -110,6 +110,10 @@ Route::get('/ReqKelasSchedule', function(){
     return view('Pelajar.RequestKelasSchedule');
 });
 
+Route::get('/JadiPengajar', function(){
+    return view('Pengajar.JadiPengajar');
+});
+
 
 // DetailPengajar
 // agustinus

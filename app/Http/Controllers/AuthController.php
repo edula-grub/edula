@@ -30,13 +30,15 @@ class AuthController extends Controller
 
     function ValidateLogin(Request $request){
         $user = User::where('name', $request->USERNAME)->first();
+        // dd($user->id);
         if($user && Hash::check($request->PASSWORD, $user->password)){
-            $user = DB::table('siswa_aktif')->where('id', $user->id)->first();
             $guru = DB::table('guru_aktif')->where('id', $user->id)->first();
+            $siswa = DB::table('siswa_aktif')->where('id', $user->id)->first();
+            // dd($siswa);
             if($guru){
-                session(['guru' => $guru]); 
+                session(['guru' => $guru]);
             }
-            session(['user' => $user]);
+            session(['siswa' => $siswa]);
             return redirect('/dashboard');
         } else {
             return redirect('/login')->with('faill', 'Invalid Username or Password');

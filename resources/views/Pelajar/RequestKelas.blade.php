@@ -32,9 +32,9 @@
                             in imperdiet erat. Maecenas ut nisi tellus.
                         </p>
                     </div>
-                    <button onclick="window.location.href = '{{ '#' }}';" class="request-button">
+                    <a href="{{ route('BuatPenajuan') }}?s=1" class="request-button">
                         <b class="request-kelas1">Request Kelas</b>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

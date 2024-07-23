@@ -23,6 +23,10 @@ Route::get('/dashboard', function () {
 
 Route::any('/ReqPelajaran', [PelajarState::class, 'BuatPenajuan'])->name('BuatPenajuan');
 
+
+
+
+// ROUTER BENAR
 Route::get('/RequestKelas3', function(){
     return view('Pelajar.RequestKelas3');
 });

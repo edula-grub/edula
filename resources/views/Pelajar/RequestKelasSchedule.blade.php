@@ -46,25 +46,15 @@
             font-weight: 500;
         }
 
-        .back-button:hover,
-        .select-button:hover {
-            background-color: #999;
-            color: white;
-            font-weight: 500;
-        }
+        /* .back-button:hover,
+                    .select-button:hover {
+                        background-color: #999;
+                        color: white;
+                        font-weight: 500;
+                    } */
     </style>
     {{-- <link rel="stylesheet" href="{{ url('/calendar/styles.css') }}"> --}}
     <style>
-        /* body {
-                                                                                                                    font-family: Arial, sans-serif;
-                                                                                                                    background-color: #f4f4f4;
-                                                                                                                    display: flex;
-                                                                                                                    justify-content: center;
-                                                                                                                    align-items: center;
-                                                                                                                    height: 100vh;
-                                                                                                                    margin: 0;
-                                                                                                                } */
-
         .containerkecil {
             background-color: white;
             padding: 20px;
@@ -83,20 +73,20 @@
             color: #666;
         }
 
-        .back-button,
-        .select-button {
-            background-color: #ccc;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            color: white;
-            cursor: pointer;
-        }
+        /*.back-button,
+                 .select-button {
+                            background-color: #ccc;
+                            border: none;
+                            border-radius: 5px;
+                            padding: 10px;
+                            color: white;
+                            cursor: pointer;
+                        } */
 
-        .back-button:hover,
-        .select-button:hover {
-            background-color: #999;
-        }
+        /*.back-button:hover,
+             .select-button:hover {
+                                background-color: #;
+                            } */
 
         .calendar {
             margin-top: 20px;
@@ -161,7 +151,7 @@
                     <h1>Pilih Jadwal Lesmu</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut
                         nisi tellus.</p>
-                    <button class="back-button">Kembali</button>
+                    <a href="{{ route('BuatPenajuan') }}" class="back-button">Kembali</a>
                 </div>
             </div>
             {{-- Init untuk kalender nanti --}}
@@ -206,6 +196,8 @@
                             <option value="21:00-22:00">21:00 - 22:00</option>
                         </select>
                     </div>
+                    {{-- input hidden --}}
+                    <input type="text" name="selectedDate" id="selectedDate">
 
                     <div class="mt-1 col-3 offset-9">
                         <button class="col-12 btn btn-warning select-button">Pilih</button>
@@ -217,5 +209,74 @@
     </div>
 @endsection
 @section('JS')
-    <script src="{{ url('/calendar/script.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const datesContainer = document.getElementById('dates');
+            const monthYearDisplay = document.getElementById('monthYear');
+            const prevMonthButton = document.getElementById('prevMonth');
+            const nextMonthButton = document.getElementById('nextMonth');
+            const timeSelect = document.getElementById('timeSelect');
+            const selectButton = document.querySelector('.select-button');
+
+            let currentDate = new Date();
+            let selectedDate = null;
+            let selectedTime = timeSelect.value;
+
+            function renderCalendar() {
+                const year = currentDate.getFullYear();
+                const month = currentDate.getMonth();
+                const firstDay = new Date(year, month, 1).getDay();
+                const lastDate = new Date(year, month + 1, 0).getDate();
+
+                monthYearDisplay.textContent =
+                    `${currentDate.toLocaleString('default', { month: 'long' })} ${year}`;
+                datesContainer.innerHTML = '';
+
+                for (let i = 0; i < firstDay; i++) {
+                    datesContainer.innerHTML += `<div></div>`;
+                }
+
+                for (let date = 1; date <= lastDate; date++) {
+                    const dateButton = document.createElement('button');
+                    dateButton.textContent = date;
+                    dateButton.addEventListener('click', () => {
+                        if (selectedDate) {
+                            selectedDate.classList.remove('selected');
+                        }
+                        selectedDate = dateButton;
+                        dateButton.classList.add('selected');
+                    });
+                    datesContainer.appendChild(dateButton);
+                }
+            }
+
+            prevMonthButton.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar();
+            });
+
+            nextMonthButton.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar();
+            });
+
+            timeSelect.addEventListener('change', (e) => {
+                selectedTime = e.target.value;
+            });
+
+            selectButton.addEventListener('click', () => {
+                if (selectedDate) {
+                    const selectedDateValue =
+                        `${selectedDate.textContent} ${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}`;
+                    console.log(`Selected Date: ${selectedDateValue}`);
+                    console.log(`Selected Time: ${selectedTime}`);
+                    // Here you can add your logic to save the selected date and time
+                } else {
+                    alert('Please select a date.');
+                }
+            });
+
+            renderCalendar();
+        });
+    </script>
 @endsection

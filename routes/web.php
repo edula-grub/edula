@@ -7,6 +7,7 @@ use App\Http\Controllers\ipaymuController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelajarState;
+use App\Http\Controllers\UbahProfilController;
 
 Route::get('/', function () {
     return view('landing');
@@ -30,6 +31,10 @@ Route::any('/ReqPelajaran', [PelajarState::class, 'BuatPenajuan'])->name('BuatPe
 Route::get('/RequestKelas3', function(){
     return view('Pelajar.RequestKelas3');
 });
+
+
+Route::get('/UbahProfilPengajar', [UbahProfilController::class, 'ViewUbahProfil']);
+Route::post('/UbahProfilPengajar/update', [UbahProfilController::class, 'UpdateUbahProfil'])->name('updateprofil');
 
 // Route::get('/ReqKelasPayment', function(){
 //     return view('Pelajar.RequestKelasPayment');
@@ -70,9 +75,7 @@ Route::get('/DetailPengajar', function () {
     return view('DetailPengajar');
 });
 
-Route::get('/UbahProfilPengajar', function () {
-    return view('UbahProfilPengajar');
-});
+
 
 Route::get('/login', function () {
     return view('login');

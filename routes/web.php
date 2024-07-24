@@ -123,6 +123,10 @@ Route::get('/Konfirm', function(){
 
 
 
+Route::get('/JadiPengajar', function(){
+    return view('Pengajar.JadiPengajar');
+});
+
 
 // DetailPengajar
 // agustinus

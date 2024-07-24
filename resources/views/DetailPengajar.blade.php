@@ -25,28 +25,36 @@
                     <div class="bio">
                         <div class="name-and-rating">
                             <div class="budiman-h-container">
-                                <a class="budiman-h1">Budiman H</a>
+                                <a class="budiman-h1">
+                                    {{ session('gurus')->name }}
+                                </a>
                             </div>
                             <div class="teaching-hours-and-rating">
                                 <div class="rating-stars">
-                                    <img class="stars-icon10" loading="lazy" alt=""
-                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
-                                    <img class="stars-icon11" loading="lazy" alt=""
-                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
-                                    <img class="stars-icon12" loading="lazy" alt=""
-                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
-                                    <img class="stars-icon13" loading="lazy" alt=""
-                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
-                                    <img class="stars-icon14" loading="lazy" alt=""
-                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
+                                    @empty($averageRating)
+                                        ☆☆☆☆☆
+                                    @else
+                                        @for ($i = 0; $i < floor($averageRating); $i++)
+                                            <img class="stars-icon10" loading="lazy" alt=""
+                                                src="{{ url('EdulaExport/public/star-13.svg') }}" />
+                                        @endfor
+                                        @if ($averageRating - floor($averageRating) >= 0.5)
+                                            ☆
+                                        @endif
+                                    @endempty
                                 </div>
                                 <div class="hours-label">
-                                    <div class="div">(300)</div>
+                                    <div class="div">(
+                                        {{ count($reviews) }}
+                                        )</div>
                                 </div>
                                 <div class="hours-label1">
                                     <div class="durasi-mengajar-50-container1">
                                         <span>| Durasi mengajar: </span>
-                                        <b>50 Jam</b>
+                                        <b>
+                                            {{-- count total leng of $review --}}
+                                            {{ count($reviews) }}
+                                            Jam</b>
                                     </div>
                                 </div>
                             </div>
@@ -56,10 +64,10 @@
                 <div class="actions2">
                     <div class="action-buttons2">
                         <div class="button3">
-                            <div class="ubah-profil1">Ubah Profil</div>
+                            <a href="{{ url('/UbahProfilPelajar') }}" class="ubah-profil1">Ubah Profil</a>
                         </div>
                         <div class="button4">
-                            <div class="keluar1">Keluar</div>
+                            <a class="keluar1" href="{{ url('/dashboard') }}">Keluar</a>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,8 @@
 @section('CSS')
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* .container {
                                                             width: 400px;
@@ -12,6 +14,9 @@
                                                             border: 1px solid #ccc;
                                                             border-radius: 5px;
                                                         } */
+         .hidden{
+                display: none;
+        }
 
         .container {
             margin-top: 20px;
@@ -26,6 +31,10 @@
         h1 {
             font-size: 24px;
             /* margin-bottom: 20px; */
+            color: #275FCA;
+        }
+
+        h2{
             color: #275FCA;
         }
 
@@ -84,16 +93,31 @@
             @csrf
             <div class="payment-methods text-center">
                 <div class="payment-method d-flex align-items-center">
-                    <input style="margin: 0px" type="radio" name="payment" id="bank-transfer" value="bank transfer">
+                    <input style="margin: 0px" type="radio" name="payment" id="bank-transfer" value="bank transfer" onclick="togglePaymentMethod()">
                     <p style="margin: 0px;margin-bottom:3px;margin-left: 1rem;">Transfer Bank</p>
                 </div>
                 <div class="payment-method d-flex alignment-item-center">
-                    <input style="margin: 0px" type="radio" name="payment" id="qris" value="qris">
+                    <input style="margin: 0px" type="radio" name="payment" id="qris" value="qris" onclick="togglePaymentMethod()">
                     <p style="margin: 0px;margin-bottom:3px;margin-left: 1rem;">QRIS</p>
                 </div>
             </div>
 
-            <div class="justify-content-center row" style="height: 60dvh">
+            <div id="bank-options" class="hidden">
+                <h2>Pilih Bank</h2>
+                <select name="bank" class="form-control" onchange="showAccountNumber()" style="color:#275FCA;">
+                    <option value="" style="color:#275FCA;">--Pilih Bank--</option>
+                    <option value="bca" style="color:#275FCA;">BCA</option>
+                    <option value="bni" style="color:#275FCA;">BNI</option>
+                    <option value="bri" style="color:#275FCA;">BRI</option>
+                    <option value="mandiri" style="color:#275FCA;">Mandiri</option>
+                </select>
+                <div class="mt-3">
+                    <label for="account-number" style="color:#275FCA;">Nomor Rekening</label>
+                    <input type="text" id="account-number" class="form-control" style="color:#275FCA;" readonly>
+                </div>
+            </div>
+
+            <div class="justify-content-center row hidden" style="height: 60dvh" id="qris-iframe">
                 <iframe class="col-10" src="https://www.paper.id/blog/wp-content/uploads/2022/11/csan-qr-a.jpg"
                     title="QR Code"></iframe>
             </div>
@@ -107,4 +131,46 @@
             <button type="submit">Bayar</button>
         </form>
     </div>
+@endsection
+
+@section('JS')
+    <script>
+        function togglePaymentMethod() {
+            const bankTransfer = document.getElementById('bank-transfer');
+            const qris = document.getElementById('qris');
+            const bankOptions = document.getElementById('bank-options');
+            const qrisIframe = document.getElementById('qris-iframe');
+
+            if (bankTransfer.checked) {
+                bankOptions.classList.remove('hidden');
+                qrisIframe.classList.add('hidden');
+            } else if (qris.checked) {
+                bankOptions.classList.add('hidden');
+                qrisIframe.classList.remove('hidden');
+            }
+        }
+
+        function showAccountNumber() {
+            const bankSelect = document.querySelector('select[name="bank"]');
+            const accountNumberInput = document.getElementById('account-number');
+            const accountNumbers = {
+                bca: '1234567890',
+                bni: '0987654321',
+                bri: '1122334455',
+                mandiri: '5566778899'
+            };
+
+            const selectedBank = bankSelect.value;
+            if (selectedBank) {
+                accountNumberInput.value = accountNumbers[selectedBank];
+            } else {
+                accountNumberInput.value = '';
+            }
+        }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 @endsection

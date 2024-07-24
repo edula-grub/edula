@@ -8,21 +8,32 @@ use Illuminate\Support\Facades\DB;
 
 class PengajarController extends Controller
 {
-    // public function index(){
-    //     $reviews = RatingAndReview::all();
-    //     return view('ktks', compact('reviews'));
-    // }
 
-    // public function show($id){
-    //     $review = RatingAndReview::findOrFail($id);
-    //     return view('ktks', compact('review'));
-    // }
 
-    public function index(){
+    public function JadiPengajar(Request $request)
+    {
+        if (session('gurus')) {
+            return redirect('/DetailPengajar');
+        }
 
+        if ($request->isMethod('post')) {
+            $pat = [
+                'user_id' => session('siswa')->id,
+                'porfolio' => $request->portofolio,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
+            DB::table('gurus')->insertGetId($pat);
+            $data = DB::table('guru_aktif')
+                ->where('id', session('siswa')->id)->first();
+            session(['gurus' => $data]);
+        }
+        return view('Pengajar.JadiPengajar');
     }
 
-    public function riwayatpengajar(){
+
+    public function riwayatpengajar()
+    {
         // Ambil semua ulasan
         $reviews = DB::table('bidrequests')->get();
 
@@ -42,11 +53,11 @@ class PengajarController extends Controller
         ];
 
         $reviews = DB::table('bidrequests')
-        ->where('guru_id', 2)
-        ->join('users', 'bidrequests.siswa_id', '=', 'users.id')
-        ->select('bidrequests.*','users.name')
-        ->get();
-        // dd($reviews->all());
+            ->where('guru_id', 2)
+            ->join('users', 'bidrequests.siswa_id', '=', 'users.id')
+            ->select('bidrequests.*', 'users.name')
+            ->get();
+        // dd($reviews);
         return view('ktks', compact('averageRating', 'totalReviews', 'ratingsCount', 'reviews'));
     }
 }

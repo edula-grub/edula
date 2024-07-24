@@ -16,23 +16,32 @@ class AuthController extends Controller
 {
 
     // funtion agus
-    public function Indexline1($data){
-        $submit=[
+    public function Indexline1($data)
+    {
+        $submit = [
             'user_id' => $data->id,
             'jenjang_pendidikan' => 'Umum',
             'profile' => 'https://www.ybkb.or.id/wp-content/uploads/2024/03/8222_Y1ntt.jpg',
         ];
-        $siswa=DB::table('siswas')->insert($submit);
+        $siswa = DB::table('siswas')->insert($submit);
     }
-    function Login(Request $request){
+    function Login(Request $request)
+    {
         return view('login');
     }
 
-    function ValidateLogin(Request $request){
+    function ValidateLogin(Request $request)
+    {
         $user = User::where('name', $request->USERNAME)->first();
-        if($user && Hash::check($request->PASSWORD, $user->password)){
-            $user = DB::table('siswa_aktif')->where('id', $user->id)->first();
-            session(['user' => $user]);
+        // dd($user->id);
+        if ($user && Hash::check($request->PASSWORD, $user->password)) {
+            $guru = DB::table('guru_aktif')->where('id', $user->id)->first();
+            $siswa = DB::table('siswa_aktif')->where('id', $user->id)->first();
+            // dd($siswa);
+            if ($guru) {
+                session(['gurus' => $guru]);
+            }
+            session(['siswa' => $siswa]);
             return redirect('/dashboard');
         } else {
             return redirect('/login')->with('faill', 'Invalid Username or Password');
@@ -49,7 +58,7 @@ class AuthController extends Controller
             return redirect('/login#sign-up-btn')->with('failr', 'Invalid Username or Password');
         }
         $data = $request->all();
-        $data=User::create([
+        $data = User::create([
             'name' => $data['USERNAME'],
             'email' => $data['EMAIL'],
             'password' => Hash::make($data['PASSWORD']),
@@ -59,5 +68,4 @@ class AuthController extends Controller
         // dd($data);
         return back()->with('success', 'You have signed-in');
     }
-
 }

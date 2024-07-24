@@ -28,11 +28,11 @@
         }
 
         /* form {
-                                                                                                                                                                            width: 500px;
-                                                                                                                                                                            margin: 0 auto;
-                                                                                                                                                                            padding: 20px;
-                                                                                                                                                                            border: 1px solid #ccc;
-                                                                                                                                                                        } */
+                                                                                                                                                                                    width: 500px;
+                                                                                                                                                                                    margin: 0 auto;
+                                                                                                                                                                                    padding: 20px;
+                                                                                                                                                                                    border: 1px solid #ccc;
+                                                                                                                                                                                } */
 
         h4 {
             text-align: center;
@@ -75,51 +75,45 @@
             font-weight: 700;
             font-size: 16px;
         }
-
-        /* button */
     </style>
 @endsection
 
 @section('content')
-
-    <body>
-        <div class="container ">
-            <form action="#" class="row" method="POST">
-                @csrf
-                <div class="col-12">
-                    <h4>Kamu mau belajar apa?</h4>
-                </div>
-                <div class="col-8">
-                    <label for="pelajaran">Pelajaran yang kamu ingin pelajari:</label>
-                    <input type="text" name="pelajaran" id="pelajaran">
-                </div>
-                <div class="col-4">
-                    <label for="jenjang">Pilih jenjang:</label>
-                    <select name="jenjang" id="jenjang">
-                        <option value="sd">SD</option>
-                        <option value="smp">SMP</option>
-                        <option value="sma">SMA</option>
-                        <option value="kuliah">Kuliah</option>
-                        <option value="umum">Umum</option>
-                    </select>
-                </div>
-                <div class="col-8">
-                    <label for="deskripsi">Deskripsikan pelajaran tersebut lebih detail:</label>
-                    <textarea name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
-                </div>
-                <div class="col-4 card">
-                    <h1 class="alert-primary">error</h1>
-                </div>
-                <div class="col-8">
-                    <label for="harga">Tentukan harga yang sesuai:</label>
-                    <input type="price" name="harga" id="harga">
-                </div>
-                <div class="col-9"></div>
-                <div class="col-3">
-                    <button type="submit" class="btn btn-warning text-light">Lanjut Pembayaran</button>
-                </div>
-            </form>
-        </div>
-
-    </body>
+    <div class="container ">
+        <form action="#" class="row" method="POST">
+            @csrf
+            <div class="col-12">
+                <h4>Kamu mau belajar apa?</h4>
+            </div>
+            <div class="col-8">
+                <label for="pelajaran">Pelajaran yang kamu ingin pelajari:</label>
+                <input type="text" name="pelajaran" id="pelajaran">
+            </div>
+            <div class="col-4">
+                <label for="jenjang">Pilih jenjang:</label>
+                <select name="jenjang" id="jenjang">
+                    <option value="sd">SD</option>
+                    <option value="smp">SMP</option>
+                    <option value="sma">SMA</option>
+                    <option value="kuliah">Kuliah</option>
+                    <option value="umum">Umum</option>
+                </select>
+            </div>
+            <div class="col-8">
+                <label for="deskripsi">Deskripsikan pelajaran tersebut lebih detail:</label>
+                <textarea name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
+            </div>
+            <div class="col-4 card">
+                <h1 class="alert-primary">error</h1>
+            </div>
+            <div class="col-8">
+                <label for="harga">Tentukan harga yang sesuai:</label>
+                <input type="price" name="harga" id="harga">
+            </div>
+            <div class="col-9"></div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-warning text-light">Lanjut Pembayaran</button>
+            </div>
+        </form>
+    </div>
 @endsection

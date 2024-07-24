@@ -3,7 +3,7 @@ Dasboard
 
 <a href="">KelasTerjadwal</a>
 <a href="">KelasSelesai</a>
-<a href="">Request</a>
+<a href="{{ url('/ReqPelajaran') }}">Request</a>
 
 <hr>
 @dump(session()->all())

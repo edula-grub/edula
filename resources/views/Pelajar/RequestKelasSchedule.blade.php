@@ -47,11 +47,11 @@
         }
 
         /* .back-button:hover,
-                    .select-button:hover {
-                        background-color: #999;
-                        color: white;
-                        font-weight: 500;
-                    } */
+                                                                                                            .select-button:hover {
+                                                                                                                background-color: #999;
+                                                                                                                color: white;
+                                                                                                                font-weight: 500;
+                                                                                                            } */
     </style>
     {{-- <link rel="stylesheet" href="{{ url('/calendar/styles.css') }}"> --}}
     <style>
@@ -74,19 +74,19 @@
         }
 
         /*.back-button,
-                 .select-button {
-                            background-color: #ccc;
-                            border: none;
-                            border-radius: 5px;
-                            padding: 10px;
-                            color: white;
-                            cursor: pointer;
-                        } */
+                                                                                                         .select-button {
+                                                                                                                    background-color: #ccc;
+                                                                                                                    border: none;
+                                                                                                                    border-radius: 5px;
+                                                                                                                    padding: 10px;
+                                                                                                                    color: white;
+                                                                                                                    cursor: pointer;
+                                                                                                                } */
 
         /*.back-button:hover,
-             .select-button:hover {
-                                background-color: #;
-                            } */
+                                                                                                     .select-button:hover {
+                                                                                                                        background-color: #;
+                                                                                                                    } */
 
         .calendar {
             margin-top: 20px;
@@ -160,9 +160,9 @@
                 <div class="containerkecil">
                     <div class="calendar">
                         <div class="calendar-header">
-                            <button id="prevMonth">❮</button>
+                            <button id="prevMonth">back</button>
                             <div id="monthYear"></div>
-                            <button id="nextMonth">❯</button>
+                            <button id="nextMonth">next</button>
                         </div>
                         <div class="days">
                             <div>Min</div>
@@ -197,8 +197,7 @@
                         </select>
                     </div>
                     {{-- input hidden --}}
-                    <input type="text" name="selectedDate" id="selectedDate">
-
+                    {{-- <input type="text" name="selectedDate" id="selectedDate"> --}}
                     <div class="mt-1 col-3 offset-9">
                         <button class="col-12 btn btn-warning select-button">Pilih</button>
                     </div>
@@ -206,6 +205,16 @@
 
             </div>
         </div>
+    </div>
+
+    <div style="display: none;">
+        <form method="POST">
+            @csrf
+            <input type="text" name="tanggal" id="covertanggalselected">
+            <input type="text" name="jam" id="coverwaktuinput">
+            <input type="text" name="s" value="1">
+            <button type="submit" id="subs">kirim</button>
+        </form>
     </div>
 @endsection
 @section('JS')
@@ -270,7 +279,11 @@
                         `${selectedDate.textContent} ${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}`;
                     console.log(`Selected Date: ${selectedDateValue}`);
                     console.log(`Selected Time: ${selectedTime}`);
-                    // Here you can add your logic to save the selected date and time
+
+                    document.getElementById('covertanggalselected').value = selectedDateValue;
+                    document.getElementById('coverwaktuinput').value = selectedTime;
+                    document.getElementById('subs').click();
+
                 } else {
                     alert('Please select a date.');
                 }

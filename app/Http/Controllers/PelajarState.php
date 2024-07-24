@@ -3,25 +3,47 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PelajarState extends Controller
 {
 
     // request to gpt-3
-    function gpt() {
+    function gpt()
+    {
         return 'bisa';
     }
-    function ipaymu() {
+    function ipaymu()
+    {
         return 'upline';
     }
 
-    function Stage1($request){
-        if($request->isMethod('post')){
+    function CreteRequest($datalist)
+    {
+
+        $jadwal = date('Y-m-d H:i:s', strtotime($datalist['tanggal'] . ' ' . $datalist['jam_mulai']));
+        $datalist['tanggal'] = $jadwal;
+        DB::table('bidrequests')->insert([
+            'siswa_id' => session('siswa')->id,
+            'nama_mapel' => $datalist['pelajaran'],
+            'deskripsi_kebutuhan' => $datalist['deskripsi'],
+            'jadwal' => $jadwal,
+            'status' => 'OPENWAR',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    }
+
+    function Stage1($request)
+    {
+        if ($request->isMethod('post')) {
+            $jam = explode('-', $request->input('jam'));
+            $interval = (strtotime($jam[1]) - strtotime($jam[0])) / 3600;
             $newrequest = [
-                "tanggal"=>$request->input('tanggal'),
-                "jam_mulai"=>$request->input('jam_awal'),
-                "jam_selesai"=>$request->input('jam_selesai'),
-                "gap"=> $request->input('jam_selesai') - $request->input('jam_awal'),
+                "tanggal" => $request->input('tanggal'),
+                "jam_mulai" => $jam[0],
+                "jam_selesai" => $jam[1],
+                "gap" => $interval,
             ];
             session(['newrequest' => $newrequest]);
             return redirect('/ReqPelajaran?s=2');
@@ -29,38 +51,45 @@ class PelajarState extends Controller
         return view('Pelajar.RequestKelasSchedule');
     }
 
-    function Stage2($request){
-        if($request->isMethod('post')){
+    function Stage2($request)
+    {
+        if ($request->isMethod('post')) {
             $newrequest = session('newrequest');
             $newrequest['pelajaran'] = $request->input('pelajaran');
             $newrequest['jenjang'] = $request->input('jenjang');
             $newrequest['deskripsi'] = $request->input('deskripsi');
-            $newrequest['price'] = $request->input('price');
+            $newrequest['price'] = $request->input('harga');
             session(['newrequest' => $newrequest]);
-            if($this->gpt() == 'bisa'){
+            if ($this->gpt() == 'bisa') {
                 return redirect('/ReqPelajaran?s=3');
-            }else{
+            } else {
                 dump('gpt-3 error');
             }
         }
         return view('Pelajar.RequestKelas3');
     }
 
-    function Stage3($request){
-        if($request->isMethod('post')){
+    function Stage3($request)
+    {
+        if ($request->isMethod('post')) {
             $newrequest = session('newrequest');
-            $newrequest['metode_pembayaran'] = $request->input('metode_pembayaran');
+            $newrequest['metode_pembayaran'] = $request->input('payment');
             session(['newrequest' => $newrequest]);
             return redirect('/ReqPelajaran?s=4');
         }
         return view('Pelajar.RequestKelasPayment');
     }
 
-    function Stage4(){
+    function Stage4()
+    {
+        $datalist = session('newrequest');
+        session()->forget('newrequest');
+        $this->CreteRequest($datalist);
         return view('Pelajar.RequestKelasConfirm');
     }
 
-    function BuatPenajuan(Request $request){
+    function BuatPenajuan(Request $request)
+    {
         switch ($request->input('s')) {
             case '1':
                 return $this->Stage1($request);

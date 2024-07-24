@@ -114,6 +114,9 @@ Route::get('/JadiPengajar', function(){
     return view('Pengajar.JadiPengajar');
 });
 
+Route::get('/payment/qris', [ipaymuController::class, 'initiateQrisPayment'])->name('payment.qris');
+Route::get('/payment/qris/callback', [ipaymuController::class, 'qrisPaymentCallback'])->name('payment.qris.callback');
+
 
 // DetailPengajar
 // agustinus

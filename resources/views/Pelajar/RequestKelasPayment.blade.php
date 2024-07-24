@@ -91,7 +91,7 @@
         </div>
 
         <div class="justify-content-center row" style="height: 60dvh">
-            <iframe class="col-10" src="http://127.0.0.1:8000/ReqKelasPayment" title="QR Code" ></iframe>
+            <iframe class="col-10" src="{{ $qrisUrl }}" title="QR Code" ></iframe>
         </div>
 
 

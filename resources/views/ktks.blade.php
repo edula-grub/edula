@@ -11,92 +11,64 @@
 @endsection
 
 @section('content')
-<div class="riwayat-pengajar">
-      <header class="teacher-info2">
-        <div class="frame-parent46">
-          <div class="profilepicture-parent">
-            <img
-              class="profilepicture-icon1"
-              loading="lazy"
-              alt=""
-              src="{{ url('EdulaExport/public/profilepicture.svg') }}"
-            />
+    <div class="riwayat-pengajar">
+        <header class="teacher-info2">
+            <div class="frame-parent46">
+                <div class="profilepicture-parent">
+                    <img class="profilepicture-icon1" loading="lazy" alt=""
+                        src="{{ url('EdulaExport/public/profilepicture.svg') }}" />
 
-            <div class="bio">
-              <div class="name-and-rating">
-                <div class="budiman-h-container">
-                  <a class="budiman-h1">Budiman H</a>
-                </div>
-                <div class="teaching-hours-and-rating">
-                  <div class="rating-stars">
-                    <img
-                      class="stars-icon10"
-                      loading="lazy"
-                      alt=""
-                      src="{{ url('EdulaExport/public/star-13.svg') }}"
-                    />
+                    <div class="bio">
+                        <div class="name-and-rating">
+                            <div class="budiman-h-container">
+                                <a class="budiman-h1">Budiman H</a>
+                            </div>
+                            <div class="teaching-hours-and-rating">
+                                <div class="rating-stars">
+                                    <img class="stars-icon10" loading="lazy" alt=""
+                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
 
-                    <img
-                      class="stars-icon11"
-                      loading="lazy"
-                      alt=""
-                      src="{{ url('EdulaExport/public/star-13.svg') }}"
-                    />
+                                    <img class="stars-icon11" loading="lazy" alt=""
+                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
 
-                    <img
-                      class="stars-icon12"
-                      loading="lazy"
-                      alt=""
-                      src="{{ url('EdulaExport/public/star-13.svg') }}"
-                    />
+                                    <img class="stars-icon12" loading="lazy" alt=""
+                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
 
-                    <img
-                      class="stars-icon13"
-                      loading="lazy"
-                      alt=""
-                      src="{{ url('EdulaExport/public/star-13.svg') }}"
-                    />
+                                    <img class="stars-icon13" loading="lazy" alt=""
+                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
 
-                    <img
-                      class="stars-icon14"
-                      loading="lazy"
-                      alt=""
-                      src="{{ url('EdulaExport/public/star-13.svg') }}"
-                    />
-                  </div>
-                  <div class="hours-label">
-                    <div class="div">(300)</div>
-                  </div>
-                  <div class="hours-label1">
-                    <div class="durasi-mengajar-50-container1">
-                      <span>| Durasi mengajar: </span>
-                      <b>50 Jam</b>
+                                    <img class="stars-icon14" loading="lazy" alt=""
+                                        src="{{ url('EdulaExport/public/star-13.svg') }}" />
+                                </div>
+                                <div class="hours-label">
+                                    <div class="div">(300)</div>
+                                </div>
+                                <div class="hours-label1">
+                                    <div class="durasi-mengajar-50-container1">
+                                        <span>| Durasi mengajar: </span>
+                                        <b>50 Jam</b>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+                <div class="actions2">
+                    <div class="action-buttons2">
+                        <div class="button3">
+                            <div class="ubah-profil1">Ubah Profil</div>
+                        </div>
+                        <div class="button4">
+                            <div class="keluar1">Keluar</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="actions2">
-            <div class="action-buttons2">
-              <div class="button3">
-                <div class="ubah-profil1">Ubah Profil</div>
-              </div>
-              <div class="button4">
-                <div class="keluar1">Keluar</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <img
-        class="riwayat-pengajar-child"
-        loading="lazy"
-        alt=""
-        src="{{ url('EdulaExport/public/line-3.svg') }}"
-      />
+        </header>
+        <img class="riwayat-pengajar-child" loading="lazy" alt=""
+            src="{{ url('EdulaExport/public/line-3.svg') }}" />
 
-      <div class="row justify-content-center">
+        <div class="row justify-content-center">
             <div class="mb-3 col-sm-9">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -136,43 +108,43 @@
                     aria-labelledby="kelas-terjadwal-tab">
                     <div class="container-fluid poinsetpanel col-12">
                         <div class="kotak">
-                          <div class="kotakimg">
-                            <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
-                          </div>
-                          <div class="kotakisi">
-                            <h5>Calculus Dasar Anak Kuliah semester 1</h5>
-                            <p>Sabtu, 21 Juni 2024</p>
-                          </div>
+                            <div class="kotakimg">
+                                <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
+                            </div>
+                            <div class="kotakisi">
+                                <h5>Calculus Dasar Anak Kuliah semester 1</h5>
+                                <p>Sabtu, 21 Juni 2024</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 tab-pane fade" id="kelas-selesai" role="tabpanel"
                     aria-labelledby="kelas-selesai-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                    <div class="kotak">
-                          <div class="kotakimg">
-                            <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
-                          </div>
-                          <div class="kotakisi">
-                            <h5>Calculus Dasar Anak Kuliah semester 1</h5>
-                            <p>Sabtu, 21 Juni 2024</p>
-                          </div>
-                          <div class="kotakbutton">
-                            <button class="statusbutton">Lunas</button>
-                          </div>
+                        <div class="kotak">
+                            <div class="kotakimg">
+                                <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
+                            </div>
+                            <div class="kotakisi">
+                                <h5>Calculus Dasar Anak Kuliah semester 1</h5>
+                                <p>Sabtu, 21 Juni 2024</p>
+                            </div>
+                            <div class="kotakbutton">
+                                <button class="statusbutton">Lunas</button>
+                            </div>
                         </div>
                         <!-- KOTAK UNTUK PELAJAR KELAS SELESAI -->
                         <div class="kotak">
-                          <div class="kotakimg">
-                            <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
-                          </div>
-                          <div class="kotakisi">
-                            <h5>Calculus Dasar Anak Kuliah semester 1</h5>
-                            <p>Sabtu, 21 Juni 2024</p>
-                          </div>
-                          <div class="kotakbutton">
-                            <button class="statusbutton">Selesai</button>
-                          </div>
+                            <div class="kotakimg">
+                                <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
+                            </div>
+                            <div class="kotakisi">
+                                <h5>Calculus Dasar Anak Kuliah semester 1</h5>
+                                <p>Sabtu, 21 Juni 2024</p>
+                            </div>
+                            <div class="kotakbutton">
+                                <button class="statusbutton">Selesai</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,8 +161,8 @@
                     </div>
                 </div>
             </div>
-    </div>
-@endsection
+        </div>
+    @endsection
 
-@section('JS')
-@endsection
+    @section('JS')
+    @endsection

@@ -1,13 +1,28 @@
 @extends('Template.Master')
-
 @section('CSS')
+    <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
+    <link rel="stylesheet" href="{{ url('/EdulaExport/DetailKelasPelajar1.css') }}" />
+    <link rel="stylesheet" href="{{ url('/EdulaExport/SertifikasiPortofolio.css') }}" />
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers Quarrel:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {{-- <script src="{{ url('/EdulaExport/script.js') }}"></script> --}}
     <style>
+        .stars i {
+            color: #e6e6e6;
+            font-size: 35px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .stars i.active {
+            color: #FFD700;
+        }
+
         body {
             /* font-family: Arial, sans-serif; */
             display: flex;
@@ -48,32 +63,22 @@
             /* Optional: change color to fit your design */
         }
 
-        .container {
+        .containers {
             background: #fff;
-            width: 820px;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-height: 100vh;
-        }
-
-        .container {
-            background: #fff;
-            width: 820px;
-            height: 400px;
-            margin-top: 20px;
+            width: 100%;
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 100%;
         }
 
-        .container h4 {
-            text-align: center;
-            margin-bottom: 10px;
+        .containers h4 {
+            text-align: start;
+            /* margin-bottom: 10px; */
             color: #275FCA;
         }
 
-        .container p {
+        .containers p {
             text-align: center;
             margin-bottom: 20px;
             font-weight: 300;
@@ -82,7 +87,7 @@
         }
 
         .btn-riwayat {
-            width: 25%;
+            width: 10%;
             padding: 4px;
             background-color: #FDBA13;
             border: none;
@@ -98,24 +103,18 @@
             color: white;
             font-weight: 500;
         }
-
-        .img-oke {
-            max-width: 90px;
-            align-self: center;
-            margin-bottom: 10px;
-        }
     </style>
 @endsection
 
 @section('content')
-    <div>
-        <div class="container d-flex flex-column justify-content-center">
-            <img class="img-oke d-flex flex-column justify-content-center" src="{{ asset('OkeButton.png') }}" alt=""
-                srcset="">
-            <h4>Selamat pembayaran kamu terverifikasi!</h4>
-            <p>Kamu dapat menunggu guru yang cocok untukmu, cek status kelasmu di riwayat kelas</p>
-            <button class="btn-riwayat align-self-center"><a class="link-riwayat" href="{{ url('/dashboard') }}">Cek Riwayat
-                    Kelas</a></button>
+    @include('components.navbar')
+    <form method="POST">
+        @csrf
+        <div class="containers d-flex flex-column justify-content-center">
+            <h4>Deskripsikan Pengalaman Anda</h4>
+            <textarea name="portofolio" id="deskripsi" rows="15" placeholder="Deskripsi"
+                style="margin-bottom: 10px; border-radius: 10px; padding: 5px;"></textarea>
+            <button type="submit" class="btn-riwayat align-self-end">Kirim</button>
         </div>
-    </div>
+    </form>
 @endsection

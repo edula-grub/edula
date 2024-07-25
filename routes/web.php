@@ -37,6 +37,10 @@ Route::get('/riwayatpengajar2',function() {
     return view('rr');
 });
 
+Route::get('/dashboardPengajar',function() {
+    return view('dashboardPengajar');
+});
+
 
 
 // agustinus

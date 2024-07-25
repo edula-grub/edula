@@ -27,8 +27,7 @@ class AuthController extends Controller
         // hash::match($request->password, $user->password);
         // dd($request->all());
     }
-    public function ValidateRegister(Request $request)
-    {
+    public function ValidateRegister(Request $request){
         $validator = Validator::make($request->all(), [
             'USERNAME' => ['required', 'string', 'max:255'],
             'EMAIL' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -37,15 +36,12 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return redirect('/login#sign-up-btn')->with('failr', 'Invalid Username or Password');
         }
-        // dd($request->all());
         $data = $request->all();
-        // dd($data);
         $check = $this->create($data);
         return back()->with('success', 'You have signed-in');
     }
 
-    public function create(array $data)
-    {
+    public function create(array $data){
         return User::create([
             'name' => $data['USERNAME'],
             'email' => $data['EMAIL'],

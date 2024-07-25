@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Guru;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class GuruSeeder extends Seeder
@@ -11,6 +13,12 @@ class GuruSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Guru::factory(10)->create();
+        $user = User::all();
+        for($i = 1 ; $i <= 5 ; $i++){
+            Guru::create([
+                'user_id' => $user->random()->id,
+                'porfolio' => 'porfolio',
+            ]);
+        }
     }
 }

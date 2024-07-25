@@ -54,4 +54,12 @@ class User extends Authenticatable implements FilamentUser
         ];
     }
 
+    public function guru()
+    {
+        return $this->hasOne(Guru::class);
+    }
+
+    public function siswa(){
+        return $this->hasOne(Siswa::class);
+    }
 }

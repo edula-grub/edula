@@ -79,7 +79,7 @@
             border-radius: 15px;
             cursor: pointer;
             display: block;
-            width: 20%;
+            width: 40%;
             font-weight: 600;
 
         }
@@ -128,7 +128,7 @@
             </div>
             {{-- jangan lupa di rubah --}}
             <input type="hidden" name="total" value="100000">
-            <button type="submit">Bayar</button>
+            <button type="submit" id="bayar-button" disabled>Bayar</button>
         </form>
     </div>
 @endsection
@@ -140,6 +140,7 @@
             const qris = document.getElementById('qris');
             const bankOptions = document.getElementById('bank-options');
             const qrisIframe = document.getElementById('qris-iframe');
+            const bayarButton = document.getElementById('bayar-button');
 
             if (bankTransfer.checked) {
                 bankOptions.classList.remove('hidden');
@@ -148,6 +149,8 @@
                 bankOptions.classList.add('hidden');
                 qrisIframe.classList.remove('hidden');
             }
+            bayarButton.disabled = false;
+            bayarButton.innerText = "Bayar";
         }
 
         function showAccountNumber() {
@@ -167,6 +170,27 @@
                 accountNumberInput.value = '';
             }
         }
+
+        document.querySelectorAll('input[name="payment"]').forEach(radio => {
+            radio.addEventListener('change', togglePaymentMethod);
+        });
+
+        const bayarButton = document.getElementById('bayar-button');
+        bayarButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah form submit langsung
+
+            if (bayarButton.innerText === "Bayar") {
+                bayarButton.innerText = "Konfirmasi Pembayaran";
+                bayarButton.disabled = true;
+
+                setTimeout(function() {
+                    bayarButton.disabled = false;
+                }, 5000); // Mengaktifkan kembali tombol setelah 5 detik
+            } else if (bayarButton.innerText === "Konfirmasi Pembayaran") {
+                // Logic for form submission or further steps can be added here
+                alert("Pembayaran dikonfirmasi!");
+            }
+        });
     </script>
 
     <!-- Bootstrap JS and dependencies -->

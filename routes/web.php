@@ -57,7 +57,9 @@ Route::get('/ReqKelasPayment', function(){
 
 
 
-
+Route::get('/RiwayatPelajar', function () {
+    return view('RiwayatKelasPelajar');
+});
 
 
 Route::get('/CaraKerjaPelajar', function () {

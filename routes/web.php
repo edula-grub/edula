@@ -57,7 +57,9 @@ Route::post('/DetailPengajar/{guru_id}/upload', [GuruController::class, 'store']
 
 
 
-
+Route::get('/RiwayatPelajar', function () {
+    return view('RiwayatKelasPelajar');
+});
 
 
 Route::get('/CaraKerjaPelajar', function () {

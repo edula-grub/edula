@@ -94,6 +94,10 @@ Route::get('/landing', function () {
 //     return view('rr');
 // });
 
+Route::get('/dashboardPengajar',function() {
+    return view('dashboardPengajar');
+});
+
 Route::get('/detail1', function () {
     return view('detail1');
 });

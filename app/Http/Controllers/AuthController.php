@@ -47,8 +47,7 @@ class AuthController extends Controller
             return redirect('/login')->with('faill', 'Invalid Username or Password');
         }
     }
-    public function ValidateRegister(Request $request)
-    {
+    public function ValidateRegister(Request $request){
         $validator = Validator::make($request->all(), [
             'USERNAME' => ['required', 'string', 'max:255'],
             'EMAIL' => ['required', 'string', 'email', 'max:255', 'unique:users'],

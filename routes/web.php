@@ -122,6 +122,9 @@ Route::get('/Konfirm', function () {
     return view('Pengajar.KonfirmasiPermintaanMengajar', compact('request'));
 });
 
+Route::get('/AmbilKelas', function () {
+    return view('ambilKelas');
+});
 
 
 

@@ -1,4 +1,8 @@
+@extends('Template.Master')
+
+@section('content')
 <body>
+
     <div class="container">
         <div class="">
             <div class="row">
@@ -391,3 +395,6 @@
         </div>
     </div>
 </body>
+
+@endsection
+

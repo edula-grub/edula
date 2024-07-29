@@ -140,6 +140,12 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+
+        .error-message {
+            display: none;
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 @endsection
 
@@ -178,6 +184,7 @@
                     <div class="time">
                         <h2>Waktu</h2>
                         <select id="timeSelect">
+                            <option value="" disabled selected>Pilih Waktu</option>
                             <option value="06:00-07:00">06:00 - 07:00</option>
                             <option value="07:00-08:00">07:00 - 08:00</option>
                             <option value="08:00-09:00">08:00 - 09:00</option>
@@ -196,6 +203,7 @@
                             <option value="21:00-22:00">21:00 - 22:00</option>
                         </select>
                     </div>
+                    <div class="error-message" id="errorMessage">Harap isi tanggal dan waktu.</div>
                     {{-- input hidden --}}
                     {{-- <input type="text" name="selectedDate" id="selectedDate"> --}}
                     <div class="mt-1 col-3 offset-9">
@@ -217,6 +225,7 @@
         </form>
     </div>
 @endsection
+
 @section('JS')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -226,6 +235,7 @@
             const nextMonthButton = document.getElementById('nextMonth');
             const timeSelect = document.getElementById('timeSelect');
             const selectButton = document.querySelector('.select-button');
+            const errorMessage = document.getElementById('errorMessage');
 
             let currentDate = new Date();
             let selectedDate = null;
@@ -274,7 +284,10 @@
             });
 
             selectButton.addEventListener('click', () => {
-                if (selectedDate) {
+                if (!selectedDate || !selectedTime) {
+                    errorMessage.style.display = 'block';
+                } else {
+                    errorMessage.style.display = 'none';
                     const selectedDateValue =
                         `${selectedDate.textContent} ${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}`;
                     console.log(`Selected Date: ${selectedDateValue}`);
@@ -283,9 +296,6 @@
                     document.getElementById('covertanggalselected').value = selectedDateValue;
                     document.getElementById('coverwaktuinput').value = selectedTime;
                     document.getElementById('subs').click();
-
-                } else {
-                    alert('Please select a date.');
                 }
             });
 

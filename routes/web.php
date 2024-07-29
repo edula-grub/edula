@@ -45,15 +45,15 @@ Route::post('/DetailPengajar/{guru_id}/upload', [GuruController::class, 'store']
 // ROUTER BENAR
 Route::get('/ReqKelasPayment', function(){
     return view('Pelajar.RequestKelasPayment');
-});
+})->name('ReqKelasPayment');
 
 // Route::get('/ReqKelasConfirm', function () {
 //     return view('Pelajar.RequestKelasConfirm');
 // });
 
-// Route::get('/ReqKelasSchedule', function () {
-//     return view('Pelajar.RequestKelasSchedule');
-// });
+Route::get('/ReqKelasSchedule', function () {
+    return view('Pelajar.RequestKelasSchedule');
+});
 
 
 

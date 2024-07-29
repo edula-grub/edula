@@ -43,9 +43,9 @@ Route::post('/DetailPengajar/{guru_id}/upload', [GuruController::class, 'store']
 
 // Route::get('/DetailPengajar', [GuruController::class, 'showall'])->name('DetailPengajar.showall');
 // ROUTER BENAR
-// Route::get('/ReqKelasPayment', function(){
-//     return view('Pelajar.RequestKelasPayment');
-// });
+Route::get('/ReqKelasPayment', function(){
+    return view('Pelajar.RequestKelasPayment');
+});
 
 // Route::get('/ReqKelasConfirm', function () {
 //     return view('Pelajar.RequestKelasConfirm');
@@ -127,6 +127,9 @@ Route::get('/AmbilKelas', function () {
 });
 
 
+
+Route::get('/payment/qris', [ipaymuController::class, 'initiateQrisPayment'])->name('payment.qris');
+Route::get('/payment/qris/callback', [ipaymuController::class, 'qrisPaymentCallback'])->name('payment.qris.callback');
 
 
 // DetailPengajar

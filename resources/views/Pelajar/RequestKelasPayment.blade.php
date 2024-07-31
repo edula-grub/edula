@@ -188,7 +188,7 @@
                 }, 5000); // Mengaktifkan kembali tombol setelah 5 detik
             } else if (bayarButton.innerText === "Konfirmasi Pembayaran") {
                 // Logic for form submission or further steps can be added here
-                alert("Pembayaran dikonfirmasi!");
+                alert("ngelinknya masi gagal");
             }
         });
     </script>

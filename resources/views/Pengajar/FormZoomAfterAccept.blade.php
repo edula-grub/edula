@@ -144,7 +144,8 @@
 </div>
 <h1 class="text-center mt-4 mb-3">Formulir Pertemuan Online dengan Pelajar</h1>
 <div class="container mt d-flex">
-    <form action="#">
+    <form id="meeting-form" action="#">
+        <div class="error-message" id="error-message" style="display: none; color:red;">Harap isi semua field sebelum mengirim.</div>
         <div class="form-group">
             <label for="topic">Topik Pertemuan</label>
             <input type="text" id="topic" name="topic">
@@ -167,8 +168,37 @@
                 <input type="time" id="end-time" name="end-time">
             </div>
         </div>
-
         <button type="submit" class="btn-submit align-self-end"><a class="kirim-btn text-center" href="#">Kirim</a></button>
     </form>
 </div>
+@endsection
+
+@section('JS')
+<script>
+    document.getElementById('meeting-form').addEventListener('submit', function(event) {
+        // Prevent form submission
+        event.preventDefault();
+
+        // Get all input elements
+        var inputs = document.querySelectorAll('#meeting-form input');
+        var isValid = true;
+
+        // Check each input to see if it is empty
+        inputs.forEach(function(input) {
+            if (input.value.trim() === '') {
+                isValid = false;
+            }
+        });
+
+        // Show or hide error message based on validation
+        var errorMessage = document.getElementById('error-message');
+        if (isValid) {
+            errorMessage.style.display = 'none';
+            // Form is valid; you can submit it or perform other actions here
+            alert('Formulir berhasil dikirim!');
+        } else {
+            errorMessage.style.display = 'block';
+        }
+    });
+</script>
 @endsection

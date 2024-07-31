@@ -31,6 +31,8 @@ Route::get('/UbahProfilPelajar', [UbahProfilController::class, 'ViewUbahProfil']
 Route::get('/UbahProfilPengajar', [UbahProfilController::class, 'ViewUbahProfil']);
 Route::post('/UbahProfilPengajar/update', [UbahProfilController::class, 'UpdateUbahProfil'])->name('updateprofil');
 
+Route::get('/UbahPasswordPengajar', [UbahProfilController::class, 'ViewUbahPassword']);
+Route::post('/UbahPasswordPengajar/update', [UbahProfilController::class, 'UpdateUbahPassword'])->name('updatepassword');
 
 
 // Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');
@@ -50,17 +52,18 @@ Route::get('/payment/qris/callback', [ipaymuController::class, 'qrisPaymentCallb
 
 // Route::get('/DetailPengajar', [GuruController::class, 'showall'])->name('DetailPengajar.showall');
 // ROUTER BENAR
-// Route::get('/ReqKelasPayment', function () {
-//     return view('Pelajar.RequestKelasPayment');
-// });
+Route::get('/ReqKelasPayment', function () {
+    return view('Pelajar.RequestKelasPayment');
+});
 
 // Route::get('/ReqKelasConfirm', function () {
 //     return view('Pelajar.RequestKelasConfirm');
 // });
 
-// Route::get('/ReqKelasSchedule', function () {
-//     return view('Pelajar.RequestKelasSchedule');
-// });
+Route::get('/ReqKelasSchedule', function () {
+    return view('Pelajar.RequestKelasSchedule');
+});
+
 
 
 

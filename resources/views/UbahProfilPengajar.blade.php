@@ -117,8 +117,9 @@
                         <div class="jenis-kelamin-parent">
                             <div class="jenis-kelamin1">Jenis Kelamin</div>
                             <select class="form-select" name="gender" id="gender">
-                                <option value="Female">Female</option>
-                                <option value="Male">Male</option>
+                                <option value="Female" {{ $datasiswa->gender == 'Female' ? 'selected' : '' }}>Female
+                                </option>
+                                <option value="Male" {{ $datasiswa->gender == 'Male' ? 'selected' : '' }}>Male</option>
                             </select>
                         </div>
 
@@ -149,23 +150,30 @@
                 </div>
                 <br>
 
-                <form form action="" id="katasandiya">
+                <form class="katasandi" method="POST" action="{{ route('updatepassword') }}">
+                    @csrf
                     <div class="">
                         <div class="katasandi">
                             <div class="nama-lengkap1">Kata Sandi Lama</div>
                             <div class="fill-namadepan1" style="width: 60%;">
                                 <div class="fill-namadepan-item"></div>
                                 <input class="nama-depan1" placeholder="Kata sandi lama" type="password"
-                                    name="katasandilama" />
+                                    name="password_lama" />
                             </div>
                             <br>
                             <div class="nama-lengkap1">Kata Sandi Baru</div>
                             <div class="fill-namabelakang1" style="width: 60%;">
                                 <div class="fill-namabelakang-item"></div>
                                 <input class="nama-belakang1" placeholder="Kata sandi baru" type="password"
-                                    name="katasandibaru" />
+                                    name="password_baru" />
                             </div>
-
+                            <br>
+                            <div class="nama-lengkap1">Konfirmasi Kata Sandi Baru</div>
+                            <div class="fill-namabelakang1" style="width: 60%;">
+                                <div class="fill-namabelakang-item"></div>
+                                <input class="nama-belakang1" placeholder="Konfirmasi kata sandi baru" type="password"
+                                    name="password_baru_confirmation" />
+                            </div>
                             <div class="save-button-container1" style="margin: 100px 400px 0 0">
                                 <button class="button30" type="submit">
                                     <div class="simpan1">Simpan</div>
@@ -191,7 +199,7 @@
                         <div class="frame-child102" style="width: 70%"></div>
                     </div>
                 </div>
-                <div class="textkebijakan" style="width: 300px, text-align: justify">
+                <div class="textkebijakan" style="width: 300px; text-align: justify">
                     <p style="font-size: 14px">
                         <br>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, molestiae minima. <br>
@@ -200,7 +208,6 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, molestiae minima. <br>
                     </p>
                 </div>
-
             </div>
         </main>
     </div>
@@ -208,20 +215,20 @@
 
 @section('JS')
     <script>
-        var divsandi = document.getElementById("rendersandi").innerHTML
-        var profile = document.getElementById("renderpick").innerHTML
-        var about = document.getElementById("renderabout").innerHTML
-        document.getElementById("renderabout").innerHTML = ""
-        document.getElementById("rendersandi").innerHTML = ''
+        var divsandi = document.getElementById("rendersandi").innerHTML;
+        var profile = document.getElementById("renderpick").innerHTML;
+        var about = document.getElementById("renderabout").innerHTML;
+        document.getElementById("renderabout").innerHTML = "";
+        document.getElementById("rendersandi").innerHTML = "";
 
         function render(paramrender) {
-            document.getElementById("renderpick").innerHTML = ""
+            document.getElementById("renderpick").innerHTML = "";
             if (paramrender == 1) {
-                document.getElementById("renderpick").innerHTML = profile
+                document.getElementById("renderpick").innerHTML = profile;
             } else if (paramrender == 2) {
-                document.getElementById("renderpick").innerHTML = divsandi
+                document.getElementById("renderpick").innerHTML = divsandi;
             } else {
-                document.getElementById("renderpick").innerHTML = about
+                document.getElementById("renderpick").innerHTML = about;
             }
         }
     </script>

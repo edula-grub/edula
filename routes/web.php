@@ -26,6 +26,7 @@ Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('reg
 Route::any('/ReqPelajaran', [PelajarState::class, 'BuatPenajuan'])->name('BuatPenajuan');
 Route::any('/dashboard', [PelajarState::class, 'dashboard'])->name('dashboard');
 Route::get('/Rom', [PelajarState::class, 'Edetail'])->name('detail');
+Route::get('/AmbilKelas', [PelajarState::class, 'AmbilKelas'])->name('AmbilKelas');
 
 Route::get('/UbahProfilPelajar', [UbahProfilController::class, 'ViewUbahProfil']);
 Route::get('/UbahProfilPengajar', [UbahProfilController::class, 'ViewUbahProfil']);
@@ -134,10 +135,6 @@ Route::get('/CaraKerjaPelajar', function () {
 //     // dd(session())
 //     return view('Pengajar.KonfirmasiPermintaanMengajar', compact('request'));
 // });
-
-Route::get('/AmbilKelas', function () {
-    return view('ambilKelas');
-});
 
 
 

@@ -7,15 +7,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* .container {
-                                                            width: 400px;
-                                                            margin: 50px auto;
-                                                            text-align: center;
-                                                            padding: 30px;
-                                                            border: 1px solid #ccc;
-                                                            border-radius: 5px;
-                                                        } */
-         .hidden{
-                display: none;
+                                                                                                width: 400px;
+                                                                                                margin: 50px auto;
+                                                                                                text-align: center;
+                                                                                                padding: 30px;
+                                                                                                border: 1px solid #ccc;
+                                                                                                border-radius: 5px;
+                                                                                            } */
+        .hidden {
+            display: none;
         }
 
         .container {
@@ -34,7 +34,7 @@
             color: #275FCA;
         }
 
-        h2{
+        h2 {
             color: #275FCA;
         }
 
@@ -87,17 +87,19 @@
 @endsection
 
 @section('content')
-    <div class="container m-auto mt-2">
+    <div class="container m-auto" style="margin-top:20dvh !important;">
         <h1>Pilih Metode Pembayaran</h1>
         <form action="" method="POST">
             @csrf
             <div class="payment-methods text-center">
                 <div class="payment-method d-flex align-items-center">
-                    <input style="margin: 0px" type="radio" name="payment" id="bank-transfer" value="bank transfer" onclick="togglePaymentMethod()">
+                    <input style="margin: 0px" type="radio" name="payment" id="bank-transfer" value="bank transfer"
+                        onclick="togglePaymentMethod()">
                     <p style="margin: 0px;margin-bottom:3px;margin-left: 1rem;">Transfer Bank</p>
                 </div>
                 <div class="payment-method d-flex alignment-item-center">
-                    <input style="margin: 0px" type="radio" name="payment" id="qris" value="qris" onclick="togglePaymentMethod()">
+                    <input style="margin: 0px" type="radio" name="payment" id="qris" value="qris"
+                        onclick="togglePaymentMethod()">
                     <p style="margin: 0px;margin-bottom:3px;margin-left: 1rem;">QRIS</p>
                 </div>
             </div>
@@ -117,11 +119,12 @@
                 </div>
             </div>
 
-            <div class="justify-content-center row hidden" style="height: 60dvh" id="qris-iframe">
-                <iframe class="col-10" src="https://www.paper.id/blog/wp-content/uploads/2022/11/csan-qr-a.jpg"
-                    title="QR Code"></iframe>
+            <div id="qris">
+                <div class="justify-content-center row hidden" style="height: 60dvh" id="qris-iframe">
+                    <iframe class="col-10" src="https://www.paper.id/blog/wp-content/uploads/2022/11/csan-qr-a.jpg"
+                        title="QR Code"></iframe>
+                </div>
             </div>
-
 
             <div class="total">
                 <p>Total: Rp 100,000</p>

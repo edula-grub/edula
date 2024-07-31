@@ -7,6 +7,50 @@ use Illuminate\Support\Facades\DB;
 
 class PelajarState extends Controller
 {
+
+    function AmbilKelas(Request $request)
+    {
+        $kelas = DB::table('bidrequests')->where('status', "OPENWAR")->get();
+        return view('ambilKelas', compact('kelas'));
+    }
+
+    function Edetail(Request $request)
+    {
+        $Detail = DB::table('bidrequests')
+            ->join('siswa_aktif', 'bidrequests.siswa_id', '=', 'siswa_aktif.id')
+            ->join('guru_aktif', 'bidrequests.guru_id', '=', 'guru_aktif.id')
+            ->where('bidrequests.id', $request->id)
+            ->first();
+        empty($Detail) ? $Detail = DB::table('bidrequests')
+            ->join('siswa_aktif', 'bidrequests.siswa_id', '=', 'siswa_aktif.id')
+            ->where('bidrequests.id', $request->id)
+            ->first() : '';
+        $reqlist = DB::table('biderlists')->where('bidrequest_id', $request->id)
+            ->join('guru_aktif', 'biderlists.guru_id', '=', 'guru_aktif.id')
+            ->get();
+
+        foreach ($reqlist as $key => $value) {
+            $reviews = DB::table('bidrequests')->where('guru_id', $value->guru_id)->get();
+            $averageRating = $reviews->avg('rating_siswa_ke_guru');
+            $totalReviews = $reviews->count();
+            $ratingsCount = [
+                5 => $reviews->where('rating_siswa_ke_guru', 5)->count(),
+                4 => $reviews->where('rating_siswa_ke_guru', 4)->count(),
+                3 => $reviews->where('rating_siswa_ke_guru', 3)->count(),
+                2 => $reviews->where('rating_siswa_ke_guru', 2)->count(),
+                1 => $reviews->where('rating_siswa_ke_guru', 1)->count(),
+            ];
+
+            $reqlist[$key]->averageRating = $averageRating;
+            $reqlist[$key]->totalReviews = $totalReviews;
+            $reqlist[$key]->ratingsCount = $ratingsCount;
+        }
+
+        // dd($reqlist);
+
+        return view('Detail', compact('Detail', 'reqlist'));
+    }
+
     function dashboard()
     {
         $siswaId = session('siswa')->id;

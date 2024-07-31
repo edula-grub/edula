@@ -39,13 +39,18 @@
 
 
             <div class="dropdown">
+
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Pelajar
+                    @if (Route::currentRouteName() == 'DetailPengajar.show')
+                        Pengajar
+                    @elseif (session('gurus'))
+                        Pelajar
+                    @endif
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Pengajar</a></li>
-                    {{-- if gurus --}}
-                    @if (session('gurus'))
+                    @if (Route::currentRouteName() == 'DetailPengajar.show')
+                        <li><a class="dropdown-item" href="/dashboard">Pelajar</a></li>
+                    @elseif (session('gurus'))
                         <li><a class="dropdown-item" href="/JadiPengajar">Pengajar</a></li>
                     @else
                         <li><a class="dropdown-item btn btn-primary" href="/JadiPengajar">Yuk Jadi Guru</a></li>

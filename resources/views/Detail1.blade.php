@@ -3,7 +3,8 @@
     <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
     <link rel="stylesheet" href="{{ url('/EdulaExport/DetailKelasPelajar1.css') }}" />
     <link rel="stylesheet" href="{{ url('/EdulaExport/SertifikasiPortofolio.css') }}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers Quarrel:wght@400&display=swap" />
@@ -17,7 +18,8 @@
             cursor: pointer;
             transition: color 0.2s ease;
         }
-        .stars i.active{
+
+        .stars i.active {
             color: #FFD700;
         }
     </style>
@@ -113,7 +115,8 @@
                                     </div> --}}
                                     <div class="mb-3">
                                         <label for="exampleInputMataPelajaran" class="form-label">Mata Pelajaran</label>
-                                        <input type="text" class="form-control" id="exampleInputMataPelajaran" aria-describedby="emailHelp" name="nama_mapel">
+                                        <input type="text" class="form-control" id="exampleInputMataPelajaran"
+                                            aria-describedby="emailHelp" name="nama_mapel">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputUlasan" class="form-label">Ulasan</label>
@@ -132,12 +135,12 @@
                         PENGAJARMU
                     </div>
 
-                    @for ($i = 0; $i < 10; $i++)
+                    {{-- @for ($i = 0; $i < 10; $i++) --}}
+                    @foreach ($reqlist as $item)
                         <div class="my-2 col-9 teacher-info5">
                             <div class="teacher-profile">
                                 <img class="profilepicture-icon11" loading="lazy" alt=""
                                     src="{{ url('EdulaExport/public/profilepicture-1.svg') }}">
-
                                 <div class="teacher-name">
                                     <div class="teacher-name-rating">
                                         <div class="budiman-h7">Budiman H</div>
@@ -166,7 +169,8 @@
                                 Terima
                             </a>
                         </div>
-                    @endfor
+                    @endforeach
+
 
                 </div>
             </div>
@@ -175,26 +179,25 @@
 @endsection
 
 @section('JS')
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const stars = document.querySelectorAll('.stars i');
-        const ratingInput = document.getElementById('rating');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.stars i');
+            const ratingInput = document.getElementById('rating');
 
-        stars.forEach((star, index1) => {
-            star.addEventListener("click", () => {
-                let ratingValue = index1 + 1;
-                ratingInput.value = ratingValue;
+            stars.forEach((star, index1) => {
+                star.addEventListener("click", () => {
+                    let ratingValue = index1 + 1;
+                    ratingInput.value = ratingValue;
 
-                stars.forEach((star, index2) => {
-                    if (index1 >= index2) {
-                        star.classList.add('active');
-                    } else {
-                        star.classList.remove('active');
-                    }
+                    stars.forEach((star, index2) => {
+                        if (index1 >= index2) {
+                            star.classList.add('active');
+                        } else {
+                            star.classList.remove('active');
+                        }
+                    });
                 });
             });
         });
-    });
-</script>
-
+    </script>
 @endsection

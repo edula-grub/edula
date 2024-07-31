@@ -19,11 +19,13 @@ Route::post('/login', [AuthController::class, 'ValidateLogin'])->name('login');
 Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('register');
 
 // dasboard perlu di benarkan
-Route::get('/dashboard', function () {
-    return view('welcome');
-});
+// Route::get('/dashboard', function () {
+//     return view('welcome');
+// });
 
 Route::any('/ReqPelajaran', [PelajarState::class, 'BuatPenajuan'])->name('BuatPenajuan');
+Route::any('/dashboard', [PelajarState::class, 'dashboard'])->name('dashboard');
+Route::get('/Rom', [PelajarState::class, 'Edetail'])->name('detail');
 
 Route::get('/UbahProfilPelajar', [UbahProfilController::class, 'ViewUbahProfil']);
 Route::get('/UbahProfilPengajar', [UbahProfilController::class, 'ViewUbahProfil']);
@@ -31,7 +33,7 @@ Route::post('/UbahProfilPengajar/update', [UbahProfilController::class, 'UpdateU
 
 
 
-Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');
+// Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');
 
 Route::any('/JadiPengajar', [PengajarController::class, 'JadiPengajar'])->name('JadiPengajar');
 
@@ -42,7 +44,9 @@ Route::get('/DetailPengajar', [GuruController::class, 'show'])->name('DetailPeng
 Route::post('/DetailPengajar/{guru_id}/upload', [GuruController::class, 'store'])->name('DetailPengajar.store');
 Route::get('/payment/qris', [ipaymuController::class, 'initiateQrisPayment'])->name('payment.qris');
 Route::get('/payment/qris/callback', [ipaymuController::class, 'qrisPaymentCallback'])->name('payment.qris.callback');
-Route::get('/riwayatpengajar/{id}', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar.show');
+
+
+// Route::get('/riwayatpengajar/{id}', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar.show');
 
 // Route::get('/DetailPengajar', [GuruController::class, 'showall'])->name('DetailPengajar.showall');
 // ROUTER BENAR

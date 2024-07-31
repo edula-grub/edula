@@ -66,9 +66,9 @@ Route::get('/payment/qris/callback', [ipaymuController::class, 'qrisPaymentCallb
 
 
 
-// Route::get('/CaraKerjaPelajar', function () {
-//     return view('caraKerjaPelajar');
-// });
+Route::get('/CaraKerjaPelajar', function () {
+    return view('caraKerjaPelajar');
+});
 
 // Route::get('/CaraKerjaPengajar', function () {
 //     return view('caraKerjaPengajar');

@@ -4,6 +4,24 @@
             @empty($selesai)
             @else
                 @foreach ($selesai as $item)
+                    {{-- @dump($item) --}}
+                    <div class="kotak">
+                        <div class="kotakimg">
+                            <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
+                        </div>
+                        <div class="kotakisi">
+                            <h5>{{ $item->nama_mapel }} </h5>
+                            <p> @php
+                                $hari = date('l', strtotime($item->jadwal));
+                                $tanggal = date('d F Y', strtotime($item->jadwal));
+                                echo $hari . ', ' . $tanggal;
+                            @endphp</p>
+                        </div>
+                        <div class="kotakbutton">
+                            <button class="statusbutton">{{ $item->status }}</button>
+                        </div>
+                    </div>
+
                     <div class="col-12">
                         <div class="card mb-3">
                             <div class="row g-0 p-3">

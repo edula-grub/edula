@@ -16,8 +16,8 @@
 @endsection
 
 @section('content')
-    @include('welcome')
     <div class="riwayat-pengajar">
+        @include('welcome')
         <header class="teacher-info2">
             <div class="frame-parent46">
                 <div class="profilepicture-parent">
@@ -142,10 +142,9 @@
     {{-- http://localhost:8000/DetailPengajar#idpresentation if detect like this target nav-tab dengan id idpresentation lalu click --}}
     <script>
         $(document).ready(function() {
-            if (window.location.hash) {
-                var hash = window.location.hash;
-                console.log(hash);
-                document.getElementById(hash.replace('#', '')).click();
+            var hash = window.location.hash;
+            if (hash) {
+                $(hash).click();
             }
         });
     </script>

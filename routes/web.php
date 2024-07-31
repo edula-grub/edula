@@ -117,7 +117,8 @@ Route::get('/FormZoom', function(){
 });
 
 Route::get('/Konfirm', function(){
-    return view('Pengajar.KonfirmasiPermintaanMengajar');
+    // dd(session())
+    return view('Pengajar.KonfirmasiPermintaanMengajar',compact('request'));
 });
 
 

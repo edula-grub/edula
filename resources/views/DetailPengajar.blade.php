@@ -112,16 +112,16 @@
                         @include('Pengajar/DeskripsiPengajar')
                     </div>
                 </div>
-                <div class="col-12 tab-pane fade" id="kelas-terjadwal" role="tabpanel"
+                <div class="col-12 tab-pane fade show active" id="kelas-terjadwal" role="tabpanel"
                     aria-labelledby="kelas-terjadwal-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                        <p class="mt-3">Konten Kelas Terjadwal</p>
+                        @include('Pelajar.KelasSelesai')
                     </div>
                 </div>
                 <div class="col-12 tab-pane fade" id="kelas-selesai" role="tabpanel"
                     aria-labelledby="kelas-selesai-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                        <p class="mt-3">Konten Kelas Selesai</p>
+                        @include('Pelajar.KelasTerjadwaal')
                     </div>
                 </div>
                 <div class="col-12 tab-pane fade" id="sertifikasi" role="tabpanel" aria-labelledby="sertifikasi-tab">

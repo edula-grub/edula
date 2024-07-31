@@ -132,9 +132,9 @@ Route::get('/payment/qris/callback', [ipaymuController::class, 'qrisPaymentCallb
 //     return view('Pengajar.KonfirmasiPermintaanMengajar', compact('request'));
 // });
 
-// Route::get('/AmbilKelas', function () {
-//     return view('ambilKelas');
-// });
+Route::get('/AmbilKelas', function () {
+    return view('ambilKelas');
+});
 
 
 

@@ -7,6 +7,38 @@ use Illuminate\Support\Facades\DB;
 
 class PelajarState extends Controller
 {
+    function dashboard()
+    {
+        $siswaId = session('siswa')->id;
+        $siswa = DB::table('siswa_aktif')->where('id', $siswaId)->first();
+        $reviews = DB::table('bidrequests')->where('siswa_id', $siswaId)->get();
+        $averageRating = $reviews->avg('rating_siswa_ke_guru');
+        $totalReviews = $reviews->count();
+        $ratingsCount = [
+            5 => $reviews->where('rating_siswa_ke_guru', 5)->count(),
+            4 => $reviews->where('rating_siswa_ke_guru', 4)->count(),
+            3 => $reviews->where('rating_siswa_ke_guru', 3)->count(),
+            2 => $reviews->where('rating_siswa_ke_guru', 2)->count(),
+            1 => $reviews->where('rating_siswa_ke_guru', 1)->count(),
+        ];
+
+
+        $selesai = DB::table('bidrequests')->where('siswa_id', $siswaId)->where('status', 'SELESAI')->get();
+        $tidakselesai = DB::table('bidrequests')->where('siswa_id', $siswaId)->where('status', '!=', 'SELESAI')->get();
+
+
+        return view('Pelajar.DasboardPelajar', compact(
+            'siswa',
+            'reviews',
+            'averageRating',
+            'totalReviews',
+            'ratingsCount',
+            'reviews',
+            'selesai',
+            'tidakselesai'
+
+        ));
+    }
 
     // request to gpt-3
     function gpt()

@@ -29,6 +29,8 @@ Route::get('/UbahProfilPelajar', [UbahProfilController::class, 'ViewUbahProfil']
 Route::get('/UbahProfilPengajar', [UbahProfilController::class, 'ViewUbahProfil']);
 Route::post('/UbahProfilPengajar/update', [UbahProfilController::class, 'UpdateUbahProfil'])->name('updateprofil');
 
+Route::get('/UbahPasswordPengajar', [UbahProfilController::class, 'ViewUbahPassword']);
+Route::post('/UbahPasswordPengajar/update', [UbahProfilController::class, 'UpdateUbahPassword'])->name('updatepassword');
 
 
 Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');

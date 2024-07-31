@@ -7,15 +7,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* .container {
-                                                                                                width: 400px;
-                                                                                                margin: 50px auto;
-                                                                                                text-align: center;
-                                                                                                padding: 30px;
-                                                                                                border: 1px solid #ccc;
-                                                                                                border-radius: 5px;
-                                                                                            } */
+                                                                                                            width: 400px;
+                                                                                                            margin: 50px auto;
+                                                                                                            text-align: center;
+                                                                                                            padding: 30px;
+                                                                                                            border: 1px solid #ccc;
+                                                                                                            border-radius: 5px;
+                                                                                                        } */
         .hidden {
-            display: none;
+            display: none !important;
         }
 
         .container {
@@ -119,11 +119,9 @@
                 </div>
             </div>
 
-            <div id="qris">
-                <div class="justify-content-center row hidden" style="height: 60dvh" id="qris-iframe">
-                    <iframe class="col-10" src="https://www.paper.id/blog/wp-content/uploads/2022/11/csan-qr-a.jpg"
-                        title="QR Code"></iframe>
-                </div>
+            <div class="justify-content-center row hidden" style="height: 60dvh" id="qris-iframe">
+                <iframe class="col-10" src="https://www.paper.id/blog/wp-content/uploads/2022/11/csan-qr-a.jpg"
+                    title="QR Code"></iframe>
             </div>
 
             <div class="total">

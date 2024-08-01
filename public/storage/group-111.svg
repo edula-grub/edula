@@ -1,4 +1,4 @@
-<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="10" cy="8.20585" rx="10" ry="7.51127" fill="#4EE381"/>
-<path d="M6 8.72739L8.88679 11.2103L15 5.95239" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="8" cy="8.25" r="7.5" fill="#4EE381"/>
+<path d="M5 8.77083L7.16509 11.25L11.75 6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

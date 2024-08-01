@@ -52,7 +52,7 @@
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
-                <p class="account-text">Tidak ada akun? <a href="#" id="sign-up-btn2">Daftar</a></p>
+                <p class="account-text">Tidak ada akun? <a href="#" id="sign-up-btn2 btn-primary">Daftar</a></p>
             </form>
             <form id="registerForm" action="{{ route('register') }}" class="sign-up-form" method='POST'>
                 @csrf
@@ -99,7 +99,7 @@
                     <h3>Member of Brand?</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
                         minima iure?</p>
-                    <button class="btn" id="sign-in-btn">Masuk</button>
+                    <button class="btn btn-primary" id="sign-in-btn">Masuk</button>
                 </div>
                 <img src="signin.svg" alt="" class="image">
             </div>
@@ -108,7 +108,7 @@
                     <h3>New to Brand?</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
                         minima iure?</p>
-                    <button class="btn" id="sign-up-btn">Daftar</button>
+                    <button class="btn btn-primary" id="sign-up-btn">Daftar</button>
                 </div>
                 <img src="signup.svg" alt="" class="image">
             </div>

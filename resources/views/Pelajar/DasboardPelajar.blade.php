@@ -16,13 +16,16 @@
 @endsection
 
 @section('content')
+    @include('components.navbarPelajar')
     <div class="riwayat-pengajar">
         {{-- @include('welcome') --}}
         <header class="teacher-info2">
             <div class="frame-parent46">
                 <div class="profilepicture-parent">
-                    <img class="profilepicture-icon1" loading="lazy" alt=""
-                        src="{{ url('EdulaExport/public/profilepicture.svg') }}" />
+                    <div class="profilepicture-icon1">
+                        <img class="profilepicture-icon1 rounded-circle " loading="lazy" alt=""
+                            src="{{ session('siswa')->profile }}" style="object-fit: cover;object-position: top">
+                    </div>
                     <div class="bio">
                         <div class="name-and-rating">
                             <div class="budiman-h-container">
@@ -120,12 +123,12 @@
                 <div class="col-12 tab-pane fade show active" id="kelas-terjadwal" role="tabpanel"
                     aria-labelledby="kelas-terjadwal-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                        @include('Pelajar.KelasSelesai')
+                        @include('Pelajar.KelasTerjadwaal')
                     </div>
                 </div>
                 <div class="col-12 tab-pane fade" id="kelas-selesai" role="tabpanel" aria-labelledby="kelas-selesai-tab">
                     <div class="container-fluid poinsetpanel col-12">
-                        @include('Pelajar.KelasTerjadwaal')
+                        @include('Pelajar.KelasSelesai')
                     </div>
                 </div>
                 <div class="col-12 tab-pane fade" id="sertifikasi" role="tabpanel" aria-labelledby="sertifikasi-tab">

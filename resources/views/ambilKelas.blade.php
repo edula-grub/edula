@@ -86,7 +86,7 @@
             font-style: italic;
         }
 
-        {{ }} .poppins-semibold-italic {
+        .poppins-semibold-italic {
             font-family: "Poppins", sans-serif;
             font-weight: 600;
             font-style: italic;

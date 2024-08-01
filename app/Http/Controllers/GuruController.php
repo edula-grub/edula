@@ -40,8 +40,8 @@ class GuruController extends Controller
         // dd($reviews);
 
 
-        $selesai = DB::table('bidrequests')->where('guru_id', $guruId)->where('status', 'SELESAI')->get();
-        $tidakselesai = DB::table('bidrequests')->where('guru_id', $guruId)->where('status', '!=', 'SELESAI')->get();
+        $selesai = DB::table('bidrequests')->where('guru_id', $guruId)->where('status', 'DONE')->get();
+        $tidakselesai = DB::table('bidrequests')->where('guru_id', $guruId)->where('status', '!=', 'DONE')->get();
 
 
         return view('DetailPengajar', compact(

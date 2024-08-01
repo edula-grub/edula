@@ -10,32 +10,26 @@
         <div class="collapse navbar-collapse mx-2" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url('/CaraKerjaPelajar') }}">Cara
+                    <a class="nav-link active" aria-current="page" href="{{ url('/CaraKerjaPengajar') }}">Cara
                         Kerja</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/ReqPelajaran') }}">Request Kelas</a>
+                    <a class="nav-link" href="{{ url('/AmbilKelas') }}">Ambil Kelas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/dashboard') }}">Cek Riwayat</a>
+                    <a class="nav-link" href="{{ url('/DetailPengajar') }}">Cek Riwayat</a>
                 </li>
             </ul>
 
 
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Pelajar
+                    Pengajar
                 </button>
                 <ul class="dropdown-menu">
-                    @if (session('gurus'))
-                        <li>
-                            <a class="dropdown-item" href="{{ url('/DetailPengajar') }}">Pengajar</a>
-                        </li>
-                    @elseif (!session('gurus'))
-                        <li>
-                            <a class="dropdown-item" href="{{ url('/JadiPengajar') }}">Yuk Jadi Guru</a>
-                        </li>
-                    @endif
+                    <li>
+                        <a class="dropdown-item" href="{{ url('/dashboard') }}">Pelajar </a>
+                    </li>
                 </ul>
             </div>
 

@@ -35,9 +35,9 @@ class PengajarController extends Controller
 
 
             //save 'siswa' session data temporarily and forget 'siswa' session
-            $siswa = session('siswa');
-            session(['tempsiswa' => $siswa]);
-            session()->forget('siswa');
+            // $siswa = session('siswa');
+            // session(['tempsiswa' => $siswa]);
+            // session()->forget('siswa');
         }
         return view('Pengajar.JadiPengajar');
     }

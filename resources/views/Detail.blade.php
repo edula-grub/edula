@@ -162,6 +162,7 @@
                     @endsession
                 </div>
 
+
                 <div class="col-4 Pengajar secmen1 row align-items-center">
                     <div class="col-12">
                         PENGAJARMU
@@ -170,7 +171,7 @@
                     @else
                         @foreach ($reqlist as $key => $item)
                             <div class="my-2 col-9 teacher-info5">
-                                <div class="teacher-profile">
+                                <a href="/DetailPengajar?guru_id={{ $item->id }}" class="teacher-profile">
                                     <img class="profilepicture-icon11" loading="lazy" alt=""
                                         src="{{ url('EdulaExport/public/profilepicture-1.svg') }}">
                                     <div class="teacher-name">
@@ -197,7 +198,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <div class="col-3">
                                 {{-- if zoomlink ga ada --}}

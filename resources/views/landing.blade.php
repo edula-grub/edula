@@ -24,9 +24,9 @@
     />
   </head>
   <body>
-      <b class="lastest-news-and1">Lastest News and Resources</b>
+      <b class="lastest-news-and1">Berita Terbaru</b>
       <div class="see-the-developments1">
-        See the developments that have occurred to Skillines in the world
+        Lihatlah perkembangan yang terjadi pada Skill-skill di dunia
       </div>
       <div class="rectangle-parent14">
         <img class="rectangle-icon" alt="" src="storage/rectangle-32@2x.png" />
@@ -62,7 +62,7 @@
         <div class="frame-child21"></div>
       </div>
       <div class="zooms-earliest-investors1">
-        Zoom’s earliest investors are betting millions on a better Zoom for
+        Zoom's earliest investors are betting millions on a better Zoom for
         schools
       </div>
       <div class="zoom-was-never1">
@@ -295,22 +295,6 @@
           src="storage/group-511.svg"
         />
       </div>
-      <div class="landing-page-child73"></div>
-      <div class="lorem-ipsum-dolor21">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      </div>
-      <div class="learn-more1">Learn more</div>
-      <div class="lorem-ipsum-dolor-container1">
-        <span class="l3">L</span>
-        <span>orem ipsum dolor sit amet, consectetur adipisicing elit</span>
-      </div>
-      <div class="landing-page-child74"></div>
-      <div class="landing-page-child75"></div>
-      <img class="landing-page-child76" alt="" src="storage/group-171.svg" />
-
-      <div class="launch-announcement26"></div>
       <div class="edula-is-lorem1">
         Edula is Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
         do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -318,7 +302,7 @@
         aliquip ex ea commodo consequat.
       </div>
       <div class="what-is-edula-container1">
-        <span>What is </span>
+        <span>Apa itu </span>
         <span class="edula2">Edula? </span>
       </div>
       <div class="rectangle-parent18">
@@ -332,8 +316,8 @@
 
         <div class="frame-child30"></div>
       </div>
-      <div class="for-instructors1">FOR INSTRUCTORS</div>
-      <div class="for-students1">FOR STUDENTS</div>
+      <div class="for-instructors1">PENGAJAR</div>
+      <div class="for-students1">PELAJAR</div>
       <main class="main-content">
         <section class="main-content-child"></section>
         <section class="header-bg-wrapper">
@@ -400,16 +384,15 @@
                   <div class="slogan-container">
                     <div class="studying-online-is-now-much-ea-group">
                       <b class="studying-online-is1"
-                        >Studying Online is now much easier</b
+                        >Belajar Online Sekarang Jauh Lebih Mudah</b
                       >
                       <div class="edula-is-an1">
-                        Edula is an interesting platform that help you to find a
-                        coach to teach you what you want
+                        Edula adalah platform menarik yang membantu Anda menemukan pelatih untuk mengajarkan apa yang Anda inginkan
                       </div>
                     </div>
                     <button class="group-button">
                       <div class="frame-child31"></div>
-                      <div class="join-for-free1">Join for free</div>
+                      <div class="join-for-free1">Gabung  Gratis</div>
                     </button>
                   </div>
                 </div>
@@ -429,7 +412,7 @@
                         <div class="class-name-container">
                           <b class="k1">250k</b>
                         </div>
-                        <div class="class-scheduled1">Class Scheduled</div>
+                        <div class="class-scheduled1">Kelas Terjadwal</div>
                       </div>
                     </div>
                   </div>

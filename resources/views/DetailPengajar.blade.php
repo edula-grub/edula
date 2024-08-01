@@ -68,7 +68,7 @@
                                 style="text-decoration: none">Ubah Profil</a>
                         </div>
                         <div class="button4">
-                            <a class="keluar1" href="{{ url('/dashboard') }}">Keluar</a>
+                            <a class="keluar1" href="{{ url('/dashboard') }}" style="text-decoration: none">Keluar</a>
                         </div>
                     </div>
                 </div>

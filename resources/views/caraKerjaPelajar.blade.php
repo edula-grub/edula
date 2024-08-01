@@ -15,13 +15,12 @@
                     <div class="col text-center">
                         <img src="{{ asset('./img/Step1Icon.png') }}" alt="" class="img-fluid">
                     </div>
-
                     <div class="col d-flex align-items-center justify-content-start">
                         <div class="text-start" alt="Step">
                             <h2 class="text-primary fw-semibold">Step 01</h2>
-                            <p class="col-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus
-                                quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet
-                                voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <p class="col-9">Pelajar dapat membuat permintaan kelas dengan memilih tanggal
+                                dan jam yang diinginkan untuk les. Pastikan memilih waktu yang sesuai
+                                dengan jadwal pelajar.?</p>
                         </div>
                     </div>
                 </div>
@@ -33,9 +32,9 @@
                     <div class="col d-flex align-items-center justify-content-end">
                         <div class="text-end" alt="Step">
                             <h2 class="text-primary fw-semibold">Step 02</h2>
-                            <p class="col-9 offset-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur
-                                amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <p class="col-9 offset-3">Pelajar perlu mengisi deskripsi terkait pelajaran yang
+                                ingin dipelajari. Ini termasuk nama pelajaran, deskripsi singkat tentang apa
+                                yang ingin dipelajari, harga yang diinginkan, serta jenjang pendidikan yang relevan.</p>
                         </div>
                     </div>
 
@@ -55,9 +54,9 @@
                     <div class="col d-flex align-items-center justify-content-start">
                         <div class="text-start" alt="Step">
                             <h2 class="text-primary fw-semibold">Step 03</h2>
-                            <p class="col-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus
-                                quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet
-                                voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <p class="col-9">Setelah mengisi deskripsi, pelajar harus memilih metode pembayaran yang
+                                tersedia. Lakukan pembayaran sesuai dengan metode yang dipilih untuk menyelesaikan
+                                proses pendaftaran.</p>
                         </div>
                     </div>
                 </div>
@@ -69,9 +68,9 @@
                     <div class="col d-flex align-items-center justify-content-end">
                         <div class="text-end" alt="Step">
                             <h2 class="text-primary fw-semibold">Step 04 </h2>
-                            <p class="col-9 offset-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-                                accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur
-                                amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <p class="col-9 offset-3">Setelah pengajar menerima permintaan pelajar, sesi les akan dilakukan
+                                melalui Zoom pada waktu yang telah ditentukan. Pastikan pelajar siap untuk mengikuti sesi
+                                pada waktu yang telah disepakati.</p>
                         </div>
                     </div>
 
@@ -89,8 +88,7 @@
                 <div class="banner">
                     <div class="banner-content">
                         <h1 class="fw-semibold text-primary">Ayo, request kelas sekarang!</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut
-                            nisi tellus.</p>
+                        <p>Dapatkan Pengajar yang kompeten dan terampil untuk membantu kesulitanmu.</p>
                         <a href="{{ url('/ReqPelajaran') }}" class="btn btn-warning fw-semibold text-white">Request
                             Kelas</a>
                     </div>

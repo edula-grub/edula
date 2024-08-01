@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lovers Quarrel:wght@400&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito Sans:wght@400;600;700&display=swap" />
+
     <style>
         body {
             /* font-family: Arial, sans-serif; */
@@ -47,11 +48,11 @@
         }
 
         /* .back-button:hover,
-                                                                                                                                .select-button:hover {
-                                                                                                                                    background-color: #999;
-                                                                                                                                    color: white;
-                                                                                                                                    font-weight: 500;
-                                                                                                                                } */
+                                                                                                                                                            .select-button:hover {
+                                                                                                                                                                background-color: #999;
+                                                                                                                                                                color: white;
+                                                                                                                                                                font-weight: 500;
+                                                                                                                                                            } */
     </style>
     {{-- <link rel="stylesheet" href="{{ url('/calendar/styles.css') }}"> --}}
     <style>
@@ -74,19 +75,19 @@
         }
 
         /*.back-button,
-                                                                                                                             .select-button {
-                                                                                                                                        background-color: #ccc;
-                                                                                                                                        border: none;
-                                                                                                                                        border-radius: 5px;
-                                                                                                                                        padding: 10px;
-                                                                                                                                        color: white;
-                                                                                                                                        cursor: pointer;
-                                                                                                                                    } */
+                                                                                                                                                         .select-button {
+                                                                                                                                                                    background-color: #ccc;
+                                                                                                                                                                    border: none;
+                                                                                                                                                                    border-radius: 5px;
+                                                                                                                                                                    padding: 10px;
+                                                                                                                                                                    color: white;
+                                                                                                                                                                    cursor: pointer;
+                                                                                                                                                                } */
 
         /*.back-button:hover,
-                                                                                                                         .select-button:hover {
-                                                                                                                                            background-color: #;
-                                                                                                                                        } */
+                                                                                                                                                     .select-button:hover {
+                                                                                                                                                                        background-color: #;
+                                                                                                                                                                    } */
 
         .calendar {
             margin-top: 20px;
@@ -165,9 +166,9 @@
                 <div class="containerkecil">
                     <div class="calendar">
                         <div class="calendar-header">
-                            <button id="prevMonth">back</button>
-                            <div id="monthYear"></div>
-                            <button id="nextMonth">next</button>
+                            <button id="prevMonth" style="color: #275FCA;"><i class="bi bi-chevron-left"></i></button>
+                            <div id="monthYear" style="font-size: 1.5rem; color: #275FCA;"></div>
+                            <button id="nextMonth" style="color: #275FCA;"><i class="bi bi-chevron-right"></i></button>
                         </div>
                         <div class="days">
                             <div>Min</div>

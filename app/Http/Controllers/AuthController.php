@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Auth;
 
 class AuthController extends Controller
 {
@@ -79,7 +80,6 @@ class AuthController extends Controller
     {
         $request->session()->forget("pengajar");
         $request->session()->forget("pelajar");
-        Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

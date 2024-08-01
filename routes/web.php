@@ -17,49 +17,61 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'ValidateLogin'])->name('login');
 Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('register');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // dasboard perlu di benarkan
-Route::get('/dashboard', function () {
-    return view('welcome');
-});
+// Route::get('/dashboard', function () {
+//     return view('welcome');
+// });
 
 Route::any('/ReqPelajaran', [PelajarState::class, 'BuatPenajuan'])->name('BuatPenajuan');
+Route::any('/dashboard', [PelajarState::class, 'dashboard'])->name('dashboard');
+Route::get('/Rom', [PelajarState::class, 'Edetail'])->name('detail');
+Route::get('/Rom/setpo', [PelajarState::class, 'setpo'])->name('setpo');
+Route::get('/Rom/approve', [PelajarState::class, 'approve'])->name('approve');
+
+Route::get('/AmbilKelas', [PelajarState::class, 'AmbilKelas'])->name('AmbilKelas');
 
 Route::get('/UbahProfilPelajar', [UbahProfilController::class, 'ViewUbahProfil']);
 Route::get('/UbahProfilPengajar', [UbahProfilController::class, 'ViewUbahProfil']);
 Route::post('/UbahProfilPengajar/update', [UbahProfilController::class, 'UpdateUbahProfil'])->name('updateprofil');
 
+Route::get('/UbahPasswordPengajar', [UbahProfilController::class, 'ViewUbahPassword']);
+Route::post('/UbahPasswordPengajar/update', [UbahProfilController::class, 'UpdateUbahPassword'])->name('updatepassword');
 
 
-Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');
+// Route::get('/riwayatpengajar', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar');
 
 Route::any('/JadiPengajar', [PengajarController::class, 'JadiPengajar'])->name('JadiPengajar');
 
 
-// Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
+Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
 
 Route::get('/DetailPengajar', [GuruController::class, 'show'])->name('DetailPengajar.show');
 Route::post('/DetailPengajar/{guru_id}/upload', [GuruController::class, 'store'])->name('DetailPengajar.store');
+Route::get('/payment/qris', [ipaymuController::class, 'initiateQrisPayment'])->name('payment.qris');
+Route::get('/payment/qris/callback', [ipaymuController::class, 'qrisPaymentCallback'])->name('payment.qris.callback');
+
+
+// Route::get('/riwayatpengajar/{id}', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar.show');
 
 // Route::get('/DetailPengajar', [GuruController::class, 'showall'])->name('DetailPengajar.showall');
 // ROUTER BENAR
-// Route::get('/ReqKelasPayment', function(){
-//     return view('Pelajar.RequestKelasPayment');
-// });
+Route::get('/ReqKelasPayment', function () {
+    return view('Pelajar.RequestKelasPayment');
+});
 
 // Route::get('/ReqKelasConfirm', function () {
 //     return view('Pelajar.RequestKelasConfirm');
 // });
 
-// Route::get('/ReqKelasSchedule', function () {
-//     return view('Pelajar.RequestKelasSchedule');
-// });
-
-
-
-Route::get('/RiwayatPelajar', function () {
-    return view('RiwayatKelasPelajar');
+Route::get('/ReqKelasSchedule', function () {
+    return view('Pelajar.RequestKelasSchedule');
 });
+
+
+
+
 
 
 Route::get('/CaraKerjaPelajar', function () {
@@ -70,9 +82,9 @@ Route::get('/CaraKerjaPengajar', function () {
     return view('caraKerjaPengajar');
 });
 
-Route::get('/detail1', function () {
-    return view('detail1');
-});
+// Route::get('/detail1', function () {
+//     return view('detail1');
+// });
 
 // Route::get('/DetailPengajar', function () {
 //     return view('DetailPengajar');
@@ -80,13 +92,13 @@ Route::get('/detail1', function () {
 
 
 
-Route::get('/login', function () {
-    return view('login');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// });
 
-Route::get('/landing', function () {
-    return view('landing');
-});
+// Route::get('/landing', function () {
+//     return view('landing');
+// });
 
 // Route::get('/riwayatpengajar', function () {
 //     return view('ktks');
@@ -96,13 +108,13 @@ Route::get('/landing', function () {
 //     return view('rr');
 // });
 
-Route::get('/dashboardPengajar',function() {
-    return view('dashboardPengajar');
-});
+// Route::get('/dashboardPengajar', function () {
+//     return view('dashboardPengajar');
+// });
 
-Route::get('/detail1', function () {
-    return view('detail1');
-});
+// Route::get('/detail1', function () {
+//     return view('detail1');
+// });
 
 // Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
 
@@ -115,18 +127,18 @@ Route::get('/detail1', function () {
 //     return view('UbahProfilPelajar');
 // });
 
-Route::get('/DetailReqMengajar', function () {
-    return view('Pengajar.DetailPermintaanMengajar');
-});
+// Route::get('/DetailReqMengajar', function () {
+//     return view('Pengajar.DetailPermintaanMengajar');
+// });
 
-Route::get('/FormZoom', function () {
-    return view('Pengajar.FormZoomAfterAccept');
-});
+// Route::get('/FormZoom', function () {
+//     return view('Pengajar.FormZoomAfterAccept');
+// });
 
-Route::get('/Konfirm', function () {
-    // dd(session())
-    return view('Pengajar.KonfirmasiPermintaanMengajar', compact('request'));
-});
+// Route::get('/Konfirm', function () {
+//     // dd(session())
+//     return view('Pengajar.KonfirmasiPermintaanMengajar', compact('request'));
+// });
 
 
 
@@ -143,7 +155,7 @@ Route::get('/Konfirm', function () {
 // Route::get('/riwayatpengajar', function () {
 //     return view('ktks');
 // });
-Route::get('/riwayatpengajar/{id}', [PengajarController::class, 'riwayatpengajar'])->name('riwayatpengajar.show');
+
 // Route::get('/riwayatpengajar2',function() {
 //     return view('rr');
 // });

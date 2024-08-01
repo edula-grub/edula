@@ -27,6 +27,12 @@ class AuthController extends Controller
     }
     function Login(Request $request)
     {
+
+        // forget all session
+        session()->forget('gurus');
+        session()->forget('siswa');
+        session()->forget('tempsiswa');
+        session()->forget('tempguru');
         return view('login');
     }
 
@@ -47,7 +53,8 @@ class AuthController extends Controller
             return redirect('/login')->with('faill', 'Invalid Username or Password');
         }
     }
-    public function ValidateRegister(Request $request){
+    public function ValidateRegister(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'USERNAME' => ['required', 'string', 'max:255'],
             'EMAIL' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -66,5 +73,18 @@ class AuthController extends Controller
         $this->Indexline1($data);
         // dd($data);
         return back()->with('success', 'You have signed-in');
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget("pengajar");
+        $request->session()->forget("pelajar");
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+
+        // frank kita gapake auth jadi bisa forget session gurus dan siswa langsung aja
     }
 }

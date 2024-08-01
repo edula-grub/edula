@@ -27,13 +27,6 @@
             max-height: 100vh;
         }
 
-        /* form {
-                                                                                                                                                                                    width: 500px;
-                                                                                                                                                                                    margin: 0 auto;
-                                                                                                                                                                                    padding: 20px;
-                                                                                                                                                                                    border: 1px solid #ccc;
-                                                                                                                                                                                } */
-
         h4 {
             text-align: center;
             margin-bottom: 20px;
@@ -55,7 +48,6 @@
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            /* font-family: sans-serif; */
         }
 
         textarea {
@@ -75,15 +67,21 @@
             font-weight: 700;
             font-size: 16px;
         }
+
+        .error-message {
+            display: none;
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 @endsection
 
 @section('content')
-    <div class="container ">
-        <form action="#" class="row" method="POST">
+    <div class="container">
+        <form id="lessonForm" class="row" method="POST">
             @csrf
             <div class="col-12">
-                <h4>Kamu mau belajar apa?</h4>
+                <h4 style="color: #275FCA">Kamu mau belajar apa?</h4>
             </div>
             <div class="col-8">
                 <label for="pelajaran">Pelajaran yang kamu ingin pelajari:</label>
@@ -92,6 +90,7 @@
             <div class="col-4">
                 <label for="jenjang">Pilih jenjang:</label>
                 <select name="jenjang" id="jenjang">
+                    <option value="">Pilih jenjang</option>
                     <option value="sd">SD</option>
                     <option value="smp">SMP</option>
                     <option value="sma">SMA</option>
@@ -104,16 +103,59 @@
                 <textarea name="deskripsi" id="deskripsi" cols="30" rows="10"></textarea>
             </div>
             <div class="col-4 card">
-                <h1 class="alert-primary">error</h1>
+                <div class="error-message" id="errorMessage">Harap isi semua field.</div>
             </div>
             <div class="col-8">
                 <label for="harga">Tentukan harga yang sesuai:</label>
-                <input type="price" name="harga" id="harga">
+                <input type="number" name="harga" id="harga">
             </div>
+
             <div class="col-9"></div>
             <div class="col-3">
                 <button type="submit" class="btn btn-warning text-light">Lanjut Pembayaran</button>
             </div>
         </form>
     </div>
+
+    <div style="display: none;">
+        <form id="hiddenForm" method="POST" action="">
+            @csrf
+            <input type="hidden" name="pelajaran" id="hiddenPelajaran">
+            <input type="hidden" name="jenjang" id="hiddenJenjang">
+            <input type="hidden" name="deskripsi" id="hiddenDeskripsi">
+            <input type="hidden" name="harga" id="hiddenHarga">
+            <button type="submit" id="hiddenSubmit">kirim</button>
+        </form>
+    </div>
+@endsection
+
+@section('JS')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('lessonForm');
+            const errorMessage = document.getElementById('errorMessage');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const pelajaran = document.getElementById('pelajaran').value;
+                const jenjang = document.getElementById('jenjang').value;
+                const deskripsi = document.getElementById('deskripsi').value;
+                const harga = document.getElementById('harga').value;
+
+                if (pelajaran === '' || jenjang === '' || deskripsi === '' || harga === '') {
+                    errorMessage.style.display = 'block';
+                } else {
+                    errorMessage.style.display = 'none';
+
+                    document.getElementById('hiddenPelajaran').value = pelajaran;
+                    document.getElementById('hiddenJenjang').value = jenjang;
+                    document.getElementById('hiddenDeskripsi').value = deskripsi;
+                    document.getElementById('hiddenHarga').value = harga;
+
+                    document.getElementById('hiddenSubmit').click();
+                }
+            });
+        });
+    </script>
 @endsection

@@ -47,11 +47,11 @@
         }
 
         /* .back-button:hover,
-                                                                                                            .select-button:hover {
-                                                                                                                background-color: #999;
-                                                                                                                color: white;
-                                                                                                                font-weight: 500;
-                                                                                                            } */
+                                                                                                                                .select-button:hover {
+                                                                                                                                    background-color: #999;
+                                                                                                                                    color: white;
+                                                                                                                                    font-weight: 500;
+                                                                                                                                } */
     </style>
     {{-- <link rel="stylesheet" href="{{ url('/calendar/styles.css') }}"> --}}
     <style>
@@ -74,19 +74,19 @@
         }
 
         /*.back-button,
-                                                                                                         .select-button {
-                                                                                                                    background-color: #ccc;
-                                                                                                                    border: none;
-                                                                                                                    border-radius: 5px;
-                                                                                                                    padding: 10px;
-                                                                                                                    color: white;
-                                                                                                                    cursor: pointer;
-                                                                                                                } */
+                                                                                                                             .select-button {
+                                                                                                                                        background-color: #ccc;
+                                                                                                                                        border: none;
+                                                                                                                                        border-radius: 5px;
+                                                                                                                                        padding: 10px;
+                                                                                                                                        color: white;
+                                                                                                                                        cursor: pointer;
+                                                                                                                                    } */
 
         /*.back-button:hover,
-                                                                                                     .select-button:hover {
-                                                                                                                        background-color: #;
-                                                                                                                    } */
+                                                                                                                         .select-button:hover {
+                                                                                                                                            background-color: #;
+                                                                                                                                        } */
 
         .calendar {
             margin-top: 20px;
@@ -140,6 +140,12 @@
             border-radius: 5px;
             border: 1px solid #ccc;
         }
+
+        .error-message {
+            display: none;
+            color: red;
+            margin-top: 10px;
+        }
     </style>
 @endsection
 
@@ -149,9 +155,8 @@
             <div class="col-md-5 d-flex justify-content-center">
                 <div class="header">
                     <h1>Pilih Jadwal Lesmu</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut
-                        nisi tellus.</p>
-                    <a href="{{ route('BuatPenajuan') }}" class="back-button">Kembali</a>
+                    <p>Pilih tanggal les yang kamu inginkan dan pilih waktu yang sesuai.</p>
+                    <a href="{{ route('BuatPenajuan') }}" class="back-button" style="text-decoration: none">Kembali</a>
                 </div>
             </div>
             {{-- Init untuk kalender nanti --}}
@@ -176,8 +181,9 @@
                         <div class="dates" id="dates"></div>
                     </div>
                     <div class="time">
-                        <h2>Waktu</h2>
+                        <h2 style="color: #1A73E8">Waktu</h2>
                         <select id="timeSelect">
+                            <option value="" disabled selected>Pilih Waktu</option>
                             <option value="06:00-07:00">06:00 - 07:00</option>
                             <option value="07:00-08:00">07:00 - 08:00</option>
                             <option value="08:00-09:00">08:00 - 09:00</option>
@@ -196,10 +202,11 @@
                             <option value="21:00-22:00">21:00 - 22:00</option>
                         </select>
                     </div>
+                    <div class="error-message" id="errorMessage">Harap isi tanggal dan waktu.</div>
                     {{-- input hidden --}}
                     {{-- <input type="text" name="selectedDate" id="selectedDate"> --}}
                     <div class="mt-1 col-3 offset-9">
-                        <button class="col-12 btn btn-warning select-button">Pilih</button>
+                        <button class="col-12 btn btn-warning select-button" style="color: white">Pilih</button>
                     </div>
                 </div>
 
@@ -217,6 +224,7 @@
         </form>
     </div>
 @endsection
+
 @section('JS')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -226,6 +234,7 @@
             const nextMonthButton = document.getElementById('nextMonth');
             const timeSelect = document.getElementById('timeSelect');
             const selectButton = document.querySelector('.select-button');
+            const errorMessage = document.getElementById('errorMessage');
 
             let currentDate = new Date();
             let selectedDate = null;
@@ -274,7 +283,10 @@
             });
 
             selectButton.addEventListener('click', () => {
-                if (selectedDate) {
+                if (!selectedDate || !selectedTime) {
+                    errorMessage.style.display = 'block';
+                } else {
+                    errorMessage.style.display = 'none';
                     const selectedDateValue =
                         `${selectedDate.textContent} ${currentDate.toLocaleString('default', { month: 'long' })} ${currentDate.getFullYear()}`;
                     console.log(`Selected Date: ${selectedDateValue}`);
@@ -283,9 +295,6 @@
                     document.getElementById('covertanggalselected').value = selectedDateValue;
                     document.getElementById('coverwaktuinput').value = selectedTime;
                     document.getElementById('subs').click();
-
-                } else {
-                    alert('Please select a date.');
                 }
             });
 

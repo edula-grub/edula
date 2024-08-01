@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
+@include('components.navbar')
 @section('content')
-<body>
-    @include('components.navbar')
-
     <!-- Bagian content -->
     <div class="mw-100 container pt-5">
-        <div class="d-flex justify-content-center my-5">
+        <div class="d-flex justify-content-center my-5 pt-5">
             <h1 class="fw-semibold text-primary">Cara Request Kelas di Edula</h1>
         </div>
 
@@ -21,7 +19,9 @@
                     <div class="col d-flex align-items-center justify-content-start">
                         <div class="text-start" alt="Step">
                             <h2 class="text-primary fw-semibold">Step 01</h2>
-                            <p class="col-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <p class="col-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus
+                                quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet
+                                voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,9 @@
                     <div class="col d-flex align-items-center justify-content-end">
                         <div class="text-end" alt="Step">
                             <h2 class="text-primary fw-semibold">Step 02</h2>
-                            <p class="col-9 offset-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <p class="col-9 offset-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                                accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur
+                                amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
                         </div>
                     </div>
 
@@ -53,7 +55,9 @@
                     <div class="col d-flex align-items-center justify-content-start">
                         <div class="text-start" alt="Step">
                             <h2 class="text-primary fw-semibold">Step 03</h2>
-                            <p class="col-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <p class="col-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus
+                                quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet
+                                voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
                         </div>
                     </div>
                 </div>
@@ -64,8 +68,10 @@
                 <div class="row">
                     <div class="col d-flex align-items-center justify-content-end">
                         <div class="text-end" alt="Step">
-                            <h2 class="text-primary fw-semibold">Step 04    </h2>
-                            <p class="col-9 offset-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
+                            <h2 class="text-primary fw-semibold">Step 04 </h2>
+                            <p class="col-9 offset-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                                accusamus quidem natus nam repellendus vero molestiae velit, harum aut, laborum consequuntur
+                                amet voluptatum dolorem ad maiores maxime magni aliquam! Libero?</p>
                         </div>
                     </div>
 
@@ -83,8 +89,10 @@
                 <div class="banner">
                     <div class="banner-content">
                         <h1 class="fw-semibold text-primary">Ayo, request kelas sekarang!</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut nisi tellus.</p>
-                        <a href="#" class="btn btn-warning fw-semibold text-white">Request Kelas</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut
+                            nisi tellus.</p>
+                        <a href="{{ url('/ReqPelajaran') }}" class="btn btn-warning fw-semibold text-white">Request
+                            Kelas</a>
                     </div>
                 </div>
             </div>
@@ -92,5 +100,4 @@
     </div>
 
     @include('components.footer')
-</body>
 @endsection

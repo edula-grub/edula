@@ -28,8 +28,7 @@
                     <div class="request-info1">
                         <h1 class="request-kelas-head">Request Kelas</h1>
                         <p class="req-description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                            in imperdiet erat. Maecenas ut nisi tellus.
+                            Dapatkan Pengajar yang kompeten dan terampil untuk membantu kesulitanmu.
                         </p>
                     </div>
                     <a href="{{ route('BuatPenajuan') }}?s=1" class="request-button">

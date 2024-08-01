@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UbahProfilController extends Controller
 {
@@ -42,5 +44,36 @@ class UbahProfilController extends Controller
 
         session(['siswa' => $siswa]);
         return back();
+    }
+
+    public function ViewUbahPassword()
+    {
+        return view('UbahPasswordPengajar');
+    }
+
+    public function UpdateUbahPassword(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'password_lama' => 'required',
+            'password_baru' => 'required|min:6|confirmed',
+        ]);
+
+        if ($validator->fails()) {
+            return back()->withErrors($validator);
+        }
+
+        $siswa = DB::table('users')
+            ->where('id', session("siswa")->id)
+            ->first();
+
+        if (!Hash::check($request->password_lama, $siswa->password)) {
+            return back()->withErrors(['password_lama' => 'Password lama tidak sesuai']);
+        }
+
+        DB::table('users')
+            ->where('id', session("siswa")->id)
+            ->update(['password' => Hash::make($request->password_baru)]);
+
+        return back()->with('success', 'Password berhasil diubah');
     }
 }

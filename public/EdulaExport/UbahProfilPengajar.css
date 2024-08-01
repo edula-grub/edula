@@ -10,7 +10,6 @@
   }
   .ubah-profil8 {
     position: relative;
-    letter-spacing: 0.02em;
     font-weight: 600;
     z-index: 1;
   }
@@ -37,7 +36,7 @@
   }
   .personal-data-label-row-parent {
     border-radius: var(--br-5xs);
-    background-color: var(--color-lavender-100);
+    /* background-color: var(--color-lavender-100); */
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -46,7 +45,7 @@
     padding: var(--padding-3xs) var(--padding-base);
     gap: var(--gap-3xs);
     z-index: 1;
-    color: var(--color-royalblue-200);
+    /* color: var(--color-royalblue-200); */
   }
   .password-24dp-fill0-wght400-gr-icon1 {
     width: 1.5rem;
@@ -93,13 +92,30 @@
     justify-content: flex-start;
     padding: var(--padding-11xs-5) 0 0;
   }
+
   .kebijakan1 {
-    text-decoration: none;
     position: relative;
     letter-spacing: 0.02em;
     font-weight: 500;
     color: inherit;
   }
+
+  .personal-data-label-row-parent:hover,
+  .frame-parent83:hover,
+  .frame-parent84:hover {
+    border-radius: var(--br-5xs);
+    background-color: var(--color-lavender-100);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-3xs) var(--padding-base);
+    gap: var(--gap-3xs);
+    z-index: 1;
+    color: var(--color-royalblue-200);
+  }
+
   .frame-parent82,
   .frame-parent84,
   .ubah-profil-parent {
@@ -883,8 +899,8 @@
       padding: var(--padding-5xs) var(--padding-3xs);
       min-width: 19.563rem;
       z-index: 1;
-      color: var(--color-silver-100);
       font-size: 16px;
+      color: #000;
   }
 
 
@@ -947,3 +963,14 @@
       color: var(--color-silver-100);
       z-index: 1;
   }
+
+.form-select{
+    border: 1.5px solid var(--color-silver-100);
+    flex: 1;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    border: 1.5px solid var(--color-silver-100);
+    box-sizing: border-box;
+    padding: var(--padding-5xs) var(--padding-3xs);
+    min-width: 19.563rem;
+}

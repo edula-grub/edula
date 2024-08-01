@@ -6,12 +6,15 @@ use App\Models\RatingAndReview;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use App\Models\Bidrequest;
+// iluminate faces db
+use Illuminate\Support\Facades\DB;
 use App\Review; // Add this line to import the Review class
 
 class PelajarController extends Controller
 {
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         // dd($request->all());
         // $review = new RatingAndReview();
         // $review->rating = $request->input('rating');
@@ -22,22 +25,32 @@ class PelajarController extends Controller
 
         // 'siswa_id', 'guru_id', 'nama_mapel', 'deskripsi_kebutuhan', 'jadwal', 'harga_bider_terpilih', 'status', 'review', 'komentar_guru_ke_siswa', 'komen_siswa_ke_guru', 'rating_guru_ke_siswa', 'rating_siswa_ke_guru', 'taskpoinlain', 'zoomlink',
         // dd($request->all());
-        $review = Bidrequest::create([
-            'siswa_id' => 2,
-            'guru_id' => 2,
-            'nama_mapel' => $request->input('nama_mapel'),
-            'deskripsi_kebutuhan' => "DEMO",
-            'jadwal' => now(),
-            'harga_bider_terpilih' => 100,
-            'status' => "DEMO",
-            'review' => "DEMO",
-            'komentar_guru_ke_siswa' => "DEMO",
-            'komen_siswa_ke_guru' => $request->input('komen_siswa_ke_guru'),
-            'rating_guru_ke_siswa' => 1,
-            'rating_siswa_ke_guru' => $request->input('rating_siswa_ke_guru'),
-            'taskpoinlain' => "DEMO",
-            'zoomlink' => "DEMO",
-        ]);
+        // $review = Bidrequest::create([
+        //     'siswa_id' => 2,
+        //     'guru_id' => 2,
+        //     'nama_mapel' => $request->input('nama_mapel'),
+        //     'deskripsi_kebutuhan' => "DEMO",
+        //     'jadwal' => now(),
+        //     'harga_bider_terpilih' => 100,
+        //     'status' => "DEMO",
+        //     'review' => "DEMO",
+        //     'komentar_guru_ke_siswa' => "DEMO",
+        //     'komen_siswa_ke_guru' => $request->input('komen_siswa_ke_guru'),
+        //     'rating_guru_ke_siswa' => 1,
+        //     'rating_siswa_ke_guru' => $request->input('rating_siswa_ke_guru'),
+        //     'taskpoinlain' => "DEMO",
+        //     'zoomlink' => "DEMO",
+        // ]);
+
+        // update bidrequest
+        $req = [
+            'status' => 'DONE',
+            "rating_siswa_ke_guru" => $request->input('rating_siswa_ke_guru'),
+            "komen_siswa_ke_guru" => $request->input('komen_siswa_ke_guru')
+        ];
+        // dd($req);
+        $kon = DB::table('bidrequests')->where('id', $request->id)->update($req);
+        // dd($kon);
 
         return redirect()->back()->with('success', 'Form submitted successfully!');
         // return redirect()->back();

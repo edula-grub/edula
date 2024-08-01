@@ -13,6 +13,11 @@ class PengajarController extends Controller
     public function JadiPengajar(Request $request)
     {
         if (session('gurus')) {
+            $siswa = session('siswa');
+            session('tempsiswa', $siswa);
+            session()->forget('siswa');
+
+
             return redirect('/DetailPengajar');
         }
 
@@ -30,7 +35,6 @@ class PengajarController extends Controller
         }
         return view('Pengajar.JadiPengajar');
     }
-
 
     public function riwayatpengajar()
     {

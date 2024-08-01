@@ -7,13 +7,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* .container {
-                                                                                                                                                width: 400px;
-                                                                                                                                                margin: 50px auto;
-                                                                                                                                                text-align: center;
-                                                                                                                                                padding: 30px;
-                                                                                                                                                border: 1px solid #ccc;
-                                                                                                                                                border-radius: 5px;
-                                                                                                                                            } */
+                                                                                                                                                        width: 400px;
+                                                                                                                                                        margin: 50px auto;
+                                                                                                                                                        text-align: center;
+                                                                                                                                                        padding: 30px;
+                                                                                                                                                        border: 1px solid #ccc;
+                                                                                                                                                        border-radius: 5px;
+                                                                                                                                                    } */
         .hidden {
             display: none !important;
         }
@@ -88,7 +88,7 @@
 
 @section('content')
     <div class="container m-auto" style="margin-top:20dvh !important;">
-        <h1>Pilih Metode Pembayaran</h1>
+        <h1 style="color: #275FCA">Pilih Metode Pembayaran</h1>
         <form action="" method="POST">
             @csrf
             <div class="payment-methods text-center">

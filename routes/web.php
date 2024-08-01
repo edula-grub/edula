@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'login']);
 Route::post('/login', [AuthController::class, 'ValidateLogin'])->name('login');
 Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('register');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 // dasboard perlu di benarkan
 // Route::get('/dashboard', function () {

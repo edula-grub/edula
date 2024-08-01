@@ -47,11 +47,11 @@
         }
 
         /* .back-button:hover,
-                                                                                                            .select-button:hover {
-                                                                                                                background-color: #999;
-                                                                                                                color: white;
-                                                                                                                font-weight: 500;
-                                                                                                            } */
+                                                                                                                                .select-button:hover {
+                                                                                                                                    background-color: #999;
+                                                                                                                                    color: white;
+                                                                                                                                    font-weight: 500;
+                                                                                                                                } */
     </style>
     {{-- <link rel="stylesheet" href="{{ url('/calendar/styles.css') }}"> --}}
     <style>
@@ -74,19 +74,19 @@
         }
 
         /*.back-button,
-                                                                                                         .select-button {
-                                                                                                                    background-color: #ccc;
-                                                                                                                    border: none;
-                                                                                                                    border-radius: 5px;
-                                                                                                                    padding: 10px;
-                                                                                                                    color: white;
-                                                                                                                    cursor: pointer;
-                                                                                                                } */
+                                                                                                                             .select-button {
+                                                                                                                                        background-color: #ccc;
+                                                                                                                                        border: none;
+                                                                                                                                        border-radius: 5px;
+                                                                                                                                        padding: 10px;
+                                                                                                                                        color: white;
+                                                                                                                                        cursor: pointer;
+                                                                                                                                    } */
 
         /*.back-button:hover,
-                                                                                                     .select-button:hover {
-                                                                                                                        background-color: #;
-                                                                                                                    } */
+                                                                                                                         .select-button:hover {
+                                                                                                                                            background-color: #;
+                                                                                                                                        } */
 
         .calendar {
             margin-top: 20px;
@@ -155,9 +155,8 @@
             <div class="col-md-5 d-flex justify-content-center">
                 <div class="header">
                     <h1>Pilih Jadwal Lesmu</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut
-                        nisi tellus.</p>
-                    <a href="{{ route('BuatPenajuan') }}" class="back-button">Kembali</a>
+                    <p>Pilih tanggal les yang kamu inginkan dan pilih waktu yang sesuai.</p>
+                    <a href="{{ route('BuatPenajuan') }}" class="back-button" style="text-decoration: none">Kembali</a>
                 </div>
             </div>
             {{-- Init untuk kalender nanti --}}
@@ -182,7 +181,7 @@
                         <div class="dates" id="dates"></div>
                     </div>
                     <div class="time">
-                        <h2>Waktu</h2>
+                        <h2 style="color: #1A73E8">Waktu</h2>
                         <select id="timeSelect">
                             <option value="" disabled selected>Pilih Waktu</option>
                             <option value="06:00-07:00">06:00 - 07:00</option>
@@ -207,7 +206,7 @@
                     {{-- input hidden --}}
                     {{-- <input type="text" name="selectedDate" id="selectedDate"> --}}
                     <div class="mt-1 col-3 offset-9">
-                        <button class="col-12 btn btn-warning select-button">Pilih</button>
+                        <button class="col-12 btn btn-warning select-button" style="color: white">Pilih</button>
                     </div>
                 </div>
 

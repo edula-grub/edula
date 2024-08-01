@@ -81,7 +81,7 @@
         <form id="lessonForm" class="row" method="POST">
             @csrf
             <div class="col-12">
-                <h4>Kamu mau belajar apa?</h4>
+                <h4 style="color: #275FCA">Kamu mau belajar apa?</h4>
             </div>
             <div class="col-8">
                 <label for="pelajaran">Pelajaran yang kamu ingin pelajari:</label>
@@ -131,11 +131,11 @@
 
 @section('JS')
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('lessonForm');
             const errorMessage = document.getElementById('errorMessage');
 
-            form.addEventListener('submit', function (event) {
+            form.addEventListener('submit', function(event) {
                 event.preventDefault();
 
                 const pelajaran = document.getElementById('pelajaran').value;

@@ -67,7 +67,13 @@
                             <a href="{{ url('/UbahProfilPelajar') }}" class="ubah-profil1">Ubah Profil</a>
                         </div>
                         <div class="button4">
-                            <a class="keluar1" href="{{ url('/dashboard') }}">Keluar</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                            <a class="keluar1" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Keluar
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -127,7 +133,8 @@
                         {{-- @include('Pengajar/SertifikasiPengajar') --}}
                     </div>
                 </div>
-                <div class="col-12 tab-pane fade" id="rating-ulasan" role="tabpanel" aria-labelledby="rating-ulasan-tab">
+                <div class="col-12 tab-pane fade" id="rating-ulasan" role="tabpanel"
+                    aria-labelledby="rating-ulasan-tab">
                     <div class="container-fluid poinsetpanel col-12">
                         {{-- @include('Pengajar/ratingPengajar')
                         @include('Pengajar.reviewPengajar') --}}

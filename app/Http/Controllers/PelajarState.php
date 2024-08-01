@@ -82,6 +82,9 @@ class PelajarState extends Controller
     {
 
         if (session('tempsiswa')) {
+
+
+
             $siswa = session('tempsiswa');
             session('siswa', $siswa);
 

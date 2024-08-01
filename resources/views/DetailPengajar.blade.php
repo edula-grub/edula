@@ -64,7 +64,8 @@
                 <div class="actions2">
                     <div class="action-buttons2">
                         <div class="button3">
-                            <a href="{{ url('/UbahProfilPelajar') }}" class="ubah-profil1">Ubah Profil</a>
+                            <a href="{{ url('/UbahProfilPelajar') }}" class="ubah-profil1"
+                                style="text-decoration: none">Ubah Profil</a>
                         </div>
                         <div class="button4">
                             <a class="keluar1" href="{{ url('/dashboard') }}">Keluar</a>

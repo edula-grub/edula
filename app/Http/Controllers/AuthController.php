@@ -74,4 +74,17 @@ class AuthController extends Controller
         // dd($data);
         return back()->with('success', 'You have signed-in');
     }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget("pengajar");
+        $request->session()->forget("pelajar");
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+
+        // frank kita gapake auth jadi bisa forget session gurus dan siswa langsung aja
+    }
 }

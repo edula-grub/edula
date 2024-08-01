@@ -24,7 +24,7 @@
                     @empty($totalReviews)
                         0
                     @else
-                        {{ $totalReviews - 1 }}
+                        {{ $totalReviews }}
                     @endempty
                     Rating</p>
             </div>

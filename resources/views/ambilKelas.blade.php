@@ -77,7 +77,8 @@
                                 </div>
 
                                 <p class="text-end my-2">
-                                    <a href="#" class="card-link text-align-end">Lihat selengkapnya</a>
+                                    <a href="/Rom?s={{ $item->id }}" class="card-link text-align-end">Lihat
+                                        selengkapnya</a>
                                 </p>
                             </div>
                         </div>

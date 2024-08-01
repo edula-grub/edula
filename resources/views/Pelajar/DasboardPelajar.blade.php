@@ -17,7 +17,7 @@
 
 @section('content')
     <div class="riwayat-pengajar">
-        @include('welcome')
+        {{-- @include('welcome') --}}
         <header class="teacher-info2">
             <div class="frame-parent46">
                 <div class="profilepicture-parent">

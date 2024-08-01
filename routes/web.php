@@ -26,6 +26,9 @@ Route::post('/register', [AuthController::class, 'ValidateRegister'])->name('reg
 Route::any('/ReqPelajaran', [PelajarState::class, 'BuatPenajuan'])->name('BuatPenajuan');
 Route::any('/dashboard', [PelajarState::class, 'dashboard'])->name('dashboard');
 Route::get('/Rom', [PelajarState::class, 'Edetail'])->name('detail');
+Route::get('/Rom/setpo', [PelajarState::class, 'setpo'])->name('setpo');
+Route::get('/Rom/approve', [PelajarState::class, 'approve'])->name('approve');
+
 Route::get('/AmbilKelas', [PelajarState::class, 'AmbilKelas'])->name('AmbilKelas');
 
 Route::get('/UbahProfilPelajar', [UbahProfilController::class, 'ViewUbahProfil']);
@@ -41,7 +44,7 @@ Route::post('/UbahPasswordPengajar/update', [UbahProfilController::class, 'Updat
 Route::any('/JadiPengajar', [PengajarController::class, 'JadiPengajar'])->name('JadiPengajar');
 
 
-// Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
+Route::post('/form-review', [PelajarController::class, 'store'])->name('form-review');
 
 Route::get('/DetailPengajar', [GuruController::class, 'show'])->name('DetailPengajar.show');
 Route::post('/DetailPengajar/{guru_id}/upload', [GuruController::class, 'store'])->name('DetailPengajar.store');
@@ -74,9 +77,9 @@ Route::get('/CaraKerjaPelajar', function () {
     return view('caraKerjaPelajar');
 });
 
-// Route::get('/CaraKerjaPengajar', function () {
-//     return view('caraKerjaPengajar');
-// });
+Route::get('/CaraKerjaPengajar', function () {
+    return view('caraKerjaPengajar');
+});
 
 // Route::get('/detail1', function () {
 //     return view('detail1');

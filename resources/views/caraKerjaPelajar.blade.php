@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
+@include('components.navbar')
 @section('content')
-    @include('components.navbar')
-
     <!-- Bagian content -->
     <div class="mw-100 container pt-5">
-        <div class="d-flex justify-content-center my-5">
+        <div class="d-flex justify-content-center my-5 pt-5">
             <h1 class="fw-semibold text-primary">Cara Request Kelas di Edula</h1>
         </div>
 
@@ -92,7 +91,8 @@
                         <h1 class="fw-semibold text-primary">Ayo, request kelas sekarang!</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in imperdiet erat. Maecenas ut
                             nisi tellus.</p>
-                        <a href="#" class="btn btn-warning fw-semibold text-white">Request Kelas</a>
+                        <a href="{{ url('/ReqPelajaran') }}" class="btn btn-warning fw-semibold text-white">Request
+                            Kelas</a>
                     </div>
                 </div>
             </div>

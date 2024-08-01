@@ -7,13 +7,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* .container {
-                                                                                                            width: 400px;
-                                                                                                            margin: 50px auto;
-                                                                                                            text-align: center;
-                                                                                                            padding: 30px;
-                                                                                                            border: 1px solid #ccc;
-                                                                                                            border-radius: 5px;
-                                                                                                        } */
+                                                                                                                                                width: 400px;
+                                                                                                                                                margin: 50px auto;
+                                                                                                                                                text-align: center;
+                                                                                                                                                padding: 30px;
+                                                                                                                                                border: 1px solid #ccc;
+                                                                                                                                                border-radius: 5px;
+                                                                                                                                            } */
         .hidden {
             display: none !important;
         }
@@ -127,9 +127,8 @@
             <div class="total">
                 <p>Total: Rp 100,000</p>
             </div>
-            {{-- jangan lupa di rubah --}}
             <input type="hidden" name="total" value="100000">
-            <button type="submit" id="bayar-button" disabled>Bayar</button>
+            <button type="submit" id="bayar-button">Bayar</button>
         </form>
     </div>
 @endsection
@@ -177,21 +176,21 @@
         });
 
         const bayarButton = document.getElementById('bayar-button');
-        bayarButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Mencegah form submit langsung
+        // bayarButton.addEventListener('click', function(event) {
+        //     event.preventDefault(); // Mencegah form submit langsung
 
-            if (bayarButton.innerText === "Bayar") {
-                bayarButton.innerText = "Konfirmasi Pembayaran";
-                bayarButton.disabled = true;
-
-                setTimeout(function() {
-                    bayarButton.disabled = false;
-                }, 5000); // Mengaktifkan kembali tombol setelah 5 detik
-            } else if (bayarButton.innerText === "Konfirmasi Pembayaran") {
-                // Logic for form submission or further steps can be added here
-                alert("ngelinknya masi gagal");
-            }
-        });
+        // if (bayarButton.innerText === "Bayar") {
+        //     bayarButton.innerText = "Konfirmasi Pembayaran";
+        //     bayarButton.disabled = true;
+        //     setTimeout(function() {
+        //         bayarButton.click();
+        //         // bayarButton.disabled = false;
+        //     }, 5000); // Mengaktifkan kembali tombol setelah 5 detik
+        // } else if (bayarButton.innerText === "Konfirmasi Pembayaran") {
+        //     // Logic for form submission or further steps can be added here
+        //     alert("ngelinknya masi gagal");
+        // }
+        // });
     </script>
 
     <!-- Bootstrap JS and dependencies -->

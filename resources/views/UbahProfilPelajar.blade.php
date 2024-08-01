@@ -66,7 +66,7 @@
                       src="{{url('EdulaExport/public/id-card-24dp-fill0-wght400-grad0-opsz24-2.svg')}}"
                     />
                   </div>
-                  <b class="data-pribadi3">Data Pribadi</b>
+                  <b class="data-pribadi3">Data Pribadi Pelajar</b>
                 </div>
               </div>
               <div class="frame-child102"></div>
@@ -142,37 +142,12 @@
           <div class="frame-parent88">
             <div class="tanggal-lahir-parent">
               <div class="tanggal-lahir1">Tanggal Lahir</div>
-              <div class="d-o-b-fields">
-                <div class="fill-email6">
-                  <div class="fill-email-child4"></div>
-                  <div class="tanggal2">Tanggal</div>
-                  <img
-                    class="arrow-drop-down-24dp-fill0-wgh-icon4"
-                    alt=""
-                    src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1.svg"
-                  />
-                </div>
-                <div class="fill-email7">
-                  <div class="fill-email-child5"></div>
-                  <div class="bulan2">Bulan</div>
-                  <img
-                    class="arrow-drop-down-24dp-fill0-wgh-icon5"
-                    alt=""
-                    src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1.svg"
-                  />
-                </div>
-                <div class="fill-email8">
-                  <div class="fill-email-child6"></div>
-                  <div class="tahun2">Tahun</div>
-                  <img
-                    class="arrow-drop-down-24dp-fill0-wgh-icon6"
-                    alt=""
-                    src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1.svg"
-                  />
-                </div>
+              <div class="isi-tanggal-lahir">
+                <input type="date" id="bdaymonth" name="bdaymonth" class="input-tanggal-lahir">
               </div>
+
             </div>
-            <div class="jenis-kelamin-parent">
+            {{-- <div class="jenis-kelamin-parent">
               <div class="jenis-kelamin1">Jenis Kelamin</div>
               <div class="fill-email9">
                 <div class="fill-email-child7"></div>
@@ -180,10 +155,24 @@
                 <img
                   class="arrow-drop-down-24dp-fill0-wgh-icon7"
                   alt=""
-                  src="./public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1-3.svg"
+                  src="url{{('EdulaExport/public/arrow-drop-down-24dp-fill0-wght400-grad0-opsz24-1-3.svg')}}"
                 />
               </div>
+            </div> --}}
+
+            <div class="jenis-kelamin-parent">
+                <div class="jenis-kelamin1">Jenis Kelamin</div>
+                <div class="dropdown">
+                    <div class="dropdown-button pilih-satu5" id="dropdownButton">
+                        Pilih satu
+                    </div>
+                    <div class="dropdown-content" id="dropdownContent">
+                        <div onclick="selectOption('Female')">Female</div>
+                        <div onclick="selectOption('Male')">Male</div>
+                    </div>
+                </div>
             </div>
+
             <div class="save-button-container1">
               <button class="button30">
                 <div class="simpan1">Simpan</div>
@@ -193,5 +182,31 @@
         </form>
       </main>
     </div>
+
+
+
+    <script>
+        document.getElementById('dropdownButton').addEventListener('click', function() {
+            var content = document.getElementById('dropdownContent');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+
+        function selectOption(value) {
+            document.getElementById('dropdownButton').textContent = value;
+            document.getElementById('dropdownContent').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-button')) {
+                var dropdowns = document.getElementsByClassName('dropdown-content');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+    </script>
   </body>
 </html>

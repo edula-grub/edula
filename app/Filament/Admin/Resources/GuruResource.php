@@ -23,19 +23,15 @@ class GuruResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('user_id')->numeric(),
-                Forms\Components\Textarea::make('porfolio'),
+                Forms\Components\RichEditor::make('porfolio'),
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
-
-            ])
-            ->filters([
-
-            ])
+            ->columns([])
+            ->filters([])
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])

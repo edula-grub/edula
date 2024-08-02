@@ -7,13 +7,13 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* .container {
-                                                                                                                                                        width: 400px;
-                                                                                                                                                        margin: 50px auto;
-                                                                                                                                                        text-align: center;
-                                                                                                                                                        padding: 30px;
-                                                                                                                                                        border: 1px solid #ccc;
-                                                                                                                                                        border-radius: 5px;
-                                                                                                                                                    } */
+                                                                                                                                                                width: 400px;
+                                                                                                                                                                margin: 50px auto;
+                                                                                                                                                                text-align: center;
+                                                                                                                                                                padding: 30px;
+                                                                                                                                                                border: 1px solid #ccc;
+                                                                                                                                                                border-radius: 5px;
+                                                                                                                                                            } */
         .hidden {
             display: none !important;
         }
@@ -124,12 +124,14 @@
                     title="QR Code"></iframe>
             </div>
 
-            <div class="total">
+            <@php
+                $harga = App\Models\bid;
+            @endphp <div class="total">
                 <p>Total: Rp 100,000</p>
-            </div>
-            <input type="hidden" name="total" value="100000">
-            <button type="submit" id="bayar-button">Bayar</button>
-        </form>
+    </div>
+    <input type="hidden" name="total" value="100000">
+    <button type="submit" id="bayar-button">Bayar</button>
+    </form>
     </div>
 @endsection
 

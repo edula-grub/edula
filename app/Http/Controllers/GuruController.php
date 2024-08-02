@@ -12,11 +12,12 @@ class GuruController extends Controller
     public function show(Request $request)
     {
         $guruId = $request->guru_id;
-        // $guruId = session('gurus')->id;
+        // dd($guruId);
+        $guruId == null ? $guruId = session('gurus')->id : null;
         // dd($guruId);
         $guru = DB::table('guru_aktif')->where('id', $guruId)->first();
         $sertif = DB::table('sertifandskils')->where('guru_id', $guruId)->get();
-
+        // dd($guru);//
 
         // Ambil semua ulasan
         $reviews = DB::table('bidrequests')->where('guru_id', $guruId)->get();
@@ -47,7 +48,7 @@ class GuruController extends Controller
         $tidakselesai = DB::table('bidrequests')->where('guru_id', $guruId)->where('status', '!=', 'DONE')->get();
 
         // create session gurus
-        session(['gurus' => $guru]);
+        // session(['gurus' => $guru]);
 
         return view('DetailPengajar', compact(
             'guru',
@@ -71,13 +72,19 @@ class GuruController extends Controller
         ]);
 
         $guru = Guru::where('user_id', $guruId);
-        // dump($guruId);
+
         if (!$guru->first()) {
             return response()->json(['message' => 'Guru not found'], 404);
         } else {
+            $filePath = '';
             if ($request->hasFile('img')) {
-                $request->file('img')->move('img', $request->file('img')->getClientOriginalName());
+                $file = $request->file('img');
+                $filename = $file->getClientOriginalName();
+                $filePath = 'img/' . $filename;
+                $file->move(public_path('/sertiv/img'), $filename);
             }
+
+            // dd($request->all());
             $sertif = Sertifandskil::create([
                 'guru_id' => $guru->first()->user_id,
                 'nama' => $request->nama,
@@ -85,7 +92,7 @@ class GuruController extends Controller
                 "skill" => "DEMO",
                 "level" => "123",
                 'status' => 1,
-                'image' => $request->file('img')->getClientOriginalName(),
+                'image' => $filePath,
             ]);
         }
         return back();

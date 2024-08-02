@@ -30,10 +30,10 @@ class AuthController extends Controller
     {
 
         // forget all session
-        session()->forget('gurus');
-        session()->forget('siswa');
-        session()->forget('tempsiswa');
-        session()->forget('tempguru');
+        // session()->forget('gurus');
+        // session()->forget('siswa');
+        // session()->forget('tempsiswa');
+        // session()->forget('tempguru');
         return view('login');
     }
 
@@ -62,7 +62,7 @@ class AuthController extends Controller
             'PASSWORD' => ['required', 'string', 'min:8'],
         ]);
         if ($validator->fails()) {
-            return redirect('/login#sign-up-btn')->with('failr', 'Invalid Username or Password');
+            return redirect('/login#sign-up-btn')->with('failr', 'Wajib isi semua dan Password minimal 8');
         }
         $data = $request->all();
         $data = User::create([

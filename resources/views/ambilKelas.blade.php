@@ -150,6 +150,7 @@
 @endsection
 
 @section('content')
+    @include('components.navbarPengajar')
     <div class="container .poppins-regular" style="margin-top: 5rem;">
         <div class="">
             <div class="row">

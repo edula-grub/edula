@@ -6,14 +6,6 @@
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* .container {
-                                                                                                                                                                width: 400px;
-                                                                                                                                                                margin: 50px auto;
-                                                                                                                                                                text-align: center;
-                                                                                                                                                                padding: 30px;
-                                                                                                                                                                border: 1px solid #ccc;
-                                                                                                                                                                border-radius: 5px;
-                                                                                                                                                            } */
         .hidden {
             display: none !important;
         }
@@ -30,7 +22,6 @@
 
         h1 {
             font-size: 24px;
-            /* margin-bottom: 20px; */
             color: #275FCA;
         }
 
@@ -41,7 +32,6 @@
         .payment-methods {
             display: flex;
             align-items: center;
-            /* Aligns items vertically */
             padding: 5px;
             cursor: pointer;
         }
@@ -58,7 +48,6 @@
         }
 
         .payment-method p {
-            /* font-weight: regular; */
             display: inline;
             color: #275FCA;
             font-weight: normal;
@@ -81,7 +70,6 @@
             display: block;
             width: 40%;
             font-weight: 600;
-
         }
     </style>
 @endsection
@@ -89,7 +77,7 @@
 @section('content')
     <div class="container m-auto" style="margin-top:20dvh !important;">
         <h1 style="color: #275FCA">Pilih Metode Pembayaran</h1>
-        <form action="" method="POST">
+        <form action="" method="POST" id="payment-form">
             @csrf
             <div class="payment-methods text-center">
                 <div class="payment-method d-flex align-items-center">
@@ -106,7 +94,8 @@
 
             <div id="bank-options" class="hidden">
                 <h2>Pilih Bank</h2>
-                <select name="bank" class="form-control" onchange="showAccountNumber()" style="color:#275FCA;">
+                <select name="bank" class="form-control" onchange="showAccountNumberAndToggleButton()"
+                    style="color:#275FCA;">
                     <option value="" style="color:#275FCA;">--Pilih Bank--</option>
                     <option value="bca" style="color:#275FCA;">BCA</option>
                     <option value="bni" style="color:#275FCA;">BNI</option>
@@ -124,14 +113,12 @@
                     title="QR Code"></iframe>
             </div>
 
-            <@php
-                $harga = App\Models\bid;
-            @endphp <div class="total">
-                <p>Total: Rp 100,000</p>
-    </div>
-    <input type="hidden" name="total" value="100000">
-    <button type="submit" id="bayar-button">Bayar</button>
-    </form>
+            <div class="total">
+                <p>Total: Rp {{ session('newrequest')['price'] }}</p>
+            </div>
+            <input type="hidden" name="total" value="100000">
+            <button type="submit" id="bayar-button" disabled>Bayar</button>
+        </form>
     </div>
 @endsection
 
@@ -147,11 +134,12 @@
             if (bankTransfer.checked) {
                 bankOptions.classList.remove('hidden');
                 qrisIframe.classList.add('hidden');
+                toggleButtonState();
             } else if (qris.checked) {
                 bankOptions.classList.add('hidden');
                 qrisIframe.classList.remove('hidden');
+                bayarButton.disabled = false;
             }
-            bayarButton.disabled = false;
             bayarButton.innerText = "Bayar";
         }
 
@@ -173,26 +161,42 @@
             }
         }
 
+        function toggleButtonState() {
+            const bankTransfer = document.getElementById('bank-transfer');
+            const bankSelect = document.querySelector('select[name="bank"]');
+            const bayarButton = document.getElementById('bayar-button');
+
+            if (bankTransfer.checked && bankSelect.value) {
+                bayarButton.disabled = false;
+            } else {
+                bayarButton.disabled = true;
+            }
+        }
+
+        function showAccountNumberAndToggleButton() {
+            showAccountNumber();
+            toggleButtonState();
+        }
+
         document.querySelectorAll('input[name="payment"]').forEach(radio => {
             radio.addEventListener('change', togglePaymentMethod);
         });
 
         const bayarButton = document.getElementById('bayar-button');
-        // bayarButton.addEventListener('click', function(event) {
-        //     event.preventDefault(); // Mencegah form submit langsung
+        bayarButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Mencegah form submit langsung
 
-        // if (bayarButton.innerText === "Bayar") {
-        //     bayarButton.innerText = "Konfirmasi Pembayaran";
-        //     bayarButton.disabled = true;
-        //     setTimeout(function() {
-        //         bayarButton.click();
-        //         // bayarButton.disabled = false;
-        //     }, 5000); // Mengaktifkan kembali tombol setelah 5 detik
-        // } else if (bayarButton.innerText === "Konfirmasi Pembayaran") {
-        //     // Logic for form submission or further steps can be added here
-        //     alert("ngelinknya masi gagal");
-        // }
-        // });
+            if (bayarButton.innerText === "Bayar") {
+                bayarButton.innerText = "Konfirmasi Pembayaran";
+                bayarButton.disabled = true;
+
+                setTimeout(function() {
+                    bayarButton.disabled = false;
+                }, 5000); // Mengaktifkan kembali tombol setelah 5 detik
+            } else if (bayarButton.innerText === "Konfirmasi Pembayaran") {
+                document.getElementById('payment-form').submit(); // Submit form
+            }
+        });
     </script>
 
     <!-- Bootstrap JS and dependencies -->

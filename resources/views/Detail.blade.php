@@ -1,4 +1,3 @@
-{{-- @dd($Detail); --}}
 @extends('Template.Master')
 @section('CSS')
     <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
@@ -27,10 +26,11 @@
 @endsection
 
 @section('content')
-    <main class="frame-main" style="margin-top: 10dvh">
+    @include('components.navbarPengajar')
+    <main class="frame-main" style="">
         {{-- @dump($Detail) --}}
-        <div class="class-details4">
-            <p class="cek-riwayat-container1">
+        <div class="class-details4 mt-5">
+            <p class="cek-riwayat-container1 mt-5">
                 <span>Cek Riwayat > Kelas Terjadwal ></span>
                 <span class="calculus-dasar-anak8">
                     {{ $Detail->nama_mapel }}
@@ -41,7 +41,6 @@
 
         <section class="class-info3">
             <div class="class-card row">
-
                 <div class="card-content1 col-8">
                     {{-- tiitle data for task --}}
                     <div class="class-title1">
@@ -148,9 +147,18 @@
                                                 }
                                             }
                                         @endphp
+                                        {{-- @dump($Detail) --}}
                                         @if (!$isExist)
                                             <a href="/Rom/setpo?s={{ $Detail->BRID }}&harga={{ $Detail->harga_bider_terpilih }}"
                                                 class="col-12 btn btn-primary">Ambil Kelas</a>
+                                        @elseif ($Detail->guru_id == session('gurus')->id)
+                                            <div class="alert alert-succes">
+                                                Selamat Kamu sudah Di Terima
+                                            </div>
+                                        @elseif ($Detail->guru_id != session('gurus')->id)
+                                            <div class="alert alert-warning" role="alert">
+                                                Maaf Kamu Di Talaq
+                                            </div>
                                         @else
                                             <div class="alert alert-warning" role="alert">
                                                 Anda sudah mengajukan diri untuk mengajar
@@ -162,86 +170,94 @@
                     @endsession
                 </div>
 
-
-                <div class="col-4 Pengajar secmen1 row align-items-center">
-                    <div class="col-12">
-                        PENGAJARMU
-                    </div>
-                    @empty($reqlist)
-                    @else
-                        @foreach ($reqlist as $key => $item)
-                            <div class="my-2 col-9 teacher-info5">
-                                <a href="/DetailPengajar?guru_id={{ $item->id }}" class="teacher-profile">
-                                    <img class="profilepicture-icon11" loading="lazy" alt=""
-                                        src="{{ url('EdulaExport/public/profilepicture-1.svg') }}">
-                                    <div class="teacher-name">
-                                        <div class="teacher-name-rating">
-                                            <div class="budiman-h7">{{ $item->name }}</div>
-                                            <div class="rating-experience">
-                                                <div class="star-rating">
-                                                    @empty($item->averageRating)
-                                                    @else
-                                                        @php
-                                                            $star = ($key % 2) + 3;
-                                                        @endphp
-                                                        @for ($a = 0; $a < $star; $a++)
-                                                            <img class="star-rating-child" loading="lazy" alt=""
-                                                                src="{{ url('EdulaExport/public/star-81.svg') }}">
-                                                        @endfor
-                                                    @endempty
+                {{-- Conditionally show PENGAJARMU section --}}
+                {{-- @if (session('siswa')) --}}
+                {{-- @dump(session()->all(), $Detail) --}}
+                @session('siswa')
+                    @if ($Detail->siswa_id == session('siswa')->id)
+                        <div class="col-4 Pengajar secmen1 row
+                    align-items-center">
+                            <div class="col-12">
+                                PENGAJARMU
+                            </div>
+                        @empty($reqlist)
+                        @else
+                            @foreach ($reqlist as $key => $item)
+                                <div class="my-2 col-9 teacher-info5">
+                                    <a href="/DetailPengajar?guru_id={{ $item->id }}" class="teacher-profile">
+                                        <img class="profilepicture-icon11" loading="lazy" alt=""
+                                            src="{{ url('EdulaExport/public/profilepicture-1.svg') }}">
+                                        <div class="teacher-name">
+                                            <div class="teacher-name-rating">
+                                                <div class="budiman-h7">{{ $item->name }}</div>
+                                                <div class="rating-experience">
+                                                    <div class="star-rating">
+                                                        @empty($item->averageRating)
+                                                        @else
+                                                            @php
+                                                                $star = ($key % 2) + 3;
+                                                            @endphp
+                                                            @for ($a = 0; $a < $star; $a++)
+                                                                <img class="star-rating-child" loading="lazy" alt=""
+                                                                    src="{{ url('EdulaExport/public/star-81.svg') }}">
+                                                            @endfor
+                                                        @endempty
+                                                    </div>
+                                                    <div class="blank">({{ $item->totalReviews }})</div>
                                                 </div>
-                                                <div class="blank">({{ $item->totalReviews }})</div>
-                                            </div>
-                                            <div class="total-durasi-mengajar-container4">
-                                                <span>Total Durasi Mengajar: </span>
-                                                <span class="jam4">{{ $jam = $item->totalReviews }} Jam</span>
+                                                <div class="total-durasi-mengajar-container4">
+                                                    <span>Total Durasi Mengajar: </span>
+                                                    <span class="jam4">{{ $jam = $item->totalReviews }} Jam</span>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-3">
-                                {{-- if zoomlink ga ada --}}
-                                @empty($Detail->zoomlink)
-                                    @empty(!session('siswa'))
-                                        @if ($Detail->siswa_id == session('siswa')->id)
-                                            <a href="/Rom/approve?s={{ $Detail->BRID }}&g={{ $item->guru_id }}"
-                                                class="btn btn-warning">
-                                                Terima
-                                            </a>
-                                        @endif
+                                    </a>
+                                </div>
+                                <div class="col-3">
+                                    {{-- if zoomlink ga ada --}}
+                                    @empty($Detail->zoomlink)
+                                        @empty(!session('siswa'))
+                                            @if ($Detail->siswa_id == session('siswa')->id)
+                                                <a href="/Rom/approve?s={{ $Detail->BRID }}&g={{ $item->guru_id }}"
+                                                    class="btn btn-warning">
+                                                    Terima
+                                                </a>
+                                            @endif
+                                        @endempty
                                     @endempty
-                                @endempty
-                            </div>
-                        @endforeach
-                    @endempty
+                                </div>
+                            @endforeach
+                        @endempty
+                    </div>
+                @endif
+            @endsession
+            {{-- @endif --}}
 
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 @endsection
 
 @section('JS')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const stars = document.querySelectorAll('.stars i');
-            const ratingInput = document.getElementById('rating');
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const stars = document.querySelectorAll('.stars i');
+        const ratingInput = document.getElementById('rating');
 
-            stars.forEach((star, index1) => {
-                star.addEventListener("click", () => {
-                    let ratingValue = index1 + 1;
-                    ratingInput.value = ratingValue;
+        stars.forEach((star, index1) => {
+            star.addEventListener("click", () => {
+                let ratingValue = index1 + 1;
+                ratingInput.value = ratingValue;
 
-                    stars.forEach((star, index2) => {
-                        if (index1 >= index2) {
-                            star.classList.add('active');
-                        } else {
-                            star.classList.remove('active');
-                        }
-                    });
+                stars.forEach((star, index2) => {
+                    if (index1 >= index2) {
+                        star.classList.add('active');
+                    } else {
+                        star.classList.remove('active');
+                    }
                 });
             });
         });
-    </script>
+    });
+</script>
 @endsection

@@ -11,9 +11,12 @@ class GuruController extends Controller
 {
     public function show(Request $request)
     {
-        $guruId = session('gurus')->id;
+        $guruId = $request->guru_id;
+        // $guruId = session('gurus')->id;
+        // dd($guruId);
         $guru = DB::table('guru_aktif')->where('id', $guruId)->first();
         $sertif = DB::table('sertifandskils')->where('guru_id', $guruId)->get();
+
 
         // Ambil semua ulasan
         $reviews = DB::table('bidrequests')->where('guru_id', $guruId)->get();
@@ -43,6 +46,8 @@ class GuruController extends Controller
         $selesai = DB::table('bidrequests')->where('guru_id', $guruId)->where('status', 'DONE')->get();
         $tidakselesai = DB::table('bidrequests')->where('guru_id', $guruId)->where('status', '!=', 'DONE')->get();
 
+        // create session gurus
+        session(['gurus' => $guru]);
 
         return view('DetailPengajar', compact(
             'guru',

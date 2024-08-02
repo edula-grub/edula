@@ -8,6 +8,7 @@ use App\Http\Controllers\ipaymuController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelajarState;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UbahProfilController;
 
 Route::get('/', function () {
@@ -181,3 +182,5 @@ Route::get('/CaraKerjaPengajar', function () {
 
 // yohhhhh
 // UbahProfilPengajar
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');

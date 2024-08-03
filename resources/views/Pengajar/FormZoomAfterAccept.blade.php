@@ -116,6 +116,7 @@
             color: #fff;
             font-size: 16px;
             cursor: pointer;
+            /* parah mirza */
         }
 
         .btn-submit:hover {
@@ -137,26 +138,6 @@
 @endsection
 
 @section('content')
-    <div class="search m-auto d-flex align-self-center">
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="Cari">
-            <span class="search-icon">&#128269;</span>
-        </div>
-        <div class="dropdown">
-            <img src="" alt="" sizes="" srcset="">
-            <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                style="border-radius: 20px; width: 100px">
-                Filter
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">SD</a></li>
-                <li><a class="dropdown-item" href="#">SMP</a></li>
-                <li><a class="dropdown-item" href="#">SMA</a></li>
-                <li><a class="dropdown-item" href="#">Kuliah</a></li>
-                <li><a class="dropdown-item" href="#">Umum</a></li>
-            </ul>
-        </div>
-    </div>
     <h1 class="text-center mt-4 mb-3">Formulir Pertemuan Online dengan Pelajar</h1>
     <div class="container mt d-flex">
         <form id="meeting-form" action="#">

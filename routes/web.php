@@ -62,6 +62,10 @@ Route::get('/ReqKelasPayment', function () {
     return view('Pelajar.RequestKelasPayment');
 });
 
+Route::get('/FormTerima', function () {
+    return view('Pengajar.FormZoomAfterAccept');
+});
+
 // Route::get('/ReqKelasConfirm', function () {
 //     return view('Pelajar.RequestKelasConfirm');
 // });

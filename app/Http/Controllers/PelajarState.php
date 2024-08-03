@@ -35,7 +35,7 @@ class PelajarState extends Controller
 
     function AmbilKelas(Request $request)
     {
-        $kelas = DB::table('bidrequests')->where('status', "OPENWAR")->get();
+        $kelas = DB::table('bidrequests')->where('status', "OPENWAR")->where('siswa_id', '!=', session('siswa')->id)->get();
         // dd($kelas);
         return view('ambilKelas', compact('kelas'));
     }

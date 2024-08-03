@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-white shadow-sm fixed-top" style="width: auto;">
     <div class="container-fluid ms-3">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/dashboard">
             <img src="{{ asset('./img/edulaLogo.png') }}" width="65" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -151,13 +151,13 @@
                                         @if (!$isExist)
                                             <a href="/Rom/setpo?s={{ $Detail->BRID }}&harga={{ $Detail->harga_bider_terpilih }}"
                                                 class="col-12 btn btn-primary">Ambil Kelas</a>
-                                        @elseif ($Detail->guru_id == session('gurus')->id)
+                                        @elseif ($Detail->guru_id && $Detail->guru_id == session('gurus')->id)
                                             <div class="alert alert-succes">
                                                 Selamat Kamu sudah Di Terima
                                             </div>
-                                        @elseif ($Detail->guru_id != session('gurus')->id)
+                                        @elseif ($Detail->guru_id && $Detail->guru_id != session('gurus')->id)
                                             <div class="alert alert-warning" role="alert">
-                                                Maaf Kamu Di Talaq
+                                                Maaf Kamu Di Tolak
                                             </div>
                                         @else
                                             <div class="alert alert-warning" role="alert">

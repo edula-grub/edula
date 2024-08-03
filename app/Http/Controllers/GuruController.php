@@ -89,8 +89,8 @@ class GuruController extends Controller
                 'guru_id' => $guru->first()->user_id,
                 'nama' => $request->nama,
                 'distributor' => $request->distributor,
-                "skill" => "DEMO",
-                "level" => "123",
+                "skill" => $request->skill,
+                "level" => $request->level,
                 'status' => 1,
                 'image' => $filePath,
             ]);

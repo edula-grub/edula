@@ -5,11 +5,11 @@
         </button>
     </div>
     @if (!empty($sertif))
-        @foreach ($sertif as $item)
+        @foreach ($sertif as $k => $item)
             <div class="my-2 col-6">
                 <div class="row">
                     <div class="col-2">
-                        <img src="{{ url('img/' . $item->image) }}" class="rounded img-fluid" alt="">
+                        <img src="{{ url('sertiv/' . $item->image) }}" class="rounded img-fluid" alt="">
                     </div>
                     <div class="col-10">
                         <h4 class="CourseName">
@@ -27,12 +27,26 @@
                         </p>
                     </div>
                     <div class="offset-8 col-4">
-                        <button class="btn btn-outline-dark row" type="button">
+                        <button class="btn btn-outline-dark row" type="button" data-bs-toggle="modal"
+                            data-bs-target="#Cosmiksans{{ $k }}">
                             <span class="col-8">Lihat Detail</span>
-                            <span class="col-4">
-
-                            </span>
+                            <span class="col-4"></span>
                         </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="Cosmiksans{{ $k }}" tabindex="-1"
+                aria-labelledby="Cosmiksans{{ $k }}Label" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{ url('sertiv/' . $item->image) }}" alt="" class="img-fluid">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,6 +79,14 @@
                         <div class="mb-3">
                             <label for="distributor" class="form-label">Distributor</label>
                             <input type="text" class="form-control" id="Distributor" name="distributor">
+                        </div>
+                        <div class="mb-3">
+                            <label for="skill" class="form-label">Skill</label>
+                            <input type="text" class="form-control" id="skill" name="skill">
+                        </div>
+                        <div class="mb-3">
+                            <label for="level" class="form-label">Level</label>
+                            <input type="text" class="form-control" id="level" name="level">
                         </div>
                         <div class="mb-3">
                             <label for="ValidTime" class="form-label">Valid Time</label>

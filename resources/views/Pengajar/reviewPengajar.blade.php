@@ -6,7 +6,13 @@
             <div class="row">
                 <div class="bg-body-tertiary d-flex">
                     <div class="col-md-1 p-2">
-                        <img src="{{ $review->users->profile }}" alt="">
+                        @php
+                            $d = DB::table('guru_aktif')
+                                ->where('id', $review->guru_id)
+                                ->first();
+                        @endphp
+                        <img src="{{ $d->profile }}" class="img-fluid rounded rounded-circle" alt=""
+                            style="width: 10dvw;height: 5dvw;object-fit: cover;">
                     </div>
                     <div class="col-md-11">
                         <div class="row">

@@ -20,6 +20,14 @@ class LinkController extends Controller
                 'zoomlink' => $request->input('link'),
             ]);
 
+
+        DB::table('biderlists')->insert([
+            'guru_id' => session('gurus')->id,
+            'bidrequest_id' => $request->s,
+            // 'harga' => $request->harga,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
         // dd($bidrequest);
         return redirect('/Rom?s=' . $request->input('idnya'));
     }

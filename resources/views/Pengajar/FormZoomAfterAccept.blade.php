@@ -11,8 +11,7 @@
         body {
             /* font-family: Arial, sans-serif; */
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center align-items: center;
             flex-direction: column;
             height: 100vh;
             margin: 0;

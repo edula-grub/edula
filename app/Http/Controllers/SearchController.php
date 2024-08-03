@@ -14,6 +14,6 @@ class SearchController extends Controller
         $query = $request->input('query');
         $results = Bidrequest::where('nama_mapel', 'LIKE', "%{$query}%")->get();
 
-        return response()->json($results);
+        return view('search', ['results' => $results]);
     }
 }

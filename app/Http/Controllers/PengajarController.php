@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bidrequest;
 use App\Models\RatingAndReview;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -9,6 +10,15 @@ use Illuminate\Support\Facades\DB;
 class PengajarController extends Controller
 {
 
+    public function FormLink(Request $request)
+    {
+
+        // dd($request->s);
+        $data = Bidrequest::where('id', $request->s)->get();
+        // dd($data);
+
+        return view('Pengajar.FormZoomAfterAccept', compact('data'));
+    }
 
     public function JadiPengajar(Request $request)
     {

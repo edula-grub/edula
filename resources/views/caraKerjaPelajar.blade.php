@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@include('components.navbar')
+@include('components.navbarPelajar')
 @section('content')
     <!-- Bagian content -->
     <div class="mw-100 container pt-5">

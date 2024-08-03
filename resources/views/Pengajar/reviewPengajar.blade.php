@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="bg-body-tertiary d-flex">
                     <div class="col-md-1 p-2">
-                        <img src="{{ asset('img/profilPelajar.png') }}" alt="">
+                        <img src="{{ $review->users->profile }}" alt="">
                     </div>
                     <div class="col-md-11">
                         <div class="row">

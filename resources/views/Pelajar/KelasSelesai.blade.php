@@ -6,9 +6,9 @@
             @else
                 @foreach ($selesai as $item)
                     @if ($item->status == 'DONE')
-                        <div class="kotak">
+                        <div class="kotak" style="background-color: #F0F0F0">
                             <div class="kotakimg">
-                                <img src="{{ url('EdulaExport/public/ellipse-70@2x.png') }}" alt="">
+                                <img src="{{ url('/img/Icon_Mapel_1.png') }}" class="img-fluid" alt="">
                             </div>
                             <div class="kotakisi">
                                 <h5>{{ $item->nama_mapel }}</h5>

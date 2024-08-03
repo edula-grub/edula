@@ -12,8 +12,6 @@ class UbahProfilController extends Controller
     function ViewUbahProfil(Request $request)
     {
         $datasiswa = session("siswa");
-        // dd(session("siswa"));
-
         return view('UbahProfilPengajar', compact('datasiswa'));
     }
 

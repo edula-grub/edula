@@ -67,14 +67,16 @@
                 <div class="actions2">
                     <div class="action-buttons2">
                         <div class="button3">
-                            <a href="{{ url('/UbahProfilPelajar') }}" class="ubah-profil1">Ubah Profil</a>
+                            <a href="{{ url('/UbahProfilPelajar') }}" class="ubah-profil1"
+                                style="text-decoration: none">Ubah Profil</a>
                         </div>
                         <div class="button4">
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
                             <a class="keluar1" href="{{ route('logout') }}"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                style="text-decoration: none">
                                 Keluar
                             </a>
                         </div>

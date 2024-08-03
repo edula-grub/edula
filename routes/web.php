@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PelajarState;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UbahProfilController;
+use App\Http\Controllers\LinkController;
 
 Route::get('/', function () {
     return view('landing');
@@ -62,17 +63,15 @@ Route::get('/ReqKelasPayment', function () {
     return view('Pelajar.RequestKelasPayment');
 });
 
-Route::get('/FormTerima', function () {
-    return view('Pengajar.FormZoomAfterAccept');
-});
+Route::get('/FormTerima', [PengajarController::class, 'FormLink'])->name('FormTerima');
 
 // Route::get('/ReqKelasConfirm', function () {
 //     return view('Pelajar.RequestKelasConfirm');
 // });
 
-Route::get('/ReqKelasSchedule', function () {
-    return view('Pelajar.RequestKelasSchedule');
-});
+// Route::get('/ReqKelasSchedule', function () {
+//     return view('Pelajar.RequestKelasSchedule');
+// });
 
 
 
@@ -188,3 +187,6 @@ Route::get('/CaraKerjaPengajar', function () {
 // UbahProfilPengajar
 
 Route::get('/search', [SearchController::class, 'search'])->name('search');
+// Route::post('/submit-meeting', [LinkController::class, 'submitMeeting'])->name('submitMeeting');
+// Route::get('submit-meeting', [LinkController::class, 'submitMeeting'])->name('submitMeeting');
+Route::post('submit-meeting', [LinkController::class, 'submitMeeting'])->name('submitMeeting');

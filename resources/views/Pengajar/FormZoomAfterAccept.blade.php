@@ -134,39 +134,77 @@
             flex-direction: column;
             justify-content: end;
         }
+
+        .backbuttonhore {
+            border-radius: 200px !important;
+            border-color: #275FCA !important;
+            background-color: white !important;
+            font-weight: 500 !important;
+            font-family: var(--font-poppins) !important;
+            color: #275FCA !important;
+            width: 100px !important;
+            height: 40px !important;
+            margin: 0px 0 10px 40px !important;
+        }
+
+        .backbuttonhore:hover {
+            color: #1b4186 !important;
+            background-color: whitesmoke !important;
+        }
     </style>
 @endsection
 
 @section('content')
-    <h1 class="text-center mt-4 mb-3">Formulir Pertemuan Online dengan Pelajar</h1>
+    <div class="backbutton">
+        <a class="btn btn-primary backbuttonhore" href="{{ url()->previous() }}">
+            Back
+        </a>
+    </div>
+
+    <h1 class="text-center mb-5">Formulir Pertemuan Online dengan Pelajar</h1>
     <div class="container mt d-flex">
-        <form id="meeting-form" action="#">
+        <form id="meeting-form" method="POST" action="{{ route('submitMeeting') }}">
+            @csrf
+
             <div class="error-message" id="error-message" style="display: none; color:red;">Harap isi semua field sebelum
                 mengirim.</div>
-            <div class="form-group">
-                <label for="topic">Topik Pertemuan</label>
-                <input type="text" id="topic" name="topic">
-            </div>
-            <div class="form-group">
-                <label for="link">Tautan Pertemuan Terjadwal</label>
-                <input type="text" id="link" name="link">
-            </div>
-            <div class="form-group">
-                <label for="date">Hari/Tanggal</label>
-                <input type="date" id="date" name="date">
-            </div>
-            <div class="form-group-inline">
+            @foreach ($data as $item)
+                <input type="hidden" name="idnya" value="{{ $item->id }}">
+                <?php
+                $hari = date('l', strtotime($item->jadwal));
+                $tanggal = date('d F Y', strtotime($item->jadwal));
+                $jam_mulai = date('H:i', strtotime($item->jadwal));
+                $jam_selesai = $jamselesai = date('H:i', strtotime('+1 hour', strtotime($item->jadwal)));
+                ?>
                 <div class="form-group">
-                    <label for="start-time">Jam Mulai (WIB)</label>
-                    <input type="time" id="start-time" name="start-time">
+                    <label for="topic">Topik Pertemuan</label>
+                    <label for="topikValue">{{ $item->nama_mapel }}</label>
+                    {{-- <input type="text" id="topic" name="topic"> --}}
                 </div>
                 <div class="form-group">
-                    <label for="end-time">Jam Selesai (WIB)</label>
-                    <input type="time" id="end-time" name="end-time">
+                    <label for="link">Tautan Pertemuan Terjadwal</label>
+                    <input type="text" id="link" name="link">
                 </div>
-            </div>
-            <button type="submit" class="btn-submit align-self-end"><a class="kirim-btn text-center"
-                    href="#">Kirim</a></button>
+                <div class="form-group">
+                    <label for="date">Hari/Tanggal</label>
+                    <label for="dateValue">{{ $hari }}, {{ $tanggal }}</label>
+                    {{-- <input type="date" id="date" name="date"> --}}
+                </div>
+                <div class="form-group-inline">
+                    <div class="form-group">
+                        <label for="start-time">Jam Mulai (WIB)</label>
+                        <label for="startValue">{{ $jam_mulai }}</label>
+                        {{-- <input type="time" id="start-time" name="start-time"> --}}
+                    </div>
+                    <div class="form-group">
+                        <label for="end-time">Jam Selesai (WIB)</label>
+                        <label for="endValue">{{ $jam_selesai }}</label>
+                        {{-- <input type="time" id="end-time" name="end-time"> --}}
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit align-self-end"><a class="kirim-btn text-center"
+                        href="#">Kirim</a></button>
+            @endforeach
         </form>
     </div>
 @endsection
@@ -183,7 +221,8 @@
 
             // Check each input to see if it is empty
             inputs.forEach(function(input) {
-                if (input.value.trim() === '') {
+                if (input.value.trim() === '' && input.name !== 'topic' && input.name !== 'date' && input
+                    .name !== 'start_time' && input.name !== 'end_time') {
                     isValid = false;
                 }
             });
@@ -193,7 +232,7 @@
             if (isValid) {
                 errorMessage.style.display = 'none';
                 // Form is valid; you can submit it or perform other actions here
-                alert('Formulir berhasil dikirim!');
+                this.submit(); // Submit form
             } else {
                 errorMessage.style.display = 'block';
             }

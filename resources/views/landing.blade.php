@@ -89,7 +89,8 @@
                                 <img class="frame-inner" alt="" src="storage/rectangle-19@2x.png" />
 
                                 <div class="pengajar">Pengajar</div>
-                                <a class="button how-it-works-title-container" href="/CaraKerjaPengajar">
+                                <a style="text-decoration:none;" class="button how-it-works-title-container"
+                                    href="/login#sign-up-btn">
                                     <button class="group-button">
                                         <div class="rectangle-div"></div>
                                         <div class="cara-kerja1">Cara Kerja</div>
@@ -101,9 +102,8 @@
                             <div class="request-class-description">
                                 <h1 class="request-kelas1">Request Kelas</h1>
                                 <div class="lorem-ipsum-dolor">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua.
+                                    Dengan fitur Request Kelas, siswa dapat dengan mudah
+                                    mengajukan permintaan untuk kelas yang mereka inginkan.
                                 </div>
                             </div>
                         </div>
@@ -118,10 +118,8 @@
                                     </h1>
                                 </div>
                                 <div class="lorem-ipsum-dolor1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea
+                                    Di Edula, kami menyediakan metode pembayaran yang mudah dan cepat
+                                    untuk kenyamanan Anda. Dengan menggunakan Transfer Bank ataupun QRIS.
                                 </div>
                             </div>
                         </div>
@@ -131,7 +129,8 @@
                             <img class="frame-inner" alt="" src="storage/rectangle-21@2x.png" />
 
                             <div class="pelajar">Pelajar</div>
-                            <a class="button how-it-works-title-container-l" href="/CaraKerjaPelajar">
+                            <a style="text-decoration:none;" class="button how-it-works-title-container-l"
+                                href="/login#sign-up-btn">
                                 <button class="group-button">
                                     <div class="rectangle-div"></div>
                                     <div class="cara-kerja1">Cara Kerja</div>
@@ -144,11 +143,10 @@
                         </div>
                         <div class="negotiate-description">
                             <div class="negotiate-title">
-                                <h1 class="negosiasi-harga">Negosiasi Harga</h1>
+                                <h1 class="negosiasi-harga">Harga yang Fleksibel</h1>
                                 <div class="lorem-ipsum-dolor2">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam,
+                                    Dengan fitur ini, Pelajar dan Pengajar mendapatkan harga yang sesuai dengan
+                                    kemampuan dan keinginannya.
                                 </div>
                             </div>
                         </div>
@@ -162,10 +160,8 @@
                             <div class="private-class-title">
                                 <h1 class="kelas-privat">Kelas Privat</h1>
                                 <div class="lorem-ipsum-dolor1">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex
+                                    Kelas privat di Edula dirancang untuk memberikan pengalaman belajar yang lebih
+                                    personal dan fokus, sesuai dengan kebutuhan dan tujuan setiap penggunnya.
                                 </div>
                             </div>
                         </div>
@@ -182,10 +178,12 @@
                         <div class="testimonial1">
                             <div class="private-class-image">
                                 <div class="lorem-ipsum-dolor4">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Ulasan di Edula memberikan wawasan berharga tentang pengalaman belajar dari pengguna
+                                    lain, membantu Anda membuat keputusan yang tepat. Setiap ulasan ditulis oleh
+                                    pengguna yang telah mengikuti kelas, memberikan perspektif nyata tentang kualitas
+                                    pengajaran dan materi yang disampaikan. Dengan beragam pandangan dari pengguna
+                                    dengan latar belakang dan kebutuhan belajar yang berbeda, Anda bisa mendapatkan
+                                    gambaran yang lebih komprehensif.
                                 </div>
                                 <div class="testimonial-user">
                                     <div class="user-avatar">
@@ -203,19 +201,18 @@
                                             <div class="user-testimonial">
                                                 <div class="user-testimonial-content">
                                                     <blockquote class="lorem-ipsum-dolor5">
-                                                        “Lorem ipsum dolor sit amet, consectetur
-                                                        adipisicing elit, sed do eiusmod tempor incididunt
-                                                        ut labore et dolore magna aliqua. .”
+                                                        “Edula sangat membantu saya dalam menemukan Pengajar yang
+                                                        kompeten dengan harga yang sesuai. Nice Edula”
                                                     </blockquote>
                                                     <div class="user-company">
                                                         <img class="user-company-child" loading="lazy" alt=""
                                                             src="storage/group-29.svg" />
 
                                                         <div class="company-name">
-                                                            <div class="lorem-ipsum">LOREM IPSUM</div>
+                                                            <div class="lorem-ipsum">Yohanna Edu</div>
                                                             <div class="company-position">
                                                                 <div class="reviews-at-tinder">
-                                                                    12 reviews at Tinder
+                                                                    12 Ulasan di Edula
                                                                 </div>
                                                             </div>
                                                         </div>

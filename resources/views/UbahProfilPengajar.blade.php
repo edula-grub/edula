@@ -1,7 +1,6 @@
 @extends('Template.Master')
 
 @section('CSS')
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('/EdulaExport/global.css') }}" />
     <link rel="stylesheet" href="{{ url('/EdulaExport/UbahProfilPengajar.css') }}" />
     <link rel="stylesheet"
@@ -9,7 +8,15 @@
 @endsection
 
 @section('content')
-    <div class="ubah-profil-pelajar">
+    {{-- @include('components.navbarPelajar') --}}
+
+    <div class="backbutton">
+        <a class="btn btn-primary backbuttonhore" href="{{ url()->previous() }}">
+            Back
+        </a>
+    </div>
+
+    <div class="ubah-profil-pelajar" style="padding-top: 10px">
         <main class="rectangle-parent51">
             <div class="frame-child100"></div>
             <div class="ubah-profil-parent">
@@ -52,7 +59,7 @@
                                         <img class="id-card-24dp-fill0-wght400-gra-icon3" alt=""
                                             src="{{ url('EdulaExport/public/id-card-24dp-fill0-wght400-grad0-opsz24-2.svg') }}" />
                                     </div>
-                                    <b class="data-pribadi3">Data Pribadi Pengajar</b>
+                                    <b class="data-pribadi3">Data Pribadi</b>
                                 </div>
                             </div>
                             <div class="frame-child102"></div>

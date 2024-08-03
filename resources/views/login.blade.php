@@ -96,18 +96,16 @@
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
-                    <h3>Member of Brand?</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
-                        minima iure?</p>
+                    <h3>Sudah memiliki Akun?</h3>
+                    <p>Masuk ke akunmu dan belajar bersama Edula!</p>
                     <button class="btn btn-primary" id="sign-in-btn">Masuk</button>
                 </div>
                 <img src="signin.svg" alt="" class="image">
             </div>
             <div class="panel right-panel">
                 <div class="content">
-                    <h3>New to Brand?</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
-                        minima iure?</p>
+                    <h3>Belum memiliki Akun?</h3>
+                    <p>Daftar sekarang untuk bergabung dan belajar bersama di Edula!</p>
                     <button class="btn btn-primary" id="sign-up-btn">Daftar</button>
                 </div>
                 <img src="signup.svg" alt="" class="image">

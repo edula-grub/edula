@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('components.navbar')
+    @include('components.navbarPengajar')
     <!-- Bagian content -->
     <div class="mw-100 container pt-5">
         <div class="d-flex justify-content-center my-5 pt-5">

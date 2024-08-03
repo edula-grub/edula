@@ -149,8 +149,9 @@
                                         @endphp
                                         {{-- @dump($Detail) --}}
                                         @if (!$isExist)
-                                            <a href="/Rom/setpo?s={{ $Detail->BRID }}&harga={{ $Detail->harga_bider_terpilih }}"
-                                                class="col-12 btn btn-primary">Ambil Kelas</a>
+                                            <a class="btn btn-primary col-12" href="/FormTerima?s={{ $Detail->id }}">
+                                                {{-- <a href="/Rom/setpo?s={{ $Detail->BRID }}&harga={{ $Detail->harga_bider_terpilih }}"class="col-12 btn btn-primary"> --}}
+                                                Ambil Kelas</a>
                                         @elseif ($Detail->guru_id && $Detail->guru_id == session('gurus')->id)
                                             <div class="alert alert-succes">
                                                 Selamat Kamu sudah Di Terima

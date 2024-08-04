@@ -57,6 +57,7 @@ class PelajarState extends Controller
             ->where('bidrequest_id', $request->s)
             ->get();
 
+
         foreach ($reqlist as $key => $value) {
             $reviews = DB::table('bidrequests')->where('guru_id', $value->guru_id)->get();
             $averageRating = $reviews->avg('rating_siswa_ke_guru');

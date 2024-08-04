@@ -26,10 +26,14 @@
 @endsection
 
 @section('content')
-    @empty($request->r == 'siswa')
-        @include('components.navbarPelajar')
-    @else
+    @empty($_GET['r'])
         @include('components.navbarPengajar')
+    @else
+        @if ($_GET['r'] == 'siswa')
+            @include('components.navbarPelajar')
+        @else
+            @include('components.navbarPengajar')
+        @endif
     @endempty
     <main class="frame-main" style="">
         {{-- @dump($Detail) --}}

@@ -26,7 +26,7 @@
 @endsection
 
 @section('content')
-    @empty($request->r)
+    @empty($request->r == 'siswa')
         @include('components.navbarPelajar')
     @else
         @include('components.navbarPengajar')

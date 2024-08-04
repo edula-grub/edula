@@ -26,7 +26,11 @@
 @endsection
 
 @section('content')
-    @include('components.navbarPengajar')
+    @empty($request->r)
+        @include('components.navbarPelajar')
+    @else
+        @include('components.navbarPengajar')
+    @endempty
     <main class="frame-main" style="">
         {{-- @dump($Detail) --}}
         <div class="class-details4 mt-5">

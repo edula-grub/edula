@@ -21,7 +21,8 @@
                                 </p>
                             </div>
                             <div class="kotakbutton">
-                                <a href="/Rom?s={{ $item->id }}" class="statusbutton">{{ $item->status }}</a>
+                                <a href="/Rom?s={{ $item->id }}&r=siswa"
+                                    class="statusbutton">{{ $item->status }}</a>
                             </div>
                         </div>
                     @endif

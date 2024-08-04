@@ -46,11 +46,9 @@ class PelajarState extends Controller
     function Edetail(Request $request)
     {
         $Detail = DB::table('ALLWAR')
-            // ->join('siswa_aktif', 'bidrequests.siswa_id', '=', 'siswa_aktif.id')
             ->join('guru_aktif', 'ALLWAR.guru_id', '=', 'guru_aktif.id')
             ->where('BRID', $request->s)
             ->first();
-        // dd($Detail);
 
         empty($Detail) ? $Detail = DB::table('ALLWAR')->where('BRID', $request->s)->first() : null;
 
@@ -58,9 +56,6 @@ class PelajarState extends Controller
             ->join('guru_aktif', 'biderlists.guru_id', '=', 'guru_aktif.id')
             ->where('bidrequest_id', $request->s)
             ->get();
-
-        // dd($reqlist);
-
 
         foreach ($reqlist as $key => $value) {
             $reviews = DB::table('bidrequests')->where('guru_id', $value->guru_id)->get();

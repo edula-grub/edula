@@ -102,32 +102,36 @@
                         <div class="container">
                             <div class="row">
                                 @if ($Detail->status != 'DONE')
-                                    <form action="{{ route('form-review') }}" method="POST">
-                                        <input type="hidden" name="id" value="{{ $Detail->BRID }}">
-                                        @csrf
-                                        <div class="rating-box" style="position: relative;">
-                                            <header>Bagaimana pengalaman Anda?</header>
-                                            <div class="stars d-flex align-items-center my-3" style="gap: 25px">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
+                                    @if ($Detail->siswa_id == session('siswa')->id)
+                                        <form action="{{ route('form-review') }}" method="POST">
+                                            <input type="hidden" name="id" value="{{ $Detail->BRID }}">
+                                            @csrf
+                                            <div class="rating-box" style="position: relative;">
+                                                <header>Bagaimana pengalaman Anda?</header>
+                                                <div class="stars d-flex align-items-center my-3" style="gap: 25px">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <input type="hidden" name="rating_siswa_ke_guru" id="rating"
+                                                    value="0">
                                             </div>
-                                            <input type="hidden" name="rating_siswa_ke_guru" id="rating" value="0">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputMataPelajaran" class="form-label">Mata Pelajaran</label>
-                                            <input type="text" class="form-control" id="exampleInputMataPelajaran"
-                                                aria-describedby="emailHelp" name="nama_mapel"
-                                                value="{{ $Detail->nama_mapel }}">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="exampleInputUlasan" class="form-label">Ulasan</label>
-                                            <textarea name="komen_siswa_ke_guru" id="exampleInputUlasan" cols="30" rows="10" class="form-control"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </form>
+                                            <div class="mb-3">
+                                                <label for="exampleInputMataPelajaran" class="form-label">Mata
+                                                    Pelajaran</label>
+                                                <input type="text" class="form-control" id="exampleInputMataPelajaran"
+                                                    aria-describedby="emailHelp" name="nama_mapel"
+                                                    value="{{ $Detail->nama_mapel }}">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputUlasan" class="form-label">Ulasan</label>
+                                                <textarea name="komen_siswa_ke_guru" id="exampleInputUlasan" cols="30" rows="10" class="form-control"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    @endif
                                 @endif
                             </div>
                         </div>
@@ -137,43 +141,41 @@
                         <div class="payment-details1">
                             <div class="payment-info1">
                                 <div class="payment-date1">
-                                    <h2>Tertarik mengajarkan Dia?</h1>
-                                        @php
-                                            $isExist = false;
-                                            foreach ($reqlist as $key => $item) {
-                                                if ($item->id == session('gurus')->id) {
-                                                    $isExist = true;
-                                                    break;
-                                                }
+                                    @php
+                                        $isExist = false;
+                                        foreach ($reqlist as $key => $item) {
+                                            if ($item->id == session('gurus')->id) {
+                                                $isExist = true;
+                                                break;
                                             }
-                                        @endphp
-                                        {{-- @dump($Detail) --}}
-                                        @if (!$isExist)
-                                            <a class="btn btn-primary col-12" href="/FormTerima?s={{ $Detail->id }}">
-                                                {{-- <a href="/Rom/setpo?s={{ $Detail->BRID }}&harga={{ $Detail->harga_bider_terpilih }}"class="col-12 btn btn-primary"> --}}
-                                                Ambil Kelas</a>
-                                        @elseif ($Detail->guru_id && $Detail->guru_id == session('gurus')->id)
-                                            <div class="alert alert-succes">
-                                                Selamat Kamu sudah Di Terima
-                                            </div>
-                                        @elseif ($Detail->guru_id && $Detail->guru_id != session('gurus')->id)
-                                            <div class="alert alert-warning" role="alert">
-                                                Maaf Kamu Di Tolak
-                                            </div>
-                                        @else
-                                            <div class="alert alert-warning" role="alert">
-                                                Anda sudah mengajukan diri untuk mengajar
-                                            </div>
+                                        }
+                                    @endphp
+                                    {{-- @dump($Detail) --}}
+                                    @if (!$isExist)
+                                        @if ($Detail->siswa_id != session('siswa')->id)
+                                            <h2>Tertarik mengajarkan Dia?</h1>
+                                                <a class="btn btn-primary col-12" href="/FormTerima?s={{ $Detail->id }}">
+                                                    Ambil Kelas</a>
                                         @endif
+                                    @elseif ($Detail->guru_id == session('gurus')->id)
+                                        <div class="alert alert-success">
+                                            Selamat Kamu sudah Di Terima
+                                        </div>
+                                    @elseif ($Detail->guru_id && $Detail->guru_id != session('gurus')->id)
+                                        <div class="alert alert-warning" role="alert">
+                                            Maaf Kamu Di Tolak
+                                        </div>
+                                    @else
+                                        <div class="alert alert-warning" role="alert">
+                                            Anda sudah mengajukan diri untuk mengajar
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
                     @endsession
                 </div>
 
-                {{-- Conditionally show PENGAJARMU section --}}
-                {{-- @if (session('siswa')) --}}
-                {{-- @dump(session()->all(), $Detail) --}}
                 @session('siswa')
                     @if ($Detail->siswa_id == session('siswa')->id)
                         <div class="col-4 Pengajar secmen1 row
@@ -183,7 +185,45 @@
                             </div>
                         @empty($reqlist)
                         @else
+                            @if ($Detail->guru_id)
+                                @foreach ($reqlist as $key => $item)
+                                    @if ($item->guru_id == $Detail->guru_id)
+                                        <div class="my-2 col-9 teacher-info5">
+                                            <a href="/DetailPengajar?guru_id={{ $item->id }}" class="teacher-profile">
+                                                <img class="profilepicture-icon11" loading="lazy" alt=""
+                                                    src="{{ url('EdulaExport/public/profilepicture-1.svg') }}">
+                                                <div class="teacher-name">
+                                                    <div class="teacher-name-rating">
+                                                        <div class="budiman-h7">{{ $item->name }}</div>
+                                                        <div class="rating-experience">
+                                                            <div class="star-rating">
+                                                            @empty($item->averageRating)
+                                                            @else
+                                                                @php
+                                                                    $star = ($key % 2) + 3;
+                                                                @endphp
+                                                                @for ($a = 0; $a < $star; $a++)
+                                                                    <img class="star-rating-child" loading="lazy"
+                                                                        alt=""
+                                                                        src="{{ url('EdulaExport/public/star-81.svg') }}">
+                                                                @endfor
+                                                            @endempty
+                                                        </div>
+                                                        <div class="blank">({{ $item->totalReviews }})</div>
+                                                    </div>
+                                                    <div class="total-durasi-mengajar-container4">
+                                                        <span>Total Durasi Mengajar: </span>
+                                                        <span class="jam4">{{ $jam = $item->totalReviews }} Jam</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endif
+                            @endforeach
+                        @else
                             @foreach ($reqlist as $key => $item)
+                                {{-- @dump($item) --}}
                                 <div class="my-2 col-9 teacher-info5">
                                     <a href="/DetailPengajar?guru_id={{ $item->id }}" class="teacher-profile">
                                         <img class="profilepicture-icon11" loading="lazy" alt=""
@@ -215,7 +255,6 @@
                                     </a>
                                 </div>
                                 <div class="col-3">
-                                    {{-- if zoomlink ga ada --}}
                                     @empty($Detail->zoomlink)
                                         @empty(!session('siswa'))
                                             @if ($Detail->siswa_id == session('siswa')->id)
@@ -228,14 +267,15 @@
                                     @endempty
                                 </div>
                             @endforeach
-                        @endempty
-                    </div>
-                @endif
-            @endsession
-            {{-- @endif --}}
+                        @endif
+                    @endempty
+                </div>
+            @endif
+        @endsession
+        {{-- @endif --}}
 
-        </div>
-    </section>
+    </div>
+</section>
 </main>
 @endsection
 
